@@ -1,0 +1,67 @@
+{
+ "format": "baseline-labels/1",
+ "clip": "p1_bh2_ball",
+ "labeller": "Claude (AI assistant, developer tooling)",
+ "labeller_role": "non-expert developer label",
+ "expert": false,
+ "method": "Read by eye from film strips; contact from single-frame rows where the ball is visible (about +-0.04 s on the 25 fps clips, +-0.1 s on rola_*), swing peak estimated to about +-0.2 s on shadow swings. Start/end are contact -0.8 s (-1.5 s for serves) and +0.7 s, not individually marked.",
+ "labelled_at": "2026-11-15",
+ "notes": "",
+ "strokes": [
+  {
+   "type": "backhand",
+   "start": 1.07,
+   "contact": 1.87,
+   "end": 2.57,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "oblique",
+   "notes": ""
+  },
+  {
+   "type": "backhand",
+   "start": 4.27,
+   "contact": 5.07,
+   "end": 5.77,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "oblique",
+   "notes": ""
+  },
+  {
+   "type": "backhand",
+   "start": 7.6,
+   "contact": 8.4,
+   "end": 9.1,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "oblique",
+   "notes": ""
+  },
+  {
+   "type": "backhand",
+   "start": 11.07,
+   "contact": 11.87,
+   "end": 12.57,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "oblique",
+   "notes": ""
+  },
+  {
+   "type": "backhand",
+   "start": 14.63,
+   "contact": 15.43,
+   "end": 16.13,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "oblique",
+   "notes": ""
+  }
+ ]
+}

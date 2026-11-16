@@ -1,0 +1,293 @@
+{
+ "version": 1,
+ "clips": [
+  {
+   "id": "p1_fh_shadow",
+   "file": "clips/drive_demo/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": 0,
+   "t1": 21.6,
+   "player_hint": null,
+   "source": {
+    "title": "File:0DRIVE.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0DRIVE.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "d37be2471184bede61febcc93beaca6bfbbcfbb3"
+   },
+   "cuts": null,
+   "notes": "Player 1 (red top) shadow-swinging forehands without a ball, slow and deliberate. Instructional video."
+  },
+  {
+   "id": "p1_bh2_shadow",
+   "file": "clips/bh2_demo/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": 0,
+   "t1": 12.8,
+   "player_hint": null,
+   "source": {
+    "title": "File:0REVES 2 MANOS.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0REVES_2_MANOS.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "d453be1627ed4ea9711b0fdd004b27451db11ab1"
+   },
+   "cuts": null,
+   "notes": "Player 1 shadow-swinging two-handed backhands without a ball; the third is very slow."
+  },
+  {
+   "id": "sharapova",
+   "file": "clips/sharapova/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "side",
+   "t0": null,
+   "t1": null,
+   "player_hint": null,
+   "source": {
+    "title": "File:Maria Sharapova on Amelia Island.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:Maria_Sharapova_on_Amelia_Island.ogv",
+    "author": "javajoba (Jack Kennard)",
+    "licence": "CC BY 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by/2.0",
+    "sha1": "bb9363f3bd3060d836a9f49f69871fe9d061a3c3"
+   },
+   "cuts": null,
+   "notes": "Match footage, handheld from the stands, zooms out mid-clip. Used when the first build's detector was tuned."
+  },
+  {
+   "id": "rola_a",
+   "file": "clips/rola/source.webm",
+   "split": "tune",
+   "handedness": "left",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": 30.5,
+   "t1": 44.3,
+   "player_hint": [
+    0.2,
+    0.4
+   ],
+   "source": {
+    "title": "File:Blaž Rola NCAAs 2013.webm",
+    "page": "https://commons.wikimedia.org/wiki/File:Bla%C5%BE_Rola_NCAAs_2013.webm",
+    "author": "ZooTennis.com",
+    "licence": "CC BY 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by/3.0",
+    "sha1": "3f55af872e1b8d2418a79a0126421b62a89827de"
+   },
+   "cuts": null,
+   "notes": "Left-hander filmed from across the net with a panning, zooming camera; a line judge stands nearby. Used when the first build's detector was tuned."
+  },
+  {
+   "id": "rola_c",
+   "file": "clips/rola/source.webm",
+   "split": "tune",
+   "handedness": "left",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": 62.5,
+   "t1": 77.0,
+   "player_hint": [
+    0.25,
+    0.45
+   ],
+   "source": {
+    "title": "File:Blaž Rola NCAAs 2013.webm",
+    "page": "https://commons.wikimedia.org/wiki/File:Bla%C5%BE_Rola_NCAAs_2013.webm",
+    "author": "ZooTennis.com",
+    "licence": "CC BY 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by/3.0",
+    "sha1": "3f55af872e1b8d2418a79a0126421b62a89827de"
+   },
+   "cuts": null,
+   "notes": "Same player; the camera pans away so he leaves the frame around 9-10 s into the clip and comes back."
+  },
+  {
+   "id": "p2_fh_ball",
+   "file": "clips/drive_demo/source.ogv",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "oblique",
+   "t0": 28.32,
+   "t1": 47.42,
+   "player_hint": null,
+   "source": {
+    "title": "File:0DRIVE.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0DRIVE.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "d37be2471184bede61febcc93beaca6bfbbcfbb3"
+   },
+   "cuts": null,
+   "notes": "Player 2 (grey top) hitting fed forehands; camera in front and to the side."
+  },
+  {
+   "id": "p2_bh1_ball",
+   "file": "clips/bh1_demo/source.ogv",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "oblique",
+   "t0": 24.86,
+   "t1": 41.36,
+   "player_hint": null,
+   "source": {
+    "title": "File:0REVES 1 MANO.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0REVES_1_MANO.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "cb0f9f0e890dc65f21afc6afecfdb361e2c34017"
+   },
+   "cuts": null,
+   "notes": "Player 2 hitting fed one-handed backhands; wide shot, player about a quarter of frame height."
+  },
+  {
+   "id": "p1_bh2_ball",
+   "file": "clips/bh2_demo/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "oblique",
+   "t0": 19.42,
+   "t1": 37.32,
+   "player_hint": null,
+   "source": {
+    "title": "File:0REVES 2 MANOS.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0REVES_2_MANOS.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "d453be1627ed4ea9711b0fdd004b27451db11ab1"
+   },
+   "cuts": null,
+   "notes": "Player 1 hitting fed two-handed backhands; handheld camera that pans and zooms. Placed in the tune split (before any scores were looked at) so that ball tracking has frame-accurate contacts to be developed against."
+  },
+  {
+   "id": "p1_serve_ball",
+   "file": "clips/serve_demo/source.ogv",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "behind",
+   "t0": 30.6,
+   "t1": 48.3,
+   "player_hint": null,
+   "source": {
+    "title": "File:0SAQUE.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0SAQUE.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "db238f3bc532cb0aaae2c5de1c3cfdaa080d5d0a"
+   },
+   "cuts": null,
+   "notes": "Player 1 serving, filmed from behind and to the side."
+  },
+  {
+   "id": "daviscup01",
+   "file": "clips/daviscup01/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "far",
+   "t0": null,
+   "t1": null,
+   "player_hint": null,
+   "source": {
+    "title": "File:2018 Davis Cup Americas Zone - Uruguay vs Mexico - 01.webm",
+    "page": "https://commons.wikimedia.org/wiki/File:2018_Davis_Cup_Americas_Zone_-_Uruguay_vs_Mexico_-_01.webm",
+    "author": "NaBUru38",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "sha1": "02f839d5f04b51e09bf057789c611c07736beda8"
+   },
+   "cuts": null,
+   "notes": "Doubles match filmed from the stands; players are small. Not labelled: kept as a hard case to check the pipeline fails or abstains cleanly."
+  },
+  {
+   "id": "cuts_bh1_full",
+   "file": "clips/bh1_demo/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": null,
+   "t1": null,
+   "player_hint": null,
+   "source": {
+    "title": "File:0REVES 1 MANO.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0REVES_1_MANO.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "cb0f9f0e890dc65f21afc6afecfdb361e2c34017"
+   },
+   "cuts": [
+    19.16,
+    24.16
+   ],
+   "notes": "Player 3 staged demonstration, title card, then player 2 in a wide shot. After the cut the person on screen is a DIFFERENT player. Not labelled for strokes."
+  },
+  {
+   "id": "cuts_serve_full",
+   "file": "clips/serve_demo/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": null,
+   "t1": null,
+   "player_hint": null,
+   "source": {
+    "title": "File:0SAQUE.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0SAQUE.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "db238f3bc532cb0aaae2c5de1c3cfdaa080d5d0a"
+   },
+   "cuts": [
+    25.16,
+    30.2
+   ],
+   "notes": "Player 2 staged serve demonstration, title card, then player 1. After the cut the person on screen is a DIFFERENT player. Not labelled for strokes."
+  },
+  {
+   "id": "cuts_bh2_full",
+   "file": "clips/bh2_demo/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": null,
+   "t1": null,
+   "player_hint": null,
+   "source": {
+    "title": "File:0REVES 2 MANOS.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0REVES_2_MANOS.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "d453be1627ed4ea9711b0fdd004b27451db11ab1"
+   },
+   "cuts": [
+    14.2,
+    19.2
+   ],
+   "notes": "Player 1 close up, title card, then the SAME player in a wide shot. Not labelled for strokes as a whole (see p1_bh2_shadow and p1_bh2_ball)."
+  }
+ ]
+}

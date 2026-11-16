@@ -1,0 +1,56 @@
+{
+ "format": "baseline-labels/1",
+ "clip": "p1_serve_ball",
+ "labeller": "Claude (AI assistant, developer tooling)",
+ "labeller_role": "non-expert developer label",
+ "expert": false,
+ "method": "Read by eye from film strips; contact from single-frame rows where the ball is visible (about +-0.04 s on the 25 fps clips, +-0.1 s on rola_*), swing peak estimated to about +-0.2 s on shadow swings. Start/end are contact -0.8 s (-1.5 s for serves) and +0.7 s, not individually marked.",
+ "labelled_at": "2026-11-15",
+ "notes": "",
+ "strokes": [
+  {
+   "type": "serve",
+   "start": 0.08,
+   "contact": 1.58,
+   "end": 2.28,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": null,
+   "camera_view": "behind",
+   "notes": ""
+  },
+  {
+   "type": "serve",
+   "start": 4.14,
+   "contact": 5.64,
+   "end": 6.34,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": null,
+   "camera_view": "behind",
+   "notes": ""
+  },
+  {
+   "type": "serve",
+   "start": 8.98,
+   "contact": 10.48,
+   "end": 11.18,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": null,
+   "camera_view": "behind",
+   "notes": ""
+  },
+  {
+   "type": "serve",
+   "start": 14.18,
+   "contact": 15.68,
+   "end": 16.38,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": null,
+   "camera_view": "behind",
+   "notes": ""
+  }
+ ]
+}

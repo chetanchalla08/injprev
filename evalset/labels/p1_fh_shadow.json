@@ -1,0 +1,67 @@
+{
+ "format": "baseline-labels/1",
+ "clip": "p1_fh_shadow",
+ "labeller": "Claude (AI assistant, developer tooling)",
+ "labeller_role": "non-expert developer label",
+ "expert": false,
+ "method": "Read by eye from film strips; contact from single-frame rows where the ball is visible (about +-0.04 s on the 25 fps clips, +-0.1 s on rola_*), swing peak estimated to about +-0.2 s on shadow swings. Start/end are contact -0.8 s (-1.5 s for serves) and +0.7 s, not individually marked.",
+ "labelled_at": "2026-11-15",
+ "notes": "",
+ "strokes": [
+  {
+   "type": "forehand",
+   "start": 0.8,
+   "contact": 1.6,
+   "end": 2.3,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": null,
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "forehand",
+   "start": 5.1,
+   "contact": 5.9,
+   "end": 6.6,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": null,
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "forehand",
+   "start": 8.8,
+   "contact": 9.6,
+   "end": 10.3,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": null,
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "forehand",
+   "start": 13.6,
+   "contact": 14.4,
+   "end": 15.1,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": null,
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "forehand",
+   "start": 18.1,
+   "contact": 18.9,
+   "end": 19.6,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": null,
+   "camera_view": "front",
+   "notes": ""
+  }
+ ]
+}
