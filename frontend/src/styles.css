@@ -135,3 +135,12 @@ label > input.inline { display: block; width: 100%; margin-top: 4px; }
 .rec { position: absolute; top: 10px; left: 10px; background: rgba(0, 0, 0, .65); color: #ff6b5e; font-weight: 700; padding: 4px 10px; border-radius: 6px; font-variant-numeric: tabular-nums; }
 code { background: var(--grey-soft); padding: 1px 5px; border-radius: 4px; font-size: .88em; }
 .finding details { margin: 4px 0; } .finding details ol { margin: 4px 0; padding-left: 20px; }
+
+/* Sport picker: tennis is live, others are placeholders */
+.sports { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.sport { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); min-width: 0; flex: 1 1 180px; }
+.sport.on { border-color: var(--green); background: var(--green-soft); }
+.sport.soon { opacity: .6; cursor: not-allowed; }
+.sport-icon { font-size: 1.4rem; line-height: 1; }
+.sport-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.sport .tag { margin-left: auto; }

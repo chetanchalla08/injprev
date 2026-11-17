@@ -4,6 +4,11 @@ import type { Config, Intake, Profile, SessionSummary } from '../api'
 
 const REGIONS = ['shoulder', 'elbow', 'wrist', 'lower_back', 'knee', 'ankle', 'other']
 const GOALS = ['serve', 'forehand', 'backhand', 'consistency', 'power', 'general']
+const SPORTS = [
+  { id: 'tennis', name: 'Tennis', icon: '🎾', ready: true, blurb: 'Forehands, backhands and serves' },
+  { id: 'pickleball', name: 'Pickleball', icon: '🏓', ready: false, blurb: '' },
+  { id: 'golf', name: 'Golf', icon: '⛳', ready: false, blurb: '' },
+]
 const STATUS: Record<string, string> = {
   queued_prepare: 'Queued', preparing: 'Checking video', awaiting_player: 'Pick the player', queued_analyze: 'Queued', analyzing: 'Analysing', complete: 'Ready', failed: 'Needs attention',
 }
@@ -84,6 +89,15 @@ export default function Home() {
       <section className="hero">
         <h1>See what your strokes are actually doing.</h1>
         <p>Upload a clip of yourself hitting. You get your forehands, backhands and serves marked on the video, a few things worth working on, and a plain account of what the camera could and couldn't show.</p>
+        <div className="sports" role="group" aria-label="Sport">
+          {SPORTS.map((s) => (
+            <div key={s.id} className={`sport ${s.ready ? 'on' : 'soon'}`} aria-disabled={!s.ready}>
+              <span className="sport-icon" aria-hidden>{s.icon}</span>
+              <span className="sport-text"><strong>{s.name}</strong><span className="muted small">{s.ready ? s.blurb : 'Coming soon'}</span></span>
+              {!s.ready && <span className="tag hollow">Soon</span>}
+            </div>
+          ))}
+        </div>
       </section>
 
       <div className="grid2">

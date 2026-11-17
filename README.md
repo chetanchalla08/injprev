@@ -1,4 +1,4 @@
-# Baseline — tennis technique review
+# Swingwise — stroke technique review (tennis now; pickleball and golf coming soon)
 
 Upload or record a tennis clip, get forehands, backhands and serves marked on the video with
 measured observations, coaching cues and drills, and carefully limited notes on movement patterns.

@@ -34,7 +34,7 @@ export default function App() {
   return (
     <>
       <header className="top no-print">
-        <a className="brand" href="#/"><span className="ball" aria-hidden />Baseline</a>
+        <a className="brand" href="#/"><span className="ball" aria-hidden />Swingwise</a>
         <nav>
           <a href="#/">Sessions</a>
           <a href="#/progress">Progress</a>

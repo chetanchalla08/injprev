@@ -449,7 +449,7 @@ def register(app: FastAPI, *, db, store, worker, settings, owner, owned, public,
         rep = review.apply_review_status(s["report"], db.signoffs())
         track = track_of(sid) if store.exists(sid, run.TRACK) else None
         data = build_pdf(title=s["title"], created_at=s["created_at"], intake=s["intake"], report=rep, track=track, comments=db.items("comment", session_id=sid))
-        return Response(data, media_type="application/pdf", headers={"Content-Disposition": f'attachment; filename="baseline-report-{sid[:8]}.pdf"', "Cache-Control": "private, no-store"})
+        return Response(data, media_type="application/pdf", headers={"Content-Disposition": f'attachment; filename="swingwise-report-{sid[:8]}.pdf"', "Cache-Control": "private, no-store"})
 
     # --- live-capture framing guidance ----------------------------------------------------
 
