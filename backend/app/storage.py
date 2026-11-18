@@ -18,6 +18,30 @@ from fastapi.responses import FileResponse, Response, StreamingResponse
 
 from .crypto import Vault, VaultError
 
+LOCK_NAME = ".in-use.lock"
+
+
+class DataDirLock:
+    """Advisory lock on DATA_DIR. A running server holds it shared (several app instances may
+    share a directory); maintenance tools such as key rotation take it exclusively and refuse
+    to run while any server holds it. A no-op where fcntl is unavailable (Windows)."""
+
+    def __init__(self, data_dir: Path, exclusive: bool = False) -> None:
+        data_dir.mkdir(parents=True, exist_ok=True)
+        self.f = open(data_dir / LOCK_NAME, "a+")
+        try:
+            import fcntl
+        except ImportError:  # pragma: no cover
+            return
+        try:
+            fcntl.flock(self.f, (fcntl.LOCK_EX if exclusive else fcntl.LOCK_SH) | fcntl.LOCK_NB)
+        except BlockingIOError as e:
+            self.f.close()
+            raise RuntimeError("The data directory is in use by a running server (or another maintenance tool). Stop it first.") from e
+
+    def release(self) -> None:
+        self.f.close()
+
 
 class Store:
     def __init__(self, sessions_dir: Path, tmp_dir: Path, vault: Vault) -> None:

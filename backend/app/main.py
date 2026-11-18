@@ -31,7 +31,7 @@ from .pipeline.pose import Detector, MediaPipeDetector
 from .pipeline.segment import STROKE_TYPES
 from .pipeline.video import ALLOWED_EXTENSIONS
 from .review import apply_review_status
-from .storage import Store
+from .storage import DataDirLock, Store
 from .worker import Worker
 
 COOKIE = "tl_owner"
@@ -68,6 +68,10 @@ def create_app(settings: Settings | None = None, detector_factory: Callable[[], 
     vault = Vault.from_env(settings.data_key)  # raises VaultError("bad_key") for a malformed key
     if settings.require_encryption and not vault.enabled:
         raise VaultError("key_missing", "REQUIRE_ENCRYPTION=1 but DATA_KEY is not set. Generate a key with `python -m app.crypto` and put it in the environment.")
+    try:
+        data_lock = DataDirLock(settings.data_dir)  # shared; key rotation takes it exclusively
+    except RuntimeError as e:
+        raise RuntimeError("The data directory is locked by a maintenance tool (for example key rotation). Wait for it to finish.") from e
     db = DB(settings.db_path, vault)
     store = Store(settings.sessions_dir, settings.tmp_dir, vault)
     worker = Worker(db, settings, detector_factory or (lambda: MediaPipeDetector(settings.model_path)), store)
@@ -80,7 +84,7 @@ def create_app(settings: Settings | None = None, detector_factory: Callable[[], 
         worker.stop()
 
     app = FastAPI(title="Tennis technique review", lifespan=lifespan)
-    app.state.db, app.state.worker, app.state.settings, app.state.store = db, worker, settings, store
+    app.state.db, app.state.worker, app.state.settings, app.state.store, app.state.data_lock = db, worker, settings, store, data_lock
 
     @app.exception_handler(VaultError)
     async def vault_error(_: Request, e: VaultError) -> JSONResponse:  # stored data cannot be read: say why, never return garbage

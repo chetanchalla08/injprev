@@ -43,10 +43,10 @@ backend/app/pipeline/   video.py      validate, normalise, quality checks
                         framing.py    live-capture checks;      options.py  switch for every optional stage
                         run.py        prepare / analyze / rebuild
 backend/app/            main.py + api_extra.py (API), worker.py (queue, retries, retention), db.py (SQLite),
-                        crypto.py + storage.py (encryption at rest), review.py (sign-off), angles.py (angle series,
+                        crypto.py + storage.py + rotate_key.py (encryption at rest, key rotation), review.py (sign-off), angles.py (angle series,
                         reference comparison), pdf.py, llm.py (optional, checked), demo.py (synthetic figure)
 backend/app/evaltools/  format.py, score.py, add.py, angles.py, reviews.py
-backend/tests/          127 tests
+backend/tests/          145 tests
 frontend/src/           Home, Session (Player / Coach / Clinician / Label / Annotate / Review tabs), Compare,
                         Duo (side by side), Progress, Review (sign-off), Capture, Privacy
 evalset/                manifest, labels, stored runs (footage itself is not in git)
@@ -87,14 +87,20 @@ stored with AES-256-GCM; files are encrypted in chunks so video seeking still wo
 - **Key handling.** The key lives only in the server's environment. Keep a copy outside the data
   directory and its backups: without it the data is unreadable and cannot be recovered. With
   `REQUIRE_ENCRYPTION=1` the app refuses to start without a key. Starting with no key or the
-  wrong key gives a clear error on every read; it never returns scrambled data. There is no key
-  rotation tool yet: changing the key makes existing data unreadable.
+  wrong key gives a clear error on every read; it never returns scrambled data.
+- **Changing the key.** Stop the server, then run `NEW_DATA_KEY=<new key> .venv/bin/python -m app.rotate_key`
+  (or `--generate` to make one and print it; `--check` only verifies that everything reads with the
+  current key). It re-encrypts every session file and encrypted database value, including data stored
+  before a key was set, then you put the new key in `DATA_KEY`. It refuses to run while a server is
+  using the data directory and changes nothing if any item is under an unknown key. Files are swapped in
+  one at a time and the database in one transaction; if it is interrupted, run it again with the same keys.
+  Backups taken earlier still need the old key, so keep it until they expire.
 - **Protects against** someone obtaining the data directory, the database file or a backup
   without the key.
 - **Does not protect against** anyone who can read the server's environment or memory, a
   compromised application, or a host that holds both data and key. During processing a plaintext
   working copy of the video exists in `DATA_DIR/tmp` (removed afterwards, wiped at start-up).
-  Data stored before a key was set stays unencrypted. Share-link records, reviewer sign-offs,
+  Data stored before a key was set stays unencrypted until `app.rotate_key` is run. Share-link records, reviewer sign-offs,
   job status and timestamps are not encrypted. It is not end-to-end encryption.
 
 ## Optional LLM summary
@@ -117,7 +123,7 @@ reference-like or diagnostic wording. Turning it on means the written findings l
   clips. No clinician has reviewed evidence or wording; drills are not coach-reviewed.
 - Racket tracking is not delivered: a pretrained detector was evaluated but there is nothing to score it against.
 - Live capture has not been tried on a real camera in this environment.
-- No accounts (cookie-bound access only), no GPU or separate worker machine, no key rotation.
+- No accounts (cookie-bound access only), no GPU or separate worker machine.
   No regulatory compliance is claimed.
 
 ## Next priorities
@@ -127,4 +133,4 @@ reference-like or diagnostic wording. Turning it on means the written findings l
 2. Joint annotation and motion-capture reference so angles can be given an error.
 3. Coach review of flagged clips; clinician sign-off of evidence and wording.
 4. Full-court footage to test court mapping before any footwork claim.
-5. Accounts and key rotation before any hosted deployment.
+5. Accounts before any hosted deployment.

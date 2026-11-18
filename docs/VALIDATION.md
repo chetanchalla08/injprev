@@ -8,7 +8,7 @@ has been done on a very small set. No medical validation has been done.
 ## 1. Technical validation
 
 ### 1.1 Software tests
-`backend/tests` (127 tests) cover the original cases (corrupt and odd video files, frame
+`backend/tests` (145 tests) cover the original cases (corrupt and odd video files, frame
 rates, rotation, synthetic players from six camera angles, hidden limbs, tracking gaps, two
 people, upload limits, access control, deletion, retention, retries) plus, for the newer work:
 label-file validation and scoring arithmetic; labelling, joint-annotation and motion-capture
