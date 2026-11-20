@@ -49,6 +49,46 @@ def test_one_handed_backhand_with_high_finish_is_not_a_serve(yaw, left):
         assert abs(s.peak - t) < 0.3
 
 
+@pytest.mark.parametrize("yaw", [0, 45, 90, 135, 180, 225])
+@pytest.mark.parametrize("left", [False, True])
+def test_shoulder_high_backhand_with_held_finish_is_one_backhand(yaw, left):
+    # Tune clip p3_bh1_shadow: hand fastest near shoulder height, finish held above the head, then brought down.
+    # Neither the high finish (not a serve) nor the arm coming back down (not a new stroke) is a stroke of its own.
+    events = [(2.0, "forehand"), (4.5, "backhand_held_high_finish"), (8.0, "serve")]
+    track = make_track(events, yaw=yaw, left_handed=left, noise=1.0)
+    strokes = detect_strokes(track, "left" if left else "right", "one_handed")
+    assert [s.type for s in strokes] == ["forehand", "backhand", "serve"]
+    for s, (t, _) in zip(strokes, events):
+        assert abs(s.peak - t) < 0.3
+
+
+@pytest.mark.parametrize("yaw", [0, 45, 90, 135, 180, 225])
+def test_looped_forehand_from_above_the_head_is_still_a_stroke(yaw):
+    # rola_c: the take-back goes above the head, but the hand is rising again at the hit, so it is not a "return".
+    events = [(2.0, "forehand_high_loop"), (4.5, "forehand")]
+    strokes = detect_strokes(make_track(events, yaw=yaw, noise=1.0), "right", "one_handed")
+    assert [s.type for s in strokes] == ["forehand", "forehand"]
+    assert abs(strokes[0].peak - 2.0) < 0.3
+
+
+@pytest.mark.parametrize("yaw", [0, 45, 135, 180])
+def test_backhand_with_backswing_hidden_behind_the_body_is_still_a_backhand(yaw):
+    # Tune clip p3_bh1_shadow: seen from the front, the hand is out of sight behind the body for most of the lead-up.
+    track = make_track([(2.0, "backhand_early_backswing")], yaw=yaw, noise=1.0)
+    hide = (track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.4)
+    track.vis[hide, R_WR] = 0.1
+    s = detect_strokes(track, "right", "one_handed")
+    assert [x.type for x in s] == ["backhand"] and s[0].label_confidence <= 0.45
+
+
+def test_forehand_with_hidden_backswing_stays_unclassified():
+    # The hidden hand was on the hitting-arm side, so nothing says backhand: the guard still applies.
+    track = make_track([(2.0, "forehand")], yaw=135, noise=1.0)
+    hide = (track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.4)
+    track.vis[hide, R_WR] = 0.1
+    assert [x.type for x in detect_strokes(track, "right", "one_handed")] == ["unclassified"]
+
+
 def test_wrong_handedness_is_not_silently_right():
     """Analysing a right-hander as left-handed must not reproduce the same labels with confidence."""
     track = make_track(EVENTS)

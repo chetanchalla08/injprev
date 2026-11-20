@@ -46,7 +46,7 @@ backend/app/            main.py + api_extra.py (API), worker.py (queue, retries,
                         crypto.py + storage.py + rotate_key.py (encryption at rest, key rotation), review.py (sign-off), angles.py (angle series,
                         reference comparison), pdf.py, llm.py (optional, checked), demo.py (synthetic figure)
 backend/app/evaltools/  format.py, score.py, add.py, angles.py, reviews.py
-backend/tests/          145 tests
+backend/tests/          168 tests
 frontend/src/           Home, Session (Player / Coach / Clinician / Label / Annotate / Review tabs), Compare,
                         Duo (side by side), Progress, Review (sign-off), Capture, Privacy
 evalset/                manifest, labels, stored runs (footage itself is not in git)
@@ -112,9 +112,10 @@ reference-like or diagnostic wording. Turning it on means the written findings l
 
 ## What is not validated or not built
 
-- **Accuracy is known only on a tiny, non-expert-labelled set** (39 strokes, 4 players). On
-  held-out footage every stroke was found; 86% got the right label, but two of five one-handed
-  backhands are still labelled as serves. See docs/VALIDATION.md for every number.
+- **Accuracy is known only on a tiny, non-expert-labelled set** (41 strokes, 5 players). On
+  held-out footage every stroke was found and all 14 got the right label, including the five
+  one-handed backhands that used to be called serves, but that split has now been used twice to
+  judge changes, so it is no longer a clean test. See docs/VALIDATION.md for every number.
 - Ball contact was found for 2 of 14 held-out strokes; contact point is an unvalidated
   observation. Court position needs five court lines in view and was found in none of the
   evaluation clips; footwork observations are unvalidated. Wrist/grip and segment sequencing are
@@ -128,8 +129,8 @@ reference-like or diagnostic wording. Turning it on means the written findings l
 
 ## Next priorities
 
-1. Coach-labelled, consented footage across views, levels and handedness; then finish one-handed
-   backhand vs serve (partly fixed; two of five held-out cases remain) and judge it on new held-out footage.
+1. Coach-labelled, consented footage across views, levels and handedness, with a fresh held-out split of
+   new players: the current one has been used twice, so one-handed backhand vs serve needs re-judging on it.
 2. Joint annotation and motion-capture reference so angles can be given an error.
 3. Coach review of flagged clips; clinician sign-off of evidence and wording.
 4. Full-court footage to test court mapping before any footwork claim.

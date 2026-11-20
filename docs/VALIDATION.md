@@ -8,7 +8,7 @@ has been done on a very small set. No medical validation has been done.
 ## 1. Technical validation
 
 ### 1.1 Software tests
-`backend/tests` (145 tests) cover the original cases (corrupt and odd video files, frame
+`backend/tests` (168 tests) cover the original cases (corrupt and odd video files, frame
 rates, rotation, synthetic players from six camera angles, hidden limbs, tracking gaps, two
 people, upload limits, access control, deletion, retention, retries) plus, for the newer work:
 label-file validation and scoring arithmetic; labelling, joint-annotation and motion-capture
@@ -25,9 +25,9 @@ guidance; and the LLM check (**invented number**, citation, risk wording).
 These show the software behaves as designed. They say nothing about accuracy on real players.
 
 ### 1.2 Evaluation set
-`evalset/` (format and commands in `evalset/README.md`). Today: 13 clips cut from 7 freely
-licensed Wikimedia Commons files; 9 are labelled, about 154 s, 4 players, **39 strokes** (tune
-25, held-out 14). **All labels are non-expert** (made by the developer's AI assistant from film
+`evalset/` (format and commands in `evalset/README.md`). Today: 14 clips cut from 7 freely
+licensed Wikimedia Commons files; 10 are labelled, about 173 s, 5 players, **41 strokes** (tune
+27, held-out 14). **All labels are non-expert** (made by the developer's AI assistant from film
 strips; contact to about ±0.04 s where the ball is visible, ±0.1 to ±0.2 s otherwise). The
 held-out split is real hitting with a visible ball that was not looked at while tuning; one
 player appears in both splits in different footage. With numbers this small one stroke moves a
@@ -47,6 +47,7 @@ detected and given the right label. *Timing* = median absolute difference from l
 | cropped second pose pass (instead of full frame) | 72% / 95% / 44% / 0.07 s | 100% / 100% / 64% / 0.07 s | **Not adopted** |
 | Final defaults (cuts, re-acquisition, ball, court) | 76% / 100% / 44% / 0.04 s | 100% / 100% / 64% / 0.05 s | Shipped |
 | + high finish after a low fastest point is a groundstroke, not a serve | 76% / 100% / 44% / 0.03 s | 100% / **93%** / **86%** / 0.04 s | Adopted (see below) |
+| + player 3 tune clip (27 strokes from here); held high finish, arm coming down, hidden backswing | 74% / 100% / 44% / 0.03 s | 100% / **100%** / **100%** / 0.04 s | Adopted (see below; **second use of held-out**) |
 
 What the baseline numbers hide:
 - Tune: 6 strokes missed (3 very slow shadow backhands, 3 by the panning-camera left-hander) and
@@ -68,6 +69,33 @@ backhands now labelled correctly, 2 still labelled serves, and one new false det
 same clip; tune split and all serves unchanged. The held-out split has now been used to judge
 this change, so the next improvement to this confusion needs new held-out footage, and tune-split
 one-handed backhands are still missing.
+
+**One-handed backhand vs serve, second round (run `p3_bh1_tune`).** A new tune clip,
+`p3_bh1_shadow`, was cut from the part of `0REVES 1 MANO` before its first cut: player 3, two
+shadow one-handed backhands seen from the front, both finishing with the hand above the head. It
+does not overlap the held-out clip from the same file (a different player, after the cuts). Labels are
+non-expert, like the rest. On it the old rule did not call either swing a serve, but it showed three
+weaknesses: (1) the hand was fastest at shoulder height (0.44 TL below the nose), so the "groundstroke
+finishing high" escape (needed ≤ 0.5 TL below) would not have applied had the finish been slightly
+higher, and the search for the fastest moment started only 0.4 s before the top, so a finish held up
+there could hide the swing that raised it; (2) bringing the racket back down from the high finish was
+detected as a separate "forehand", twice; (3) the hand went out of sight behind the body in the
+backswing, so the hidden-arm guard left the real backhand unlabelled. Changes, each from the mechanics
+of the strokes and checked on synthetic swings from six views: the escape now applies when the hand is
+fastest ≥ 0.25 TL below the nose (serve contact is well above the head) and the fastest moment is
+searched from before the hand first got high; a fast movement that starts above the nose and is still
+falling at its peak is not a swing; and a hidden backswing whose estimated position is across the body,
+followed by a visible swing out to the hitting-arm side, is a backhand at confidence 0.45. A first
+version of the "coming down" rule dropped one of Rola's looped forehands (racket above the head in the
+take-back); requiring the hand to be falling at the peak fixed it, and a looped-forehand synthetic test
+was added. Tune split: the six existing clips are unchanged stroke for stroke; on the new clip both false
+strokes are gone and one backhand is labelled (the other is a deliberately slow demonstration swing,
+below the 6 TL/s swing threshold, and stays missed). The held-out split was then scored **once**, with no
+changes afterwards: 14 of 14 correct (was 12), no false detections (was 1); both remaining one-handed
+backhands are no longer serves. **This is the second time the held-out split has judged a change to this
+confusion**, and the second change was designed after seeing the first's held-out summary (2 of 5
+wrong), so 14 of 14 overstates what to expect on new footage. Treat the held-out split as used up for
+this question: the next check needs new players.
 
 **Ball tracking.** Two detectors were tried on the tune clips: a motion-and-colour finder and
 a pretrained general object detector (YOLOX-S, COCO "sports ball"). Contact was located for 12
@@ -141,7 +169,7 @@ is not a probability of anything about the player's body.
 ## 4. Next steps, in order
 1. Coach-labelled footage: one- and two-handed backhands, left-handers, side-on and behind views,
    recreational players; at least a few hundred strokes, with a held-out split of different players.
-2. Finish one-handed backhand vs serve (partly fixed, 2 of 5 held-out cases remain) on new tune
+2. Re-judge one-handed backhand vs serve (14 of 14 on a twice-used held-out split) on new tune
    footage, and judge it on new held-out footage.
 3. Footage with a full court in view and labelled positions, before any footwork claim.
 4. Joint annotation on 100+ frames across views, then motion capture, before trusting any angle.

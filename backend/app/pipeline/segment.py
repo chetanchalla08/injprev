@@ -74,12 +74,15 @@ def find_swings(track: PoseTrack, handedness: str) -> list[int]:
     rel, v = track.hand_motion(dom.wr)
     v = np.where(np.isfinite(v), v, 0.0)
     w = max(int(round(0.3 * track.rate)), 2)
+    reach = _hand_height(track, dom.wr)
     cands = []
     for i in range(1, track.n - 1):
         if v[i] < MIN_PEAK_SPEED or v[i] < v[i - 1] or v[i] <= v[i + 1]:
             continue
         sl = slice(max(0, i - w), min(track.n, i + w + 1))
         if _extent(rel, sl, track.torso_len[i]) < MIN_EXTENT or track.vis[sl, dom.wr].mean() < MIN_SWING_VIS:
+            continue
+        if _dropping_from_high_finish(reach, i, w):
             continue
         cands.append(i)
     cands.sort(key=lambda i: -v[i])
@@ -90,7 +93,32 @@ def find_swings(track: PoseTrack, handedness: str) -> list[int]:
     return sorted(kept)
 
 
-FOLLOW_THROUGH_LOW = -0.5  # hand at least this many torso lengths BELOW the nose at its fastest
+def _hand_height(track: PoseTrack, wrist: int) -> np.ndarray:
+    """Hand height above the nose in torso lengths (image plane); NaN where the hand is not seen."""
+    y = track.xy[:, :, 1]
+    ok = (track.vis[:, wrist] >= 0.3) & track.tracked
+    with np.errstate(invalid="ignore", divide="ignore"):
+        return np.where(ok, (y[:, NOSE] - y[:, wrist]) / track.torso_len, np.nan)
+
+
+RETURN_DROP = 0.5  # torso lengths the hand falls, from above the nose, by the time of a "return" speed peak
+
+
+def _dropping_from_high_finish(reach: np.ndarray, i: int, w: int) -> bool:
+    """True when a fast hand movement is the arm coming back down after a high finish, not a new swing.
+
+    A groundstroke drives the hand forward and up through the hit; bringing the racket back down from a
+    finish above the head to the ready position is fast too, but starts above the head and is still falling
+    at its fastest. (A looped forehand also starts high, but the hand is rising again at the hit.)
+    """
+    before = reach[max(0, i - w) : i + 1]
+    if i + 1 >= len(reach) or not np.isfinite(before).any() or not np.isfinite(reach[[i - 1, i, i + 1]]).all():
+        return False
+    top = float(np.nanmax(before))
+    return top >= 0.0 and top - reach[i] >= RETURN_DROP and reach[i + 1] < reach[i - 1]
+
+
+FOLLOW_THROUGH_LOW = -0.25  # hand at least this many torso lengths BELOW the nose at its fastest (serve contact is well above the head)
 FOLLOW_THROUGH_LEAD_S = 0.1  # ...and fastest at least this long before it reached its highest point
 
 
@@ -149,7 +177,9 @@ def find_serves(track: PoseTrack, handedness: str) -> list[tuple[int, float, str
             lo = max(0, top - int(0.4 * r))
             near = speed[lo : top + int(0.4 * r) + 1]
             fast = float(near.max()) >= MIN_PEAK_SPEED
-            if fast and _is_follow_through(reach, _fastest(track, dom.wr, speed, lo, top + int(0.4 * r) + 1), top, r):
+            # search from before the hand first got high, so a finish held up there cannot hide the swing that raised it
+            rise = max(0, i - int(0.4 * r))
+            if fast and _is_follow_through(reach, _fastest(track, dom.wr, speed, rise, top + int(0.4 * r) + 1), top, r):
                 i = j + 1  # a groundstroke finishing high (e.g. a one-handed backhand); find_swings labels it
                 continue
             if has_toss or fast:
@@ -176,11 +206,6 @@ def classify(track: PoseTrack, peak_i: int, handedness: str, backhand_style: str
     w = track.world
     vis_d, vis_n = track.vis[:, dom.wr], track.vis[:, non.wr]
 
-    # If the hitting arm was hidden for most of the lead-up, what we see may be only the tail of a swing.
-    lead = vis_d[max(0, peak_i - int(1.2 * r)) : max(1, peak_i - int(0.4 * r))]
-    if lead.size >= 3 and (lead < 0.5).mean() > 0.5:
-        return "unclassified", 0.1, "The hitting arm was hidden from the camera in the lead-up, so this may be only the end of a swing."
-
     # Cue 1: where the hand is along the hip line before vs after the peak (hip widths, + = hitting-arm side).
     axis = w[:, dom.hip] - w[:, non.hip]
     mid = (w[:, dom.hip] + w[:, non.hip]) / 2
@@ -189,6 +214,19 @@ def classify(track: PoseTrack, peak_i: int, handedness: str, backhand_style: str
     a, b = slice(max(0, peak_i - int(0.4 * r)), max(1, peak_i - int(0.1 * r)) + 1), slice(min(n - 1, peak_i + int(0.05 * r)), min(n, peak_i + int(0.3 * r) + 1))
     pre, post = _weighted_mean(lat[a], vis_d[a]), _weighted_mean(lat[b], vis_d[b])
     score = pre - post if np.isfinite(pre) and np.isfinite(post) else float("nan")
+
+    # If the hitting arm was hidden for most of the lead-up, what we see may be only the tail of a swing.
+    lead_sl = slice(max(0, peak_i - int(1.2 * r)), max(1, peak_i - int(0.4 * r)))
+    lead = vis_d[lead_sl]
+    if lead.size >= 3 and (lead < 0.5).mean() > 0.5:
+        # Exception: a backhand backswing takes the hand across and behind the body, out of a front camera's sight.
+        # Accepted only when the model's (low-visibility) estimate puts the hidden hand across the body, the hand is
+        # seen again before the hit, and the seen part of the swing travels out to the hitting-arm side.
+        hidden_lat = lat[lead_sl][lead < 0.5]
+        across = np.isfinite(hidden_lat).all() and float(np.median(hidden_lat)) < 0.0
+        if across and vis_d[a].mean() >= 0.5 and np.isfinite(score) and score < -SIDE_MIN_SCORE:
+            return "backhand", 0.45, "The hitting hand went out of sight behind the body (as in a backhand backswing), then travelled out to the hitting-arm side. Labelled with low confidence because the backswing was hidden."
+        return "unclassified", 0.1, "The hitting arm was hidden from the camera in the lead-up, so this may be only the end of a swing."
     az = track.pelvis_azimuth[peak_i]
     side_on = np.isfinite(az) and az > 60  # hips overlap in the image, so left/right depth is unreliable
 

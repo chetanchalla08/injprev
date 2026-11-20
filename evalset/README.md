@@ -74,16 +74,16 @@ starting with `#` are ignored. Use `--offset <id>=<seconds>` if the clocks diffe
 
 ## What is in the set now
 
-13 clips from 7 Wikimedia Commons files (sources and licences are in `manifest.json`):
+14 clips from 7 Wikimedia Commons files (sources and licences are in `manifest.json`):
 
 | Split | Clips | Labelled strokes | What |
 |---|---|---|---|
-| tune | 6 labelled | 25 (14 forehand, 10 backhand, 1 serve) | player 1 shadow swings (2 clips), player 1 two-handed backhands with ball, Sharapova match clip, left-hander Rola (2 clips) |
+| tune | 7 labelled | 27 (14 forehand, 12 backhand, 1 serve) | player 1 shadow swings (2 clips), player 1 two-handed backhands with ball, Sharapova match clip, left-hander Rola (2 clips), player 3 shadow one-handed backhands |
 | held_out | 3 labelled | 14 (5 forehand, 5 one-handed backhand, 4 serve) | player 2 forehands and backhands with ball, player 1 serves |
 | tune | 3 unlabelled | – | whole instructional files with hard cuts, for cut and re-acquisition checks |
 | held_out | 1 unlabelled | – | doubles from the stands (the pipeline correctly refuses it) |
 
-About 154 s of labelled footage, 4 players, 39 strokes, all right-handed except Rola, no
+About 173 s of labelled footage, 5 players, 41 strokes, all right-handed except Rola, no
 expert labels. Player 1 appears in both splits (different footage). That is far too small to
 generalise from; see docs/VALIDATION.md for what the numbers can and cannot support.
 

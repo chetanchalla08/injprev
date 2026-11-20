@@ -20,6 +20,12 @@ PATHS = {
     "backhand": [(-0.45, [-0.50, 1.00, -0.30]), (-0.15, [-0.55, 0.95, -0.25]), (0.0, [0.30, 1.00, 0.60]), (0.25, [0.75, 1.40, 0.20]), (0.6, REST)],
     # one-handed backhand whose follow-through finishes well above the head, like a serve's reach
     "backhand_high_finish": [(-0.45, [-0.50, 1.00, -0.30]), (-0.15, [-0.55, 0.95, -0.25]), (0.0, [0.30, 1.00, 0.60]), (0.3, [0.70, 2.15, 0.10]), (0.75, REST)],
+    # one-handed backhand hit at shoulder height, finish held above the head, then the racket brought back down
+    "backhand_held_high_finish": [(-0.45, [-0.50, 1.30, -0.30]), (-0.15, [-0.55, 1.35, -0.25]), (0.0, [0.30, 1.45, 0.60]), (0.3, [0.70, 2.15, 0.10]), (1.0, [0.70, 2.15, 0.10]), (1.3, REST)],
+    # backhand whose backswing takes the hand across the body early and holds it there (unit turn), as on the p3 clip
+    "backhand_early_backswing": [(-1.4, [0.00, 1.00, 0.10]), (-0.9, [-0.50, 1.00, -0.30]),(-0.15, [-0.55, 0.95, -0.25]), (0.0, [0.30, 1.00, 0.60]), (0.25, [0.75, 1.40, 0.20]), (0.6, REST)],
+    # forehand with a looped take-back: racket raised above the head, dropped, then swung up through the ball (rola_c)
+    "forehand_high_loop": [(-1.1, [0.35, 1.10, 0.15]), (-0.75, [0.45, 1.45, -0.15]), (-0.45, [0.50, 1.80, -0.30]),(-0.2, [0.75, 0.95, -0.35]), (0.0, [0.55, 1.00, 0.55]), (0.25, [-0.35, 1.50, 0.20]), (0.6, REST)],
     "serve": [(-0.9, [0.35, 1.00, 0.10]), (-0.25, [0.30, 1.40, -0.35]), (0.0, [0.25, 2.25, 0.30]), (0.3, [-0.30, 0.90, 0.30]), (0.7, REST)],
 }
 IDX = dict(nose=0, l_sh=11, r_sh=12, l_el=13, r_el=14, l_wr=15, r_wr=16, l_hip=23, r_hip=24, l_knee=25, r_knee=26, l_ank=27, r_ank=28, l_heel=29, r_heel=30, l_toe=31, r_toe=32)

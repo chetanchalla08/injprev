@@ -218,11 +218,32 @@
    "notes": "Doubles match filmed from the stands; players are small. Not labelled: kept as a hard case to check the pipeline fails or abstains cleanly."
   },
   {
+   "id": "p3_bh1_shadow",
+   "file": "clips/bh1_demo/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 0,
+   "t1": 19.1,
+   "player_hint": null,
+   "source": {
+    "title": "File:0REVES 1 MANO.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0REVES_1_MANO.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "cb0f9f0e890dc65f21afc6afecfdb361e2c34017"
+   },
+   "cuts": null,
+   "notes": "Player 3 (blue top) staged one-handed backhand demonstration without a ball, before the first cut of 0REVES 1 MANO. Slow step-by-step backswing, then a fast swing to a high finish above the head. Ends before the cut at 19.16 s; the held-out clip p2_bh1_ball (24.86-41.36 s, a different player) is not included."
+  },
+  {
    "id": "cuts_bh1_full",
    "file": "clips/bh1_demo/source.ogv",
    "split": "tune",
    "handedness": "right",
-   "backhand_style": "two_handed",
+   "backhand_style": "one_handed",
    "camera_view": "front",
    "t0": null,
    "t1": null,
