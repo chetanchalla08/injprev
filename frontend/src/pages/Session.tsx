@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { api, fmtDate } from '../api'
+import { api, fmtDate, JOINTS } from '../api'
 import type { Comment, Config, Drawing, Segment, Session } from '../api'
 import Player from '../components/Player'
 import type { PlayerHandle } from '../components/Player'
 import ReportView from '../components/Report'
-import { AnnotateTool, CoachPanel, ConfirmPlayer, JOINTS, LabelTool, ReviewFindings, SummaryBox } from '../components/Tools'
+import { AnnotateTool, CoachPanel, ConfirmPlayer, LabelTool, ReviewFindings, SummaryBox } from '../components/Tools'
 
 const ACTIVE = new Set(['queued_prepare', 'preparing', 'queued_analyze', 'analyzing'])
 type View = 'player' | 'coach' | 'clinician' | 'label' | 'annotate' | 'review'

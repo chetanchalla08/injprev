@@ -11,14 +11,14 @@ const LEFT_ARM = new Set(['11-13', '13-15'])
 const COLORS: Record<string, string> = { yellow: '#ffe14d', red: '#ff5a4d', blue: '#58b7ff', white: '#ffffff' }
 const NEED = { line: 2, angle: 3, free: 400 }
 
-export function angleDeg(p: number[][], aspect: number) {
+function angleDeg(p: number[][], aspect: number) {
   const v = (a: number[], b: number[]) => [(a[0] - b[0]) * aspect, a[1] - b[1]]
   const [a, b] = [v(p[0], p[1]), v(p[2], p[1])]
   const c = (a[0] * b[0] + a[1] * b[1]) / (Math.hypot(a[0], a[1]) * Math.hypot(b[0], b[1]) || 1)
   return (Math.acos(Math.max(-1, Math.min(1, c))) * 180) / Math.PI
 }
 
-export function drawShapes(g: CanvasRenderingContext2D, shapes: Shape[], w: number, h: number) {
+function drawShapes(g: CanvasRenderingContext2D, shapes: Shape[], w: number, h: number) {
   for (const s of shapes) {
     if (s.points.length < 1) continue
     g.strokeStyle = g.fillStyle = COLORS[s.color || 'yellow']
@@ -149,7 +149,7 @@ const Player = forwardRef<PlayerHandle, Props>(function Player({ base, fps, dura
     },
   }))
 
-  const toggle = () => { const v = video.current; if (v) (v.paused ? v.play().catch(() => {}) : v.pause()) }
+  const toggle = () => { const v = video.current; if (!v) return; if (v.paused) v.play().catch(() => {}); else v.pause() }
   const step = (n: number) => { const v = video.current; if (!v) return; v.pause(); stopLoop(); seek(v.currentTime + n / fps) }
   const pos = (e: React.PointerEvent) => { const r = canvas.current!.getBoundingClientRect(); return [Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)), Math.min(1, Math.max(0, (e.clientY - r.top) / r.height))] }
   const interactive = !!tool || !!onStageClick

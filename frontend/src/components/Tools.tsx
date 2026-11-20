@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
-import { api, cap, fmtDate, fmtTime } from '../api'
+import { api, cap, fmtDate, fmtTime, JOINTS } from '../api'
 import type { AnnotationSet, Comment, Config, Drawing, Finding, LabelSet, LabelStroke, Profile, RuleReview, Segment, Session, Share, StrokeSeries, Summary } from '../api'
 
 const err = (set: (s: string) => void) => (e: unknown) => set((e as Error).message)
-export const JOINTS = ['nose', 'left_shoulder', 'right_shoulder', 'left_elbow', 'right_elbow', 'left_wrist', 'right_wrist', 'left_hip', 'right_hip', 'left_knee', 'right_knee', 'left_ankle', 'right_ankle']
 const VIEWS = ['side', 'behind', 'front', 'oblique', 'far', 'unknown']
 const ROLES: [string, string][] = [['coach', 'Coach'], ['physiotherapist', 'Physiotherapist'], ['sports_physician', 'Sports physician'], ['other_clinician', 'Other clinician']]
 
@@ -112,9 +111,12 @@ export function SummaryBox({ id }: { id: string }) {
 /* ---- clinician: joint angle over time for one stroke ---- */
 const MCOL: Record<string, string> = { image_plane: 'var(--green)', estimated_3d: 'var(--clay)' }
 export function AnglePlot({ id, strokeId }: { id: string; strokeId: string }) {
-  const [d, setD] = useState<StrokeSeries | null>(null)
+  // keep the data with the stroke it belongs to, so switching strokes shows "Loading" without resetting state in the effect
+  const key = `${id}/${strokeId}`
+  const [loaded, setLoaded] = useState<{ key: string; data: StrokeSeries } | null>(null)
+  const d = loaded?.key === key ? loaded.data : null
   const [error, setError] = useState('')
-  useEffect(() => { setD(null); api.series(id, strokeId).then(setD).catch(err(setError)) }, [id, strokeId])
+  useEffect(() => { api.series(id, strokeId).then((data) => setLoaded({ key: `${id}/${strokeId}`, data })).catch(err(setError)) }, [id, strokeId])
   if (error) return <p className="alert">{error}</p>
   if (!d) return <p className="muted small">Loading angles…</p>
   const W = 640, H = 150, P = 34

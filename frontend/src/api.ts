@@ -62,6 +62,7 @@ export interface Share { id: string; created_at: number; expires_at: number; rev
 export interface LabelStroke { type: string; start: number; contact: number; end: number; contact_kind: string }
 export interface LabelSet { labeller: string; labeller_role: string; expert: boolean; camera_view: string; notes: string; strokes: LabelStroke[]; handedness?: string; backhand_style?: string }
 export interface AnnotationSet { annotator: string; frames: { frame: number; joints: Record<string, number[]> }[] }
+export const JOINTS = ['nose', 'left_shoulder', 'right_shoulder', 'left_elbow', 'right_elbow', 'left_wrist', 'right_wrist', 'left_hip', 'right_hip', 'left_knee', 'right_knee', 'left_ankle', 'right_ankle']
 export interface SeriesEntry { key: string; label: string; note: string; unit: string; visibility: number[]; tracked_frac: number; methods: Record<string, (number | null)[]> }
 export interface StrokeSeries { t: number[]; min_visibility: number; series: SeriesEntry[]; method_notes: Record<string, string>; gap_note: string; stroke: { id: string; type: string; start: number; end: number; peak: number }; timing?: Stroke['timing'] }
 export interface ReviewStatus { state: string; label: string; signoffs: { id: string; reviewer: string; role: string; credentials: string; decision: string; comment: string; date: string; current: boolean }[] }
