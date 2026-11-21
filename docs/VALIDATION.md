@@ -125,6 +125,17 @@ footage, and camera view is still judged from body orientation on all of this se
 **Hops (split-step candidates).** Built from pose alone; no footage is labelled for split
 steps, so there is no number to report.
 
+**Smash vs serve (run `smash_fix_tune`, tune split only).** With the expanded set (146 strokes, 14
+players; see `evalset/README.md`) the new `subtype` report showed that 13 of the 14 tune smashes the app
+found were called serves. Measured on tune clips only: in the 2 s before the hit, the other arm stayed
+above the head for 0.07-0.40 s in serves (one exception at 0.77 s) and 0.53-1.36 s in smashes (one
+exception at 0.30 s, a far shot); in a smash it points at the lob while the player waits. Rule: ≥ 0.6 s
+up → overhead, left unlabelled (0.6 rather than 0.5 so the synthetic serves, held about 0.53 s, keep a
+margin). Tune result: smashes called serve 13 → 3, smashes left unlabelled 1 → 11; one serve lost (the
+0.77 s exception), serves labelled correctly 9 → 8; no other stroke changed in the 45 tune clips. Serves
+with a slow, high toss are the known risk. **The held-out split has not been scored since the expansion**;
+it will be scored once, after this change, and that is its first use for smash vs serve.
+
 ### 1.4 "Not assessed" items revisited
 | Item | Outcome | Why |
 |---|---|---|

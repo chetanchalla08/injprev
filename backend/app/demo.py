@@ -27,6 +27,8 @@ PATHS = {
     # forehand with a looped take-back: racket raised above the head, dropped, then swung up through the ball (rola_c)
     "forehand_high_loop": [(-1.1, [0.35, 1.10, 0.15]), (-0.75, [0.45, 1.45, -0.15]), (-0.45, [0.50, 1.80, -0.30]),(-0.2, [0.75, 0.95, -0.35]), (0.0, [0.55, 1.00, 0.55]), (0.25, [-0.35, 1.50, 0.20]), (0.6, REST)],
     "serve": [(-0.9, [0.35, 1.00, 0.10]), (-0.25, [0.30, 1.40, -0.35]), (0.0, [0.25, 2.25, 0.30]), (0.3, [-0.30, 0.90, 0.30]), (0.7, REST)],
+    # overhead smash: racket taken straight up behind the head and held while the other arm tracks the lob, then hit
+    "smash": [(-1.2, [0.35, 1.60, -0.20]), (-0.25, [0.30, 1.45, -0.35]), (0.0, [0.25, 2.25, 0.30]), (0.3, [-0.30, 0.90, 0.30]), (0.7, REST)],
 }
 IDX = dict(nose=0, l_sh=11, r_sh=12, l_el=13, r_el=14, l_wr=15, r_wr=16, l_hip=23, r_hip=24, l_knee=25, r_knee=26, l_ank=27, r_ank=28, l_heel=29, r_heel=30, l_toe=31, r_toe=32)
 
@@ -53,6 +55,9 @@ def _toss(t: float, events, two_handed: bool = False) -> np.ndarray:
 
         if kind == "serve" and tp - 1.3 <= t <= tp + 0.2:
             u = np.clip(1 - abs((t - (tp - 0.6)) / 0.7), 0, 1)
+            return base + u * np.array([0.1, 1.0, 0.1])
+        if kind == "smash" and tp - 1.4 <= t <= tp + 0.1:  # other arm points at the ball for about a second
+            u = np.clip(min((t - (tp - 1.4)) / 0.3, (tp + 0.1 - t) / 0.2), 0, 1)
             return base + u * np.array([0.1, 1.0, 0.1])
     return base
 

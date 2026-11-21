@@ -149,8 +149,26 @@ def _fastest(track: PoseTrack, wrist: int, speed2d: np.ndarray, lo: int, hi: int
     return lo + int(np.argmax(speed2d[lo:hi]))
 
 
-def find_serves(track: PoseTrack, handedness: str) -> list[tuple[int, float, str]]:
-    """Serve / overhead events: (frame of highest hand position, confidence, basis)."""
+OVERHEAD_TRACK_S = 0.6  # other arm above the nose at least this long before the hit: an overhead tracking a lob, not a serve toss
+
+
+def _arm_up_longest(toss: np.ndarray, top: int, rate: float) -> float:
+    """Longest stretch (s) in the 2 s before `top` with the non-hitting hand above the nose.
+
+    In a serve the toss arm is up only briefly before the hit; in a smash the other arm points at the lob
+    for about a second while the player waits for it.
+    """
+    longest = cur = 0
+    for v in toss[max(0, top - int(2.0 * rate)) : top + 1]:
+        cur = cur + 1 if np.isfinite(v) and v >= 0 else 0
+        longest = max(longest, cur)
+    return longest / rate
+
+
+def find_serves(track: PoseTrack, handedness: str) -> list[tuple[int, float, str, str]]:
+    """Serve / overhead events: (frame of highest hand position, confidence, basis, kind).
+
+    kind is "serve", or "unclassified" for an overhead (smash) the app does not label."""
     dom, non = sides(handedness)
     r = track.rate
     y = track.xy[:, :, 1]
@@ -160,7 +178,7 @@ def find_serves(track: PoseTrack, handedness: str) -> list[tuple[int, float, str
         toss = np.where(track.vis[:, non.wr] >= 0.3, (y[:, NOSE] - y[:, non.wr]) / track.torso_len, np.nan)
     speed = hand_speed(track, handedness)
     high = np.nan_to_num(reach, nan=-9.0) >= SERVE_REACH
-    out: list[tuple[int, float, str]] = []
+    out: list[tuple[int, float, str, str]] = []
     i = 0
     while i < track.n:
         if not high[i]:
@@ -182,6 +200,11 @@ def find_serves(track: PoseTrack, handedness: str) -> list[tuple[int, float, str
             if fast and _is_follow_through(reach, _fastest(track, dom.wr, speed, rise, top + int(0.4 * r) + 1), top, r):
                 i = j + 1  # a groundstroke finishing high (e.g. a one-handed backhand); find_swings labels it
                 continue
+            held = _arm_up_longest(toss, top, r)
+            if held >= OVERHEAD_TRACK_S:
+                out.append((top, 0.3, f"Overhead: the other arm pointed up for {held:.1f} s before the hit, as when tracking a lob (a serve toss is up only briefly). Smashes are not labelled.", "unclassified"))
+                i = j + 1
+                continue
             if has_toss or fast:
                 conf = 0.5 + (0.25 if has_toss else 0.0) + (0.15 if fast else 0.0)
                 basis = "Hitting hand rose well above head height" + (
@@ -189,7 +212,7 @@ def find_serves(track: PoseTrack, handedness: str) -> list[tuple[int, float, str
                 )
                 if not fast:
                     basis += " The hitting arm was hard to see during the swing, so its speed could not be confirmed."
-                out.append((top, conf, basis))
+                out.append((top, conf, basis, "serve"))
         i = j + 1
     return out
 
@@ -278,8 +301,10 @@ def detect_strokes(track: PoseTrack, handedness: str, backhand_style: str = "two
     dom, _ = sides(handedness)
     r = track.rate
     speed = hand_speed(track, handedness)
-    events: list[tuple[int, str, float, str]] = [(i, "serve", c, b) for i, c, b in find_serves(track, handedness)]
+    overheads = find_serves(track, handedness)
+    events: list[tuple[int, str, float, str]] = [(i, kind, c, b) for i, c, b, kind in overheads]
     serve_frames = [e[0] for e in events]
+    overhead_frames = {i for i, *_ in overheads}  # serves and unlabelled smashes: timed and bounded like a serve
     for i in find_swings(track, handedness):
         # the wind-up and follow-through of a serve are part of that serve, not separate swings
         if any(-1.6 * r <= i - s <= 1.0 * r for s in serve_frames):
@@ -296,7 +321,8 @@ def detect_strokes(track: PoseTrack, handedness: str, backhand_style: str = "two
     strokes: list[Stroke] = []
     prev_end = 0
     for k, (p, kind, conf, basis) in enumerate(merged):
-        a, b = _bounds(speed, p, r, kind)
+        shape = "serve" if p in overhead_frames else kind
+        a, b = _bounds(speed, p, r, shape)
         a = max(a, prev_end)
         if k + 1 < len(merged):
             b = min(b, (p + merged[k + 1][0]) // 2)
@@ -305,7 +331,7 @@ def detect_strokes(track: PoseTrack, handedness: str, backhand_style: str = "two
         while a < p and not track.tracked[a]:
             a += 1
         prev_end = b
-        strokes.append(Stroke(_new_id(), kind, float(track.t[a]), float(track.t[b]), float(track.t[p]), "auto", conf, basis, "highest_hand" if kind == "serve" else "peak_hand_speed", float(track.t[p])))
+        strokes.append(Stroke(_new_id(), kind, float(track.t[a]), float(track.t[b]), float(track.t[p]), "auto", conf, basis, "highest_hand" if shape == "serve" else "peak_hand_speed", float(track.t[p])))
     return strokes
 
 
