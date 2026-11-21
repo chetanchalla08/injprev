@@ -20,7 +20,8 @@
     "sha1": "d37be2471184bede61febcc93beaca6bfbbcfbb3"
    },
    "cuts": null,
-   "notes": "Player 1 (red top) shadow-swinging forehands without a ball, slow and deliberate. Instructional video."
+   "notes": "Player 1 (red top) shadow-swinging forehands without a ball, slow and deliberate. Instructional video.",
+   "player": "p1"
   },
   {
    "id": "p1_bh2_shadow",
@@ -41,7 +42,8 @@
     "sha1": "d453be1627ed4ea9711b0fdd004b27451db11ab1"
    },
    "cuts": null,
-   "notes": "Player 1 shadow-swinging two-handed backhands without a ball; the third is very slow."
+   "notes": "Player 1 shadow-swinging two-handed backhands without a ball; the third is very slow.",
+   "player": "p1"
   },
   {
    "id": "sharapova",
@@ -62,7 +64,8 @@
     "sha1": "bb9363f3bd3060d836a9f49f69871fe9d061a3c3"
    },
    "cuts": null,
-   "notes": "Match footage, handheld from the stands, zooms out mid-clip. Used when the first build's detector was tuned."
+   "notes": "Match footage, handheld from the stands, zooms out mid-clip. Used when the first build's detector was tuned.",
+   "player": "sharapova"
   },
   {
    "id": "rola_a",
@@ -86,7 +89,8 @@
     "sha1": "3f55af872e1b8d2418a79a0126421b62a89827de"
    },
    "cuts": null,
-   "notes": "Left-hander filmed from across the net with a panning, zooming camera; a line judge stands nearby. Used when the first build's detector was tuned."
+   "notes": "Left-hander filmed from across the net with a panning, zooming camera; a line judge stands nearby. Used when the first build's detector was tuned.",
+   "player": "rola"
   },
   {
    "id": "rola_c",
@@ -110,7 +114,8 @@
     "sha1": "3f55af872e1b8d2418a79a0126421b62a89827de"
    },
    "cuts": null,
-   "notes": "Same player; the camera pans away so he leaves the frame around 9-10 s into the clip and comes back."
+   "notes": "Same player; the camera pans away so he leaves the frame around 9-10 s into the clip and comes back.",
+   "player": "rola"
   },
   {
    "id": "p2_fh_ball",
@@ -131,7 +136,8 @@
     "sha1": "d37be2471184bede61febcc93beaca6bfbbcfbb3"
    },
    "cuts": null,
-   "notes": "Player 2 (grey top) hitting fed forehands; camera in front and to the side."
+   "notes": "Player 2 (grey top) hitting fed forehands; camera in front and to the side.",
+   "player": "p2"
   },
   {
    "id": "p2_bh1_ball",
@@ -152,7 +158,8 @@
     "sha1": "cb0f9f0e890dc65f21afc6afecfdb361e2c34017"
    },
    "cuts": null,
-   "notes": "Player 2 hitting fed one-handed backhands; wide shot, player about a quarter of frame height."
+   "notes": "Player 2 hitting fed one-handed backhands; wide shot, player about a quarter of frame height.",
+   "player": "p2"
   },
   {
    "id": "p1_bh2_ball",
@@ -173,7 +180,8 @@
     "sha1": "d453be1627ed4ea9711b0fdd004b27451db11ab1"
    },
    "cuts": null,
-   "notes": "Player 1 hitting fed two-handed backhands; handheld camera that pans and zooms. Placed in the tune split (before any scores were looked at) so that ball tracking has frame-accurate contacts to be developed against."
+   "notes": "Player 1 hitting fed two-handed backhands; handheld camera that pans and zooms. Placed in the tune split (before any scores were looked at) so that ball tracking has frame-accurate contacts to be developed against.",
+   "player": "p1"
   },
   {
    "id": "p1_serve_ball",
@@ -194,7 +202,8 @@
     "sha1": "db238f3bc532cb0aaae2c5de1c3cfdaa080d5d0a"
    },
    "cuts": null,
-   "notes": "Player 1 serving, filmed from behind and to the side."
+   "notes": "Player 1 serving, filmed from behind and to the side.",
+   "player": "p1"
   },
   {
    "id": "daviscup01",
@@ -215,7 +224,8 @@
     "sha1": "02f839d5f04b51e09bf057789c611c07736beda8"
    },
    "cuts": null,
-   "notes": "Doubles match filmed from the stands; players are small. Not labelled: kept as a hard case to check the pipeline fails or abstains cleanly."
+   "notes": "Doubles match filmed from the stands; players are small. Not labelled: kept as a hard case to check the pipeline fails or abstains cleanly.",
+   "player": null
   },
   {
    "id": "p3_bh1_shadow",
@@ -236,7 +246,8 @@
     "sha1": "cb0f9f0e890dc65f21afc6afecfdb361e2c34017"
    },
    "cuts": null,
-   "notes": "Player 3 (blue top) staged one-handed backhand demonstration without a ball, before the first cut of 0REVES 1 MANO. Slow step-by-step backswing, then a fast swing to a high finish above the head. Ends before the cut at 19.16 s; the held-out clip p2_bh1_ball (24.86-41.36 s, a different player) is not included."
+   "notes": "Player 3 (blue top) staged one-handed backhand demonstration without a ball, before the first cut of 0REVES 1 MANO. Slow step-by-step backswing, then a fast swing to a high finish above the head. Ends before the cut at 19.16 s; the held-out clip p2_bh1_ball (24.86-41.36 s, a different player) is not included.",
+   "player": "p3"
   },
   {
    "id": "cuts_bh1_full",
@@ -260,7 +271,8 @@
     19.16,
     24.16
    ],
-   "notes": "Player 3 staged demonstration, title card, then player 2 in a wide shot. After the cut the person on screen is a DIFFERENT player. Not labelled for strokes."
+   "notes": "Player 3 staged demonstration, title card, then player 2 in a wide shot. After the cut the person on screen is a DIFFERENT player. Not labelled for strokes.",
+   "player": null
   },
   {
    "id": "cuts_serve_full",
@@ -284,7 +296,8 @@
     25.16,
     30.2
    ],
-   "notes": "Player 2 staged serve demonstration, title card, then player 1. After the cut the person on screen is a DIFFERENT player. Not labelled for strokes."
+   "notes": "Player 2 staged serve demonstration, title card, then player 1. After the cut the person on screen is a DIFFERENT player. Not labelled for strokes.",
+   "player": null
   },
   {
    "id": "cuts_bh2_full",
@@ -308,7 +321,8 @@
     14.2,
     19.2
    ],
-   "notes": "Player 1 close up, title card, then the SAME player in a wide shot. Not labelled for strokes as a whole (see p1_bh2_shadow and p1_bh2_ball)."
+   "notes": "Player 1 close up, title card, then the SAME player in a wide shot. Not labelled for strokes as a whole (see p1_bh2_shadow and p1_bh2_ball).",
+   "player": "p1"
   }
  ]
 }

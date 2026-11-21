@@ -31,16 +31,22 @@ Any option in `app/pipeline/options.py` can be overridden for a run, e.g. `--bal
 ## What is scored
 
 A detection matches a labelled stroke when its timestamp is within 0.5 s of the labelled
-contact (closest pairs first, one-to-one). Reported per split and by stroke type, camera view
-and handedness: detection recall and precision, label confusion (including "left unlabelled"
-and "missed"), share correct end to end, and timing error against contact. Strokes labelled
-`other` (volley, slice, smash) are neither misses nor false detections. A clip without a label
-file is run and listed but not scored.
+contact (closest pairs first, one-to-one). Reported per split and by stroke type, camera view,
+handedness, backhand style and player: detection recall and precision, label confusion (including
+"left unlabelled" and "missed"), share correct end to end, and timing error against contact. Strokes
+labelled `other` (volley, slice, smash) are neither misses nor false detections, but when they carry a
+`subtype` the report lists what the app took each kind for (e.g. "smash taken as serve 3, missed 1"),
+which is how serve look-alikes are measured. A clip without a label file is run and listed but not scored.
 
 ## Splits
 
 `tune` may be looked at while changing the analysis. `held_out` may not: it is scored, and
 that is all. A clip's split is fixed when it is added, before seeing how the app does on it.
+
+Each clip names its `player` (a stable id such as `p12`; `null` when several people are shown).
+A held-out result only says something about new people if those people are not in tune, so
+`app.evaltools.add --player` warns when a player would end up in both splits. Player `p1` is in
+both today (different footage); new held-out clips should use new players.
 
 ## Label file (`labels/<id>.json`)
 
@@ -49,13 +55,13 @@ that is all. A clip's split is fixed when it is added, before seeing how the app
  "expert": true, "method": "how the times were found", "labelled_at": "2026-11-20", "notes": "",
  "strokes": [{"type": "forehand|backhand|serve|other", "start": 1.07, "contact": 1.87, "end": 2.57,
               "contact_kind": "contact|peak", "handedness": "right|left", "backhand_style": "one_handed|two_handed|null",
-              "camera_view": "side|behind|front|oblique|far|unknown", "notes": ""}]}
+              "camera_view": "side|behind|front|oblique|far|unknown", "subtype": "slice|smash|volley|null", "notes": ""}]}
 ```
 
 Times are seconds in the clip. `contact_kind` is `contact` when the ball is seen on the
 strings, `peak` for a shadow swing or when contact is not visible. Per-stroke handedness,
-backhand style and camera view default to the clip's values in the manifest. `expert` must be
-true only for a qualified coach.
+backhand style and camera view default to the clip's values in the manifest. `subtype` is optional
+and allowed only on `other` strokes. `expert` must be true only for a qualified coach.
 
 **How a coach supplies labels:** upload the clip in the app, open the session's **Label** tab,
 mark start / contact / end for every stroke (found by the app or not), press *Export label
@@ -89,3 +95,34 @@ generalise from; see docs/VALIDATION.md for what the numbers can and cannot supp
 
 The Ogg source files hold a title card for several seconds with a jump in their timestamps; clip trims in
 the manifest are in presentation time.
+
+## Coverage targets
+
+The aim is a set that looks like the people who will use the app, not more of the same few
+players. Counts are labelled strokes unless stated; "now" is the set as of 2026-11-20.
+
+| Dimension | Target | Now |
+|---|---|---|
+| Labelled strokes | 300+ | 41 |
+| Distinct players | 20+ | 5 (p1, p2, p3, Sharapova, Rola) |
+| Held-out players never seen in tune | 8+ | 1 (p2) |
+| Playing level (recorded in clip notes as `level: beginner/club/advanced/pro`) | 5+ players at each of beginner, club, advanced | mostly instructional demos and pros |
+| Left-handed players | 4+ players, 60+ strokes | 1 player, 10 strokes |
+| One-handed backhand players | 6+ players, 60+ backhands | 2 players, 7 backhands |
+| Two-handed backhand players | 8+ players, 60+ backhands | 3 players, 10 backhands |
+| Serves | 60+, from 10+ players | 5, from 2 players |
+| Forehands | 80+ | 19 |
+| Camera: side | 50+ | 2 |
+| Camera: behind (incl. high behind the baseline) | 50+ | 4 |
+| Camera: front / across the net | 50+ | 20 |
+| Camera: oblique | 50+ | 15 |
+| Frame rate 50-60 fps | half the footage | 0 (all 25-30 fps) |
+| **Hard case:** one-handed backhand on a high ball | 20+ | 0 labelled as such |
+| **Hard case:** serve with the toss arm low or hidden | 15+ | 0 |
+| **Hard case:** smash / overhead (`other`, `smash`) | 20+ | 0 |
+| **Hard case:** slice backhand (`other`, `slice`) | 20+ | 0 |
+| Volleys (`other`, `volley`) | 10+ | 0 |
+
+Update the "Now" column whenever clips are added (the counts come from the label files).
+Licensed footage found but not yet added is listed in [CANDIDATES.md](CANDIDATES.md); how to
+record your own clips (consent, camera, angles, strokes) is in [RECORDING.md](RECORDING.md).
