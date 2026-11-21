@@ -455,6 +455,72 @@
    "cuts": null,
    "notes": "Player 2 (grey hoodie) volleying fed balls at the net after the title card of 0VOLEA. Same footage as 'Volea con pelota.ogv'.",
    "player": "p2"
+  },
+  {
+   "id": "p8_hogeschool1938",
+   "file": "clips/nl1938_hogeschool/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 20.0,
+   "t1": 28.0,
+   "player_hint": null,
+   "source": {
+    "title": "File:HOGESCHOOL TENNIS-PGM4011526.webm",
+    "page": "https://commons.wikimedia.org/wiki/File:HOGESCHOOL_TENNIS-PGM4011526.webm",
+    "author": "Polygoon Hollands Nieuws (producer) / Nederlands Instituut voor Beeld en Geluid (custodian)",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:HOGESCHOOL_TENNIS-PGM4011526.webm",
+    "sha1": "310f6fbd4a1c8097fcb5ebc2cc81cccc7b0047dc"
+   },
+   "cuts": null,
+   "notes": "1938 Polygoon newsreel, black and white, 720x576 at 25 fps. One continuous shot across the net of a player in a cap (identity unknown) rallying; ball mostly too small to see. Ends just before the shot cuts during an overhead. level: advanced. The rest of the reel is wide shots with small players or shots of 1-4 s and is not used.",
+   "player": "p8"
+  },
+  {
+   "id": "p9_hogeschool1938",
+   "file": "clips/nl1938_hogeschool/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 38.0,
+   "t1": 53.6,
+   "player_hint": null,
+   "source": {
+    "title": "File:HOGESCHOOL TENNIS-PGM4011526.webm",
+    "page": "https://commons.wikimedia.org/wiki/File:HOGESCHOOL_TENNIS-PGM4011526.webm",
+    "author": "Polygoon Hollands Nieuws (producer) / Nederlands Instituut voor Beeld en Geluid (custodian)",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:HOGESCHOOL_TENNIS-PGM4011526.webm",
+    "sha1": "310f6fbd4a1c8097fcb5ebc2cc81cccc7b0047dc"
+   },
+   "cuts": null,
+   "notes": "1938 Polygoon newsreel, black and white, 720x576 at 25 fps. Bareheaded player (identity unknown; the reel opens with Budge) seen across the net, camera panning to follow; jump cuts in the same set-up at about 3.4 s and 14.0 s. Mostly one-handed backhands with a high, arms-wide finish. level: advanced.",
+   "player": "p9"
+  },
+  {
+   "id": "p10_youth_lesson",
+   "file": "clips/nl_youth_lesson/source.ogv",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "behind",
+   "t0": 41.2,
+   "t1": 46.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:Tennisopleiding voor de Nederlandse jeugd Weeknummer 47-43 - Open Beelden - 10283.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:Tennisopleiding_voor_de_Nederlandse_jeugd_Weeknummer_47-43_-_Open_Beelden_-_10283.ogv",
+    "author": "Nederlands Instituut voor Beeld en Geluid",
+    "licence": "CC BY-SA 3.0 NL",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en",
+    "sha1": "eb9267940968e4feba85062577e66dd7780b0362"
+   },
+   "cuts": null,
+   "notes": "1940s newsreel of a junior lesson, 320x240 at 25 fps, filmed from behind and to one side. A junior girl swinging forehand, backhand, forehand, apparently without a ball (shadow swings for the camera). level: beginner, junior. The rest of the reel is crowds, coaches demonstrating to groups, and shots of 1-4 s.",
+   "player": "p10"
   }
  ]
 }
