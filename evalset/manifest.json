@@ -1027,6 +1027,94 @@
    "cuts": null,
    "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Tilden's second pupil, a girl with short dark hair. level: beginner. At the net, filmed across it; forehand volleys, the first a low lunge.",
    "player": "p5"
+  },
+  {
+   "id": "gibson_wimbledon_fh",
+   "file": "clips/gibson_usia/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 49.0,
+   "t1": 53.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:Althea Gibson - Tennis Champion (USIA Film).webm",
+    "page": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "author": "U.S. Information Agency",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "sha1": "affdaccbeecef070bd7e388c42ca75c2cb40a8e4"
+   },
+   "cuts": null,
+   "notes": "1957-58 USIA documentary, black and white, 1440x1080 at 24 fps, match footage with frequent cuts to the crowd. Althea Gibson. level: pro. Medium shot across the net at Wimbledon; the first forehand's backswing starts just before the clip.",
+   "player": "gibson"
+  },
+  {
+   "id": "gibson_wimbledon_net",
+   "file": "clips/gibson_usia/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "behind",
+   "t0": 86.0,
+   "t1": 93.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:Althea Gibson - Tennis Champion (USIA Film).webm",
+    "page": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "author": "U.S. Information Agency",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "sha1": "affdaccbeecef070bd7e388c42ca75c2cb40a8e4"
+   },
+   "cuts": null,
+   "notes": "1957-58 USIA documentary, black and white, 1440x1080 at 24 fps, match footage with frequent cuts to the crowd. Althea Gibson. level: pro. High shot from behind the baseline, camera panning: serve, then two volleys moving in; player small.",
+   "player": "gibson"
+  },
+  {
+   "id": "gibson_wimbledon_close",
+   "file": "clips/gibson_usia/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 115.2,
+   "t1": 119.5,
+   "player_hint": null,
+   "source": {
+    "title": "File:Althea Gibson - Tennis Champion (USIA Film).webm",
+    "page": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "author": "U.S. Information Agency",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "sha1": "affdaccbeecef070bd7e388c42ca75c2cb40a8e4"
+   },
+   "cuts": null,
+   "notes": "1957-58 USIA documentary, black and white, 1440x1080 at 24 fps, match footage with frequent cuts to the crowd. Althea Gibson. level: pro. Medium-close shot near the net: an overhead, then a forehand.",
+   "player": "gibson"
+  },
+  {
+   "id": "p11_gibson_final",
+   "file": "clips/gibson_usia/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 605.0,
+   "t1": 610.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:Althea Gibson - Tennis Champion (USIA Film).webm",
+    "page": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "author": "U.S. Information Agency",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "sha1": "affdaccbeecef070bd7e388c42ca75c2cb40a8e4"
+   },
+   "cuts": null,
+   "notes": "1957-58 USIA documentary, black and white, 1440x1080 at 24 fps, match footage with frequent cuts to the crowd. Gibson's opponent in a final (blonde, identity not confirmed). level: pro. Medium shot, camera following: serve, then a forehand moving forward.",
+   "player": "p11"
   }
  ]
 }
