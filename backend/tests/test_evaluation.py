@@ -50,6 +50,48 @@ def test_scores_precision_recall_confusion_and_timing():
     assert set(agg["tune"]["by_stroke_type"]) == {"forehand", "backhand", "serve"} and "side" in agg["tune"]["by_camera_view"] and "right" in agg["tune"]["by_handedness"]
 
 
+def test_other_strokes_take_a_subtype_only_from_the_known_list():
+    ok = parse_labels(L([{"type": "other", "subtype": "smash", "start": 1, "contact": 2, "end": 3}, {"type": "other", "start": 4, "contact": 5, "end": 6}]))
+    assert [s.subtype for s in ok.strokes] == ["smash", None] and ok.to_dict()["strokes"][0]["subtype"] == "smash"
+    for bad in (L([{"type": "other", "subtype": "tweener", "start": 1, "contact": 2, "end": 3}]), L([{"type": "serve", "subtype": "smash", "start": 1, "contact": 2, "end": 3}])):
+        with pytest.raises(FormatError):
+            parse_labels(bad)
+
+
+def test_report_shows_what_smashes_and_slices_were_taken_for_and_splits_by_backhand_style_and_player():
+    labels = parse_labels(L([
+        {"type": "other", "subtype": "smash", "start": 0.5, "contact": 1.0, "end": 1.5}, {"type": "other", "subtype": "smash", "start": 2.5, "contact": 3.0, "end": 3.5},
+        {"type": "other", "subtype": "slice", "start": 4.5, "contact": 5.0, "end": 5.5}, {"type": "other", "start": 6.5, "contact": 7.0, "end": 7.5},
+        {"type": "backhand", "start": 8.5, "contact": 9.0, "end": 9.5},
+    ]), {"backhand_style": "one_handed"})  # fmt: skip
+    preds = [{"type": "serve", "time": 1.0}, {"type": "backhand", "time": 5.1}, {"type": "serve", "time": 9.0}]
+    items = score.score_clip(labels, preds, player="p7")
+    m = score.summarise(items)
+    assert m["other_by_subtype"] == {"smash": {"serve": 1, "missed": 1}, "slice": {"backhand": 1}, "unspecified": {"missed": 1}}
+    assert m["labelled"] == 1 and m["false_detections"] == 0  # "other" strokes still neither count as misses nor as false detections
+    agg = score.aggregate([{"clip": "a", "split": "tune", "items": items}])["tune"]
+    assert agg["by_backhand_style"]["one_handed"]["confusion"]["backhand"]["serve"] == 1 and agg["by_player"]["p7"]["labelled"] == 1
+
+
+def _add(root, video, cid, split, player):
+    from app.evaltools import add
+
+    return add.main(["--root", str(root), "--id", cid, "--video", str(video), "--split", split, "--licence", "test", "--page", "test", "--player", player])
+
+
+def test_add_records_the_player_and_warns_when_a_player_would_be_in_both_splits(tmp_path, capsys):
+    from app.evaltools.format import load_manifest
+
+    video = make_video(tmp_path / "v.mp4", duration=1)
+    root = tmp_path / "evalset"
+    assert _add(root, video, "a", "tune", "p1") == 0 and _add(root, video, "b", "held_out", "p2") == 0
+    assert "WARNING" not in capsys.readouterr().out
+    assert _add(root, video, "c", "held_out", "p1") == 0
+    out = capsys.readouterr().out
+    assert "WARNING" in out and "p1" in out and "tune" in out
+    assert {c.id: c.player for c in load_manifest(root)} == {"a": "p1", "b": "p2", "c": "p1"}
+
+
 def test_empty_set_reports_blank_not_zero(tmp_path, capsys):
     assert score.main(["--root", str(tmp_path)]) == 1 and "No clips" in capsys.readouterr().out
     assert score.summarise([])["detection_recall"] is None and score.summarise([])["timing_vs_contact"] is None
