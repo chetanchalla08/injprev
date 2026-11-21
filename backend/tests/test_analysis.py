@@ -89,17 +89,6 @@ def test_forehand_with_hidden_backswing_stays_unclassified():
     assert [x.type for x in detect_strokes(track, "right", "one_handed")] == ["unclassified"]
 
 
-@pytest.mark.parametrize("yaw", [0, 45, 90, 135, 180, 225])
-@pytest.mark.parametrize("left", [False, True])
-def test_smash_is_not_called_a_serve(yaw, left):
-    # Tune clips p1_smash_shadow and p6_smash_*: the other arm points at the lob for about a second before an
-    # overhead, but is above the head only briefly in a serve. Smashes were all labelled serves.
-    events = [(2.0, "forehand"), (5.0, "smash"), (8.0, "serve")]
-    strokes = detect_strokes(make_track(events, yaw=yaw, left_handed=left, noise=1.0), "left" if left else "right", "one_handed")
-    assert [s.type for s in strokes] == ["forehand", "unclassified", "serve"]
-    assert "overhead" in strokes[1].label_basis.lower()
-
-
 def test_wrong_handedness_is_not_silently_right():
     """Analysing a right-hander as left-handed must not reproduce the same labels with confidence."""
     track = make_track(EVENTS)

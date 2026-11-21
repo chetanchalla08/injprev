@@ -93,7 +93,7 @@ what was found but left out, and why, is in [CANDIDATES.md](CANDIDATES.md)):
 146 strokes from 14 players, no expert labels. Much of the new footage is 1930s-1950s film (black and
 white, 24-30 fps, frequent cuts) or 320x240 coaching video, so it stresses the pose model more than modern
 phone footage would. Player p1 appears in both splits (different footage); every other held-out player is
-new. Held-out clips have not been scored since they were added.
+new. Held-out was scored once on 2026-11-21 (run `smash_fix_heldout`); see `docs/VALIDATION.md`.
 
 The Ogg source files hold a title card for several seconds with a jump in their timestamps; clip trims in
 the manifest are in presentation time.

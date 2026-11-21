@@ -125,7 +125,7 @@ footage, and camera view is still judged from body orientation on all of this se
 **Hops (split-step candidates).** Built from pose alone; no footage is labelled for split
 steps, so there is no number to report.
 
-**Smash vs serve (run `smash_fix_tune`, tune split only).** With the expanded set (146 strokes, 14
+**Smash vs serve (run `smash_fix_tune`, tune split only; tried and reverted, see below).** With the expanded set (146 strokes, 14
 players; see `evalset/README.md`) the new `subtype` report showed that 13 of the 14 tune smashes the app
 found were called serves. Measured on tune clips only: in the 2 s before the hit, the other arm stayed
 above the head for 0.07-0.40 s in serves (one exception at 0.77 s) and 0.53-1.36 s in smashes (one
@@ -133,8 +133,22 @@ exception at 0.30 s, a far shot); in a smash it points at the lob while the play
 up → overhead, left unlabelled (0.6 rather than 0.5 so the synthetic serves, held about 0.53 s, keep a
 margin). Tune result: smashes called serve 13 → 3, smashes left unlabelled 1 → 11; one serve lost (the
 0.77 s exception), serves labelled correctly 9 → 8; no other stroke changed in the 45 tune clips. Serves
-with a slow, high toss are the known risk. **The held-out split has not been scored since the expansion**;
-it will be scored once, after this change, and that is its first use for smash vs serve.
+with a slow, high toss are the known risk.
+
+**Held-out, scored once after this change (run `smash_fix_heldout`, 13 clips, 31 strokes).** Overall recall
+81%, precision 89%, correct 52%. Smashes: none called a serve (3 unlabelled, 1 missed). But serves: only 1
+of 6 labelled correctly, 5 left unlabelled, and 4 of those 5 are the overhead rule itself: p1's four serves in
+`p1_serve_ball` held the toss arm up 0.7-0.8 s, past the 0.6 s cutoff. The same four serves were labelled
+correctly in the 20 Nov run (`p3_bh1_tune`), before the rule. So the risk named above is real: the rule does
+not generalise to a slower toss, and the tune numbers overstate it. Held-out has now been seen, so the
+cutoff must not be tuned against these four serves; any rework needs a reason found on tune footage.
+
+**Reverted.** Tune was then searched for a second measure that keeps slow-toss serves (lowest racket-hand
+height in the 2 s before, racket-hand height when and while the toss arm is up, hip movement): none
+separates the one slow-toss tune serve (p6, 0.77 s) from the smashes, so no rework could be justified on
+tune. The rule was removed: serves are a supported stroke and smashes are not, so losing real serves costs
+more than calling a smash a serve. Smashes are therefore called serves again (13 of 15 on tune before the
+rule). To revisit it, tune needs serves with a slow, high toss and smashes inside rallies.
 
 ### 1.4 "Not assessed" items revisited
 | Item | Outcome | Why |
