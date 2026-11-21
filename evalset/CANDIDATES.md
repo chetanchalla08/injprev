@@ -4,6 +4,28 @@ Freely licensed clips found on 2026-11-20 that are not yet in the set. Nothing h
 downloaded. Each row needs the owner's OK before it is fetched; the licence goes into
 `manifest.json` when the clip is added.
 
+## Outcome (2026-11-21)
+
+The owner approved everything below; all of it was downloaded, checked against the published sha1 and
+reviewed from film strips. Each new player's split was fixed before any clip of theirs was scored. What
+went into the set:
+
+| Source | Added | Split | Left out, and why |
+|---|---|---|---|
+| A1, A3, A5 (0SMASH, 0SLICE, 0VOLEA) | 6 clips, 31 strokes | by player (p1, p3 tune; p2 held-out) | – |
+| A2, A4, A6, A7, A8 (con pelota, drop, lob, tweener) | nothing | – | same players and footage as A1-A5 and the clips already in the set |
+| B1, B2 Tilden films | 23 clips, 41 strokes: Tilden, pupils p4 and p5 | tune | talking, grip close-ups, slowed demonstrations, shots under 3 s |
+| B3 EVD lessons | 12 clips, 13 strokes: demonstrator p6, 9 smashes and 4 serves (EVD-tenis-004, -005) | tune | 000 is a history montage; the studio segments of 001-004 are slow motion, freeze frames, overhead camera or grip close-ups; lobs not labelled |
+| B4 Dutch junior lesson | 1 clip, 3 strokes: junior girl p10 | held-out | the rest is crowds, group demonstrations and shots of 1-4 s |
+| B5 Dutch junior training | nothing | – | shots of 1-4 s with several players in frame |
+| C1 Althea Gibson film | 4 clips, 9 strokes: Gibson, opponent p11 | held-out | crowd shots, wide shots with tiny players, shots that cut mid-stroke |
+| C2 Federer practice | nothing | – | the camera pans away before any stroke is complete |
+| C3 Tsitsipas practice | nothing | – | player tiny and walking; no stroke |
+| C4 Toray "Play & Stay" | nothing | – | a guest walks on court; nobody hits |
+| C5 1938 newsreels | 2 clips, 8 strokes from Hogeschool: p8, p9 | held-out | Japan, Zwitserland, Frankrijk and the rest of Hogeschool: shots of 1-4 s or wide shots with small players |
+
+The sections below are the original shortlist, kept for reference.
+
 **Sources used:** Wikimedia Commons (CC BY / CC BY-SA / public domain) and the Internet Archive
 (CC0 only). **Left out:**
 - Pexels and Storyblocks: their terms forbid machine-learning use.

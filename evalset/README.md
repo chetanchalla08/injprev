@@ -80,18 +80,20 @@ starting with `#` are ignored. Use `--offset <id>=<seconds>` if the clocks diffe
 
 ## What is in the set now
 
-14 clips from 7 Wikimedia Commons files (sources and licences are in `manifest.json`):
+58 labelled clips (plus 4 unlabelled) cut from 22 freely licensed films (sources and licences are in `manifest.json`;
+what was found but left out, and why, is in [CANDIDATES.md](CANDIDATES.md)):
 
-| Split | Clips | Labelled strokes | What |
+| Split | Clips | Labelled strokes | Players |
 |---|---|---|---|
-| tune | 7 labelled | 27 (14 forehand, 12 backhand, 1 serve) | player 1 shadow swings (2 clips), player 1 two-handed backhands with ball, Sharapova match clip, left-hander Rola (2 clips), player 3 shadow one-handed backhands |
-| held_out | 3 labelled | 14 (5 forehand, 5 one-handed backhand, 4 serve) | player 2 forehands and backhands with ball, player 1 serves |
+| tune | 45 labelled | 101 (28 forehand, 19 backhand, 23 serve, 15 smash, 10 volley, 6 slice) | p1, p3, Sharapova, Rola, Tilden, p4, p5 (Tilden's pupils), p6 (EVD demonstrator) |
+| held_out | 13 labelled | 45 (12 forehand, 13 backhand, 6 serve, 4 smash, 6 volley, 4 slice) | p1 (other footage), p2, p8, p9 (1938 newsreel), p10 (junior), Gibson, p11 |
 | tune | 3 unlabelled | – | whole instructional files with hard cuts, for cut and re-acquisition checks |
 | held_out | 1 unlabelled | – | doubles from the stands (the pipeline correctly refuses it) |
 
-About 173 s of labelled footage, 5 players, 41 strokes, all right-handed except Rola, no
-expert labels. Player 1 appears in both splits (different footage). That is far too small to
-generalise from; see docs/VALIDATION.md for what the numbers can and cannot support.
+146 strokes from 14 players, no expert labels. Much of the new footage is 1930s-1950s film (black and
+white, 24-30 fps, frequent cuts) or 320x240 coaching video, so it stresses the pose model more than modern
+phone footage would. Player p1 appears in both splits (different footage); every other held-out player is
+new. Held-out clips have not been scored since they were added.
 
 The Ogg source files hold a title card for several seconds with a jump in their timestamps; clip trims in
 the manifest are in presentation time.
@@ -99,29 +101,29 @@ the manifest are in presentation time.
 ## Coverage targets
 
 The aim is a set that looks like the people who will use the app, not more of the same few
-players. Counts are labelled strokes unless stated; "now" is the set as of 2026-11-20.
+players. Counts are labelled strokes unless stated; "now" is the set as of 2026-11-21.
 
 | Dimension | Target | Now |
 |---|---|---|
-| Labelled strokes | 300+ | 41 |
-| Distinct players | 20+ | 5 (p1, p2, p3, Sharapova, Rola) |
-| Held-out players never seen in tune | 8+ | 1 (p2) |
-| Playing level (recorded in clip notes as `level: beginner/club/advanced/pro`) | 5+ players at each of beginner, club, advanced | mostly instructional demos and pros |
+| Labelled strokes | 300+ | 146 |
+| Distinct players | 20+ | 14 |
+| Held-out players never seen in tune | 8+ | 6 (p2, p8, p9, p10, p11, Gibson) |
+| Playing level (recorded in clip notes as `level: beginner/club/advanced/pro`) | 5+ players at each of beginner, club, advanced | beginner 3 (p4, p5, p10); the rest instructional demos and pros |
 | Left-handed players | 4+ players, 60+ strokes | 1 player, 10 strokes |
-| One-handed backhand players | 6+ players, 60+ backhands | 2 players, 7 backhands |
+| One-handed backhand players | 6+ players, 60+ backhands | 6 players, 22 backhands |
 | Two-handed backhand players | 8+ players, 60+ backhands | 3 players, 10 backhands |
-| Serves | 60+, from 10+ players | 5, from 2 players |
-| Forehands | 80+ | 19 |
-| Camera: side | 50+ | 2 |
-| Camera: behind (incl. high behind the baseline) | 50+ | 4 |
-| Camera: front / across the net | 50+ | 20 |
-| Camera: oblique | 50+ | 15 |
-| Frame rate 50-60 fps | half the footage | 0 (all 25-30 fps) |
+| Serves | 60+, from 10+ players | 29, from 7 players |
+| Forehands | 80+ | 40 |
+| Camera: side | 50+ | 10 |
+| Camera: behind (incl. high behind the baseline) | 50+ | 16 |
+| Camera: front / across the net | 50+ | 87 |
+| Camera: oblique | 50+ | 25 |
+| Frame rate 50-60 fps | half the footage | 0 (all 24-30 fps) |
 | **Hard case:** one-handed backhand on a high ball | 20+ | 0 labelled as such |
 | **Hard case:** serve with the toss arm low or hidden | 15+ | 0 |
-| **Hard case:** smash / overhead (`other`, `smash`) | 20+ | 0 |
-| **Hard case:** slice backhand (`other`, `slice`) | 20+ | 0 |
-| Volleys (`other`, `volley`) | 10+ | 0 |
+| **Hard case:** smash / overhead (`other`, `smash`) | 20+ | 19 |
+| **Hard case:** slice backhand (`other`, `slice`) | 20+ | 10 |
+| Volleys (`other`, `volley`) | 10+ | 16 |
 
 Update the "Now" column whenever clips are added (the counts come from the label files).
 Licensed footage found but not yet added is listed in [CANDIDATES.md](CANDIDATES.md); how to
