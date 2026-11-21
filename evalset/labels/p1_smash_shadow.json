@@ -1,0 +1,84 @@
+{
+ "format": "baseline-labels/1",
+ "clip": "p1_smash_shadow",
+ "labeller": "Claude (AI assistant, developer tooling)",
+ "labeller_role": "non-expert developer label",
+ "expert": false,
+ "method": "Read by eye from film strips at 5 fps; no ball or ball not clearly seen, so 'contact' is the estimated hit of the swing, about +-0.2 s. Start/end are contact -0.8 s and +0.7 s, not individually marked.",
+ "labelled_at": "2026-11-20",
+ "notes": "",
+ "strokes": [
+  {
+   "type": "other",
+   "subtype": "smash",
+   "start": 0.8,
+   "contact": 1.6,
+   "end": 2.3,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "smash",
+   "start": 4.2,
+   "contact": 5.0,
+   "end": 5.7,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "smash",
+   "start": 7.8,
+   "contact": 8.6,
+   "end": 9.3,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "smash",
+   "start": 11.4,
+   "contact": 12.2,
+   "end": 12.9,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "smash",
+   "start": 14.8,
+   "contact": 15.6,
+   "end": 16.3,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "smash",
+   "start": 18.2,
+   "contact": 19.0,
+   "end": 19.7,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "notes": ""
+  }
+ ]
+}

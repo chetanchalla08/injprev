@@ -1,0 +1,734 @@
+{
+ "name": "batch1_tune",
+ "created_at": "2026-11-21T04:19:25Z",
+ "options": {
+  "pose_mode": "full_frame",
+  "ball": true,
+  "racket": false,
+  "recover_hidden": false,
+  "court": true,
+  "cuts": true,
+  "reacquire": true
+ },
+ "code_version": "672096341a67",
+ "pose_model": "heavy",
+ "match_tolerance_s": 0.5,
+ "set": {
+  "clips": 3,
+  "labelled_clips": 3,
+  "expert_labelled_clips": 0,
+  "footage_s": 58.7
+ },
+ "metrics": {
+  "all": {
+   "clips": 3,
+   "overall": {
+    "labelled": 0,
+    "detected": 0,
+    "false_detections": 0,
+    "correct_label": 0,
+    "wrong_label": 0,
+    "left_unlabelled": 0,
+    "missed": 0,
+    "detection_recall": null,
+    "detection_precision": null,
+    "label_accuracy_of_detected": null,
+    "correct_end_to_end": null,
+    "confusion": {
+     "forehand": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     },
+     "backhand": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     },
+     "serve": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     }
+    },
+    "false_by_predicted_type": {
+     "forehand": 0,
+     "backhand": 0,
+     "serve": 0,
+     "unclassified": 0
+    },
+    "timing_vs_contact": null,
+    "timing_vs_swing_peak": null,
+    "timing_sources": {},
+    "other_by_subtype": {
+     "smash": {
+      "serve": 6
+     },
+     "slice": {
+      "unclassified": 2,
+      "missed": 2,
+      "forehand": 2
+     },
+     "volley": {
+      "missed": 8
+     }
+    }
+   },
+   "by_camera_view": {},
+   "by_handedness": {},
+   "by_backhand_style": {},
+   "by_player": {},
+   "by_stroke_type": {}
+  },
+  "tune": {
+   "clips": 3,
+   "overall": {
+    "labelled": 0,
+    "detected": 0,
+    "false_detections": 0,
+    "correct_label": 0,
+    "wrong_label": 0,
+    "left_unlabelled": 0,
+    "missed": 0,
+    "detection_recall": null,
+    "detection_precision": null,
+    "label_accuracy_of_detected": null,
+    "correct_end_to_end": null,
+    "confusion": {
+     "forehand": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     },
+     "backhand": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     },
+     "serve": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     }
+    },
+    "false_by_predicted_type": {
+     "forehand": 0,
+     "backhand": 0,
+     "serve": 0,
+     "unclassified": 0
+    },
+    "timing_vs_contact": null,
+    "timing_vs_swing_peak": null,
+    "timing_sources": {},
+    "other_by_subtype": {
+     "smash": {
+      "serve": 6
+     },
+     "slice": {
+      "unclassified": 2,
+      "missed": 2,
+      "forehand": 2
+     },
+     "volley": {
+      "missed": 8
+     }
+    }
+   },
+   "by_camera_view": {},
+   "by_handedness": {},
+   "by_backhand_style": {},
+   "by_player": {},
+   "by_stroke_type": {}
+  },
+  "held_out": {
+   "clips": 0,
+   "overall": {
+    "labelled": 0,
+    "detected": 0,
+    "false_detections": 0,
+    "correct_label": 0,
+    "wrong_label": 0,
+    "left_unlabelled": 0,
+    "missed": 0,
+    "detection_recall": null,
+    "detection_precision": null,
+    "label_accuracy_of_detected": null,
+    "correct_end_to_end": null,
+    "confusion": {
+     "forehand": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     },
+     "backhand": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     },
+     "serve": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     }
+    },
+    "false_by_predicted_type": {
+     "forehand": 0,
+     "backhand": 0,
+     "serve": 0,
+     "unclassified": 0
+    },
+    "timing_vs_contact": null,
+    "timing_vs_swing_peak": null,
+    "timing_sources": {},
+    "other_by_subtype": {}
+   },
+   "by_camera_view": {},
+   "by_handedness": {},
+   "by_backhand_style": {},
+   "by_player": {},
+   "by_stroke_type": {}
+  }
+ },
+ "per_clip": [
+  {
+   "clip": "p1_smash_shadow",
+   "split": "tune",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 21.0,
+    "fps": 25.0,
+    "resolution": "480x360",
+    "people": 1,
+    "tracked_frac": 1.0,
+    "camera_view_detected": "at an angle, or the player turns a lot",
+    "analysis_s": 34.2,
+    "extras": {
+     "ball": {
+      "status": "ok",
+      "found": 6,
+      "strokes": 6,
+      "note": "Ball contact was found for 6 of 6 strokes; those are timed at contact. The rest are timed at peak hitting-hand speed (serves: highest hand position), which is near contact but is not contact. Contact is located in the 2D picture from the ball's path; it has been checked against hand-marked contact frames on a small evaluation set only (docs/VALIDATION.md)."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "Fewer than two court lines were found in each direction, so the camera's position relative to the court cannot be fixed.",
+      "frames_tried": 21,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.4666,
+         0.2612,
+         0.5986,
+         0.9249
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 20.96,
+        "frames": 525
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "serve",
+     "time": 1.72,
+     "start": 0.6,
+     "end": 2.48,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.9
+    },
+    {
+     "type": "serve",
+     "time": 5.08,
+     "start": 3.88,
+     "end": 5.76,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.9
+    },
+    {
+     "type": "serve",
+     "time": 8.48,
+     "start": 7.4,
+     "end": 9.36,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.9
+    },
+    {
+     "type": "serve",
+     "time": 12.36,
+     "start": 10.84,
+     "end": 12.96,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.9
+    },
+    {
+     "type": "serve",
+     "time": 15.68,
+     "start": 14.44,
+     "end": 16.36,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.9
+    },
+    {
+     "type": "serve",
+     "time": 19.04,
+     "start": 17.76,
+     "end": 19.72,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.9
+    }
+   ],
+   "items": [
+    {
+     "true": "other",
+     "pred": "serve",
+     "err": 0.12,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 1.6,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "smash",
+     "player": "p1"
+    },
+    {
+     "true": "other",
+     "pred": "serve",
+     "err": 0.08,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 5.0,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "smash",
+     "player": "p1"
+    },
+    {
+     "true": "other",
+     "pred": "serve",
+     "err": -0.12,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 8.6,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "smash",
+     "player": "p1"
+    },
+    {
+     "true": "other",
+     "pred": "serve",
+     "err": 0.16,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 12.2,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "smash",
+     "player": "p1"
+    },
+    {
+     "true": "other",
+     "pred": "serve",
+     "err": 0.08,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 15.6,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "smash",
+     "player": "p1"
+    },
+    {
+     "true": "other",
+     "pred": "serve",
+     "err": 0.04,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 19.0,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "smash",
+     "player": "p1"
+    }
+   ]
+  },
+  {
+   "clip": "p1_slice_shadow",
+   "split": "tune",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 12.8,
+    "fps": 25.0,
+    "resolution": "480x360",
+    "people": 1,
+    "tracked_frac": 1.0,
+    "camera_view_detected": "mostly side-on",
+    "analysis_s": 21.2,
+    "extras": {
+     "ball": {
+      "status": "ok",
+      "found": 4,
+      "strokes": 4,
+      "note": "Ball contact was found for 4 of 4 strokes; those are timed at contact. The rest are timed at peak hitting-hand speed (serves: highest hand position), which is near contact but is not contact. Contact is located in the 2D picture from the ball's path; it has been checked against hand-marked contact frames on a small evaluation set only (docs/VALIDATION.md)."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "Fewer than two court lines were found in each direction, so the camera's position relative to the court cannot be fixed.",
+      "frames_tried": 13,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.4408,
+         0.3907,
+         0.5839,
+         0.9694
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 12.76,
+        "frames": 320
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "unclassified",
+     "time": 1.26,
+     "start": 0.6,
+     "end": 1.64,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.1
+    },
+    {
+     "type": "forehand",
+     "time": 7.32,
+     "start": 6.84,
+     "end": 8.0,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.65
+    },
+    {
+     "type": "unclassified",
+     "time": 9.76,
+     "start": 9.32,
+     "end": 10.28,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.1
+    },
+    {
+     "type": "forehand",
+     "time": 11.76,
+     "start": 11.16,
+     "end": 12.32,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.65
+    }
+   ],
+   "items": [
+    {
+     "true": "other",
+     "pred": "unclassified",
+     "err": 0.36,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 0.9,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "slice",
+     "player": "p1"
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 3.1,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "slice",
+     "player": "p1"
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 5.3,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "slice",
+     "player": "p1"
+    },
+    {
+     "true": "other",
+     "pred": "forehand",
+     "err": -0.08,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 7.4,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "slice",
+     "player": "p1"
+    },
+    {
+     "true": "other",
+     "pred": "unclassified",
+     "err": 0.16,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 9.6,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "slice",
+     "player": "p1"
+    },
+    {
+     "true": "other",
+     "pred": "forehand",
+     "err": 0.16,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 11.6,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "two_handed",
+     "subtype": "slice",
+     "player": "p1"
+    }
+   ]
+  },
+  {
+   "clip": "p3_volley_shadow",
+   "split": "tune",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 24.92,
+    "fps": 25.0,
+    "resolution": "480x360",
+    "people": 1,
+    "tracked_frac": 1.0,
+    "camera_view_detected": "at an angle, or the player turns a lot",
+    "analysis_s": 44.8,
+    "extras": {
+     "ball": {
+      "status": "none",
+      "found": 0,
+      "strokes": 0,
+      "note": ""
+     },
+     "court": {
+      "status": "unable",
+      "reason": "Court lines were found in a few frames only, or the player's feet were not visible, so position on court is not reported.",
+      "frames_tried": 25,
+      "frames_fitted": 1,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.3633,
+         0.0929,
+         0.5344,
+         0.89
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 24.88,
+        "frames": 622
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [],
+   "items": [
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 3.2,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p3"
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 6.4,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p3"
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 9.6,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p3"
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 12.2,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p3"
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 15.4,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p3"
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 17.6,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p3"
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 20.8,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p3"
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 23.2,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p3"
+    }
+   ]
+  }
+ ]
+}

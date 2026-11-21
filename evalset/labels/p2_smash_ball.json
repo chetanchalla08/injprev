@@ -1,0 +1,48 @@
+{
+ "format": "baseline-labels/1",
+ "clip": "p2_smash_ball",
+ "labeller": "Claude (AI assistant, developer tooling)",
+ "labeller_role": "non-expert developer label",
+ "expert": false,
+ "method": "Read by eye from film strips at 5 fps; no ball or ball not clearly seen, so 'contact' is the estimated hit of the swing, about +-0.2 s. Start/end are contact -0.8 s and +0.7 s, not individually marked.",
+ "labelled_at": "2026-11-20",
+ "notes": "",
+ "strokes": [
+  {
+   "type": "other",
+   "subtype": "smash",
+   "start": 2.1,
+   "contact": 2.9,
+   "end": 3.6,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "oblique",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "smash",
+   "start": 6.3,
+   "contact": 7.1,
+   "end": 7.8,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "oblique",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "smash",
+   "start": 11.3,
+   "contact": 12.1,
+   "end": 12.8,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "oblique",
+   "notes": ""
+  }
+ ]
+}

@@ -323,6 +323,138 @@
    ],
    "notes": "Player 1 close up, title card, then the SAME player in a wide shot. Not labelled for strokes as a whole (see p1_bh2_shadow and p1_bh2_ball).",
    "player": "p1"
+  },
+  {
+   "id": "p1_smash_shadow",
+   "file": "clips/dardo_smash/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": 0,
+   "t1": 21.0,
+   "player_hint": null,
+   "source": {
+    "title": "File:0SMASH.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0SMASH.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "277a1428a5fdc39567f2b2145bb283e53baada47"
+   },
+   "cuts": null,
+   "notes": "Player 1 (red top) shadow smashes, demonstration before the title card of 0SMASH. A seventh swing cut off by the title card is excluded by the trim.",
+   "player": "p1"
+  },
+  {
+   "id": "p2_smash_ball",
+   "file": "clips/dardo_smash/source.ogv",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "oblique",
+   "t0": 27.5,
+   "t1": 43.0,
+   "player_hint": null,
+   "source": {
+    "title": "File:0SMASH.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0SMASH.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "277a1428a5fdc39567f2b2145bb283e53baada47"
+   },
+   "cuts": null,
+   "notes": "Player 2 (grey hoodie) smashing fed lobs after the title card of 0SMASH; handheld camera zooms in, then far out for the last smash. Same footage as 'Smash con pelota.ogv' (not added separately).",
+   "player": "p2"
+  },
+  {
+   "id": "p1_slice_shadow",
+   "file": "clips/dardo_slice/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": 0,
+   "t1": 12.8,
+   "player_hint": null,
+   "source": {
+    "title": "File:0SLICE.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0SLICE.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "45a23925654233249b6e529118013658b8e5304a"
+   },
+   "cuts": null,
+   "notes": "Player 1 (red top) shadow slices before the title card of 0SLICE. A seventh swing cut off by the title card is excluded by the trim.",
+   "player": "p1"
+  },
+  {
+   "id": "slice_ball",
+   "file": "clips/dardo_slice/source.ogv",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "far",
+   "t0": 18.5,
+   "t1": 32.8,
+   "player_hint": null,
+   "source": {
+    "title": "File:0SLICE.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0SLICE.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "45a23925654233249b6e529118013658b8e5304a"
+   },
+   "cuts": null,
+   "notes": "Player in a white top hitting slices from far away after the title card of 0SLICE. Probably player 2 but not certain from the footage; put in held-out either way. Same footage as 'Slice con pelota.ogv'.",
+   "player": null
+  },
+  {
+   "id": "p3_volley_shadow",
+   "file": "clips/dardo_volley/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 0,
+   "t1": 24.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:0VOLEA.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0VOLEA.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "8187865eab88581a60cc52c167a4214d2555434b"
+   },
+   "cuts": null,
+   "notes": "Player 3 (blue top) slow volley demonstrations, alternating forehand and backhand, filmed across the net; each is held in position before the punch.",
+   "player": "p3"
+  },
+  {
+   "id": "p2_volley_ball",
+   "file": "clips/dardo_volley/source.ogv",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 29.9,
+   "t1": 38.5,
+   "player_hint": null,
+   "source": {
+    "title": "File:0VOLEA.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0VOLEA.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "8187865eab88581a60cc52c167a4214d2555434b"
+   },
+   "cuts": null,
+   "notes": "Player 2 (grey hoodie) volleying fed balls at the net after the title card of 0VOLEA. Same footage as 'Volea con pelota.ogv'.",
+   "player": "p2"
   }
  ]
 }
