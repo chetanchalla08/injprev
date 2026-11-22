@@ -19,6 +19,7 @@ from pathlib import Path
 LABEL_FORMAT = "baseline-labels/1"
 ANNOTATION_FORMAT = "baseline-joints/1"
 STROKE_LABELS = ("forehand", "backhand", "serve", "other")  # "other" = a real stroke the app does not label (volley, slice, smash)
+OTHER_SUBTYPES = ("slice", "smash", "volley")  # optional detail on an "other" stroke, so the report can show what each kind was taken for
 CAMERA_VIEWS = ("side", "behind", "front", "oblique", "far", "unknown")
 SPLITS = ("tune", "held_out")
 ROOT = Path(__file__).resolve().parents[3] / "evalset"
@@ -39,6 +40,7 @@ class LabelledStroke:
     backhand_style: str | None = None
     camera_view: str = "unknown"
     notes: str = ""
+    subtype: str | None = None  # only on "other" strokes: one of OTHER_SUBTYPES
 
 
 @dataclass
@@ -72,12 +74,14 @@ def parse_labels(d: dict, defaults: dict | None = None) -> Labels:
             st = LabelledStroke(
                 type=s["type"], start=float(s["start"]), contact=float(s["contact"]), end=float(s["end"]), contact_kind=s.get("contact_kind", "contact"),
                 handedness=s.get("handedness") or defaults.get("handedness", "right"), backhand_style=s.get("backhand_style") or defaults.get("backhand_style"),
-                camera_view=s.get("camera_view") or defaults.get("camera_view", "unknown"), notes=str(s.get("notes") or ""),
+                camera_view=s.get("camera_view") or defaults.get("camera_view", "unknown"), notes=str(s.get("notes") or ""), subtype=s.get("subtype") or None,
             )  # fmt: skip
         except (KeyError, TypeError, ValueError) as e:
             raise FormatError(f"labels: stroke {i} is missing or has a bad field: {e}") from e
         if st.type not in STROKE_LABELS:
             raise FormatError(f"labels: stroke {i} type {st.type!r} not in {STROKE_LABELS}")
+        if st.subtype is not None and (st.type != "other" or st.subtype not in OTHER_SUBTYPES):
+            raise FormatError(f"labels: stroke {i} subtype must be one of {OTHER_SUBTYPES}, and only on an 'other' stroke")
         if not st.start <= st.contact <= st.end:
             raise FormatError(f"labels: stroke {i} needs start <= contact <= end")
         if st.contact_kind not in ("contact", "peak") or st.handedness not in ("right", "left") or st.camera_view not in CAMERA_VIEWS:
@@ -102,6 +106,7 @@ class Clip:
     source: dict = field(default_factory=dict)  # title, page, author, licence, licence_url
     cuts: list[float] | None = None  # known scene-cut times (seconds in the clip), for the cut-detection check
     notes: str = ""
+    player: str | None = None  # stable id of the person filmed, so held-out players can be kept out of tune
 
     @property
     def defaults(self) -> dict:

@@ -1,0 +1,4304 @@
+{
+ "name": "ball_b2_heldout",
+ "created_at": "2026-11-22T03:45:15Z",
+ "options": {
+  "pose_mode": "full_frame",
+  "ball": true,
+  "racket": false,
+  "recover_hidden": false,
+  "court": true,
+  "cuts": true,
+  "reacquire": true
+ },
+ "code_version": "4fccd806938a",
+ "pose_model": "heavy",
+ "match_tolerance_s": 0.5,
+ "set": {
+  "clips": 14,
+  "labelled_clips": 13,
+  "expert_labelled_clips": 0,
+  "footage_s": 143.6
+ },
+ "metrics": {
+  "all": {
+   "clips": 13,
+   "overall": {
+    "labelled": 31,
+    "detected": 25,
+    "false_detections": 3,
+    "correct_label": 20,
+    "wrong_label": 1,
+    "left_unlabelled": 4,
+    "missed": 6,
+    "detection_recall": 0.806,
+    "detection_precision": 0.893,
+    "label_accuracy_of_detected": 0.8,
+    "correct_end_to_end": 0.645,
+    "confusion": {
+     "forehand": {
+      "forehand": 7,
+      "backhand": 1,
+      "serve": 0,
+      "unclassified": 1,
+      "missed": 3
+     },
+     "backhand": {
+      "forehand": 0,
+      "backhand": 8,
+      "serve": 0,
+      "unclassified": 2,
+      "missed": 3
+     },
+     "serve": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 5,
+      "unclassified": 1,
+      "missed": 0
+     }
+    },
+    "false_by_predicted_type": {
+     "forehand": 0,
+     "backhand": 0,
+     "serve": 0,
+     "unclassified": 3
+    },
+    "timing_vs_contact": {
+     "n": 14,
+     "mean_signed_s": 0.034,
+     "median_abs_s": 0.065,
+     "p90_abs_s": 0.28
+    },
+    "timing_vs_swing_peak": {
+     "n": 11,
+     "mean_signed_s": 0.198,
+     "median_abs_s": 0.2,
+     "p90_abs_s": 0.32
+    },
+    "timing_sources": {
+     "ball_contact": 7,
+     "highest_hand": 4,
+     "peak_hand_speed": 14
+    },
+    "other_by_subtype": {
+     "smash": {
+      "serve": 2,
+      "missed": 1,
+      "unclassified": 1
+     },
+     "slice": {
+      "backhand": 3,
+      "missed": 1
+     },
+     "volley": {
+      "forehand": 2,
+      "backhand": 2,
+      "unclassified": 1,
+      "missed": 1
+     }
+    },
+    "ball_contact": {
+     "with_ball": 14,
+     "detected": 14,
+     "contact_found": 7,
+     "found_rate_of_detected": 0.5,
+     "timing_when_found": {
+      "n": 7,
+      "mean_signed_s": 0.054,
+      "median_abs_s": 0.18,
+      "p90_abs_s": 0.28
+     },
+     "found_without_visible_ball": 3
+    }
+   },
+   "by_camera_view": {
+    "behind": {
+     "labelled": 8,
+     "detected": 5,
+     "false_detections": 0,
+     "correct_label": 5,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 3,
+     "detection_recall": 0.625,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 1.0,
+     "correct_end_to_end": 0.625,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 2
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 1
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 5,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 4,
+      "mean_signed_s": 0.105,
+      "median_abs_s": 0.07,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": {
+      "n": 1,
+      "mean_signed_s": 0.192,
+      "median_abs_s": 0.192,
+      "p90_abs_s": 0.192
+     },
+     "timing_sources": {
+      "ball_contact": 1,
+      "highest_hand": 4
+     },
+     "other_by_subtype": {
+      "volley": {
+       "unclassified": 1,
+       "missed": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 4,
+      "detected": 4,
+      "contact_found": 1,
+      "found_rate_of_detected": 0.25,
+      "timing_when_found": {
+       "n": 1,
+       "mean_signed_s": 0.28,
+       "median_abs_s": 0.28,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    },
+    "front": {
+     "labelled": 13,
+     "detected": 10,
+     "false_detections": 0,
+     "correct_label": 5,
+     "wrong_label": 1,
+     "left_unlabelled": 4,
+     "missed": 3,
+     "detection_recall": 0.769,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.5,
+     "correct_end_to_end": 0.385,
+     "confusion": {
+      "forehand": {
+       "forehand": 2,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 1
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 3,
+       "serve": 0,
+       "unclassified": 2,
+       "missed": 2
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": {
+      "n": 10,
+      "mean_signed_s": 0.199,
+      "median_abs_s": 0.204,
+      "p90_abs_s": 0.44
+     },
+     "timing_sources": {
+      "peak_hand_speed": 10
+     },
+     "other_by_subtype": {
+      "volley": {
+       "forehand": 2,
+       "backhand": 2
+      },
+      "smash": {
+       "unclassified": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    },
+    "oblique": {
+     "labelled": 10,
+     "detected": 10,
+     "false_detections": 0,
+     "correct_label": 10,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 1.0,
+     "correct_end_to_end": 1.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 5,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 5,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 10,
+      "mean_signed_s": 0.005,
+      "median_abs_s": 0.065,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": null,
+     "timing_sources": {
+      "ball_contact": 6,
+      "peak_hand_speed": 4
+     },
+     "other_by_subtype": {
+      "smash": {
+       "serve": 2,
+       "missed": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 10,
+      "detected": 10,
+      "contact_found": 6,
+      "found_rate_of_detected": 0.6,
+      "timing_when_found": {
+       "n": 6,
+       "mean_signed_s": 0.017,
+       "median_abs_s": 0.145,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    }
+   },
+   "by_handedness": {
+    "right": {
+     "labelled": 31,
+     "detected": 25,
+     "false_detections": 0,
+     "correct_label": 20,
+     "wrong_label": 1,
+     "left_unlabelled": 4,
+     "missed": 6,
+     "detection_recall": 0.806,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.8,
+     "correct_end_to_end": 0.645,
+     "confusion": {
+      "forehand": {
+       "forehand": 7,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 3
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 8,
+       "serve": 0,
+       "unclassified": 2,
+       "missed": 3
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 5,
+       "unclassified": 1,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 14,
+      "mean_signed_s": 0.034,
+      "median_abs_s": 0.065,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": {
+      "n": 11,
+      "mean_signed_s": 0.198,
+      "median_abs_s": 0.2,
+      "p90_abs_s": 0.32
+     },
+     "timing_sources": {
+      "ball_contact": 7,
+      "highest_hand": 4,
+      "peak_hand_speed": 14
+     },
+     "other_by_subtype": {
+      "smash": {
+       "serve": 2,
+       "missed": 1,
+       "unclassified": 1
+      },
+      "slice": {
+       "backhand": 3,
+       "missed": 1
+      },
+      "volley": {
+       "forehand": 2,
+       "backhand": 2,
+       "unclassified": 1,
+       "missed": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 14,
+      "detected": 14,
+      "contact_found": 7,
+      "found_rate_of_detected": 0.5,
+      "timing_when_found": {
+       "n": 7,
+       "mean_signed_s": 0.054,
+       "median_abs_s": 0.18,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 3
+     }
+    }
+   },
+   "by_backhand_style": {
+    "one_handed": {
+     "labelled": 27,
+     "detected": 21,
+     "false_detections": 0,
+     "correct_label": 16,
+     "wrong_label": 1,
+     "left_unlabelled": 4,
+     "missed": 6,
+     "detection_recall": 0.778,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.762,
+     "correct_end_to_end": 0.593,
+     "confusion": {
+      "forehand": {
+       "forehand": 7,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 3
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 8,
+       "serve": 0,
+       "unclassified": 2,
+       "missed": 3
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 1,
+       "unclassified": 1,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 10,
+      "mean_signed_s": 0.005,
+      "median_abs_s": 0.065,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": {
+      "n": 11,
+      "mean_signed_s": 0.198,
+      "median_abs_s": 0.2,
+      "p90_abs_s": 0.32
+     },
+     "timing_sources": {
+      "ball_contact": 6,
+      "highest_hand": 1,
+      "peak_hand_speed": 14
+     },
+     "other_by_subtype": {
+      "smash": {
+       "serve": 2,
+       "missed": 1,
+       "unclassified": 1
+      },
+      "slice": {
+       "backhand": 3,
+       "missed": 1
+      },
+      "volley": {
+       "forehand": 2,
+       "backhand": 2,
+       "unclassified": 1,
+       "missed": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 10,
+      "detected": 10,
+      "contact_found": 6,
+      "found_rate_of_detected": 0.6,
+      "timing_when_found": {
+       "n": 6,
+       "mean_signed_s": 0.017,
+       "median_abs_s": 0.145,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 3
+     }
+    },
+    "two_handed": {
+     "labelled": 4,
+     "detected": 4,
+     "false_detections": 0,
+     "correct_label": 4,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 1.0,
+     "correct_end_to_end": 1.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 4,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 4,
+      "mean_signed_s": 0.105,
+      "median_abs_s": 0.07,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": null,
+     "timing_sources": {
+      "ball_contact": 1,
+      "highest_hand": 3
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 4,
+      "detected": 4,
+      "contact_found": 1,
+      "found_rate_of_detected": 0.25,
+      "timing_when_found": {
+       "n": 1,
+       "mean_signed_s": 0.28,
+       "median_abs_s": 0.28,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    }
+   },
+   "by_player": {
+    "gibson": {
+     "labelled": 4,
+     "detected": 4,
+     "false_detections": 0,
+     "correct_label": 3,
+     "wrong_label": 0,
+     "left_unlabelled": 1,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.75,
+     "correct_end_to_end": 0.75,
+     "confusion": {
+      "forehand": {
+       "forehand": 2,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 1,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": {
+      "n": 4,
+      "mean_signed_s": 0.148,
+      "median_abs_s": 0.154,
+      "p90_abs_s": 0.25
+     },
+     "timing_sources": {
+      "highest_hand": 1,
+      "peak_hand_speed": 3
+     },
+     "other_by_subtype": {
+      "volley": {
+       "unclassified": 1,
+       "missed": 1
+      },
+      "smash": {
+       "unclassified": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    },
+    "p1": {
+     "labelled": 4,
+     "detected": 4,
+     "false_detections": 0,
+     "correct_label": 4,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 1.0,
+     "correct_end_to_end": 1.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 4,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 4,
+      "mean_signed_s": 0.105,
+      "median_abs_s": 0.07,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": null,
+     "timing_sources": {
+      "ball_contact": 1,
+      "highest_hand": 3
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 4,
+      "detected": 4,
+      "contact_found": 1,
+      "found_rate_of_detected": 0.25,
+      "timing_when_found": {
+       "n": 1,
+       "mean_signed_s": 0.28,
+       "median_abs_s": 0.28,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    },
+    "p10": {
+     "labelled": 3,
+     "detected": 0,
+     "false_detections": 0,
+     "correct_label": 0,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 3,
+     "detection_recall": 0.0,
+     "detection_precision": null,
+     "label_accuracy_of_detected": null,
+     "correct_end_to_end": 0.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 2
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 1
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": null,
+     "timing_sources": {},
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    },
+    "p11": {
+     "labelled": 2,
+     "detected": 1,
+     "false_detections": 0,
+     "correct_label": 0,
+     "wrong_label": 0,
+     "left_unlabelled": 1,
+     "missed": 1,
+     "detection_recall": 0.5,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.0,
+     "correct_end_to_end": 0.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 1
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": {
+      "n": 1,
+      "mean_signed_s": 0.208,
+      "median_abs_s": 0.208,
+      "p90_abs_s": 0.208
+     },
+     "timing_sources": {
+      "peak_hand_speed": 1
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    },
+    "p2": {
+     "labelled": 10,
+     "detected": 10,
+     "false_detections": 0,
+     "correct_label": 10,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 1.0,
+     "correct_end_to_end": 1.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 5,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 5,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 10,
+      "mean_signed_s": 0.005,
+      "median_abs_s": 0.065,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": null,
+     "timing_sources": {
+      "ball_contact": 6,
+      "peak_hand_speed": 4
+     },
+     "other_by_subtype": {
+      "smash": {
+       "serve": 2,
+       "missed": 1
+      },
+      "volley": {
+       "forehand": 2,
+       "backhand": 2
+      }
+     },
+     "ball_contact": {
+      "with_ball": 10,
+      "detected": 10,
+      "contact_found": 6,
+      "found_rate_of_detected": 0.6,
+      "timing_when_found": {
+       "n": 6,
+       "mean_signed_s": 0.017,
+       "median_abs_s": 0.145,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    },
+    "p8": {
+     "labelled": 3,
+     "detected": 3,
+     "false_detections": 0,
+     "correct_label": 1,
+     "wrong_label": 1,
+     "left_unlabelled": 1,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.333,
+     "correct_end_to_end": 0.333,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": {
+      "n": 3,
+      "mean_signed_s": 0.2,
+      "median_abs_s": 0.2,
+      "p90_abs_s": 0.32
+     },
+     "timing_sources": {
+      "peak_hand_speed": 3
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    },
+    "p9": {
+     "labelled": 5,
+     "detected": 3,
+     "false_detections": 0,
+     "correct_label": 2,
+     "wrong_label": 0,
+     "left_unlabelled": 1,
+     "missed": 2,
+     "detection_recall": 0.6,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.667,
+     "correct_end_to_end": 0.4,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 2,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 2
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": {
+      "n": 3,
+      "mean_signed_s": 0.26,
+      "median_abs_s": 0.24,
+      "p90_abs_s": 0.44
+     },
+     "timing_sources": {
+      "peak_hand_speed": 3
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    }
+   },
+   "by_stroke_type": {
+    "backhand": {
+     "labelled": 13,
+     "detected": 10,
+     "false_detections": 0,
+     "correct_label": 8,
+     "wrong_label": 0,
+     "left_unlabelled": 2,
+     "missed": 3,
+     "detection_recall": 0.769,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.8,
+     "correct_end_to_end": 0.615,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 8,
+       "serve": 0,
+       "unclassified": 2,
+       "missed": 3
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 5,
+      "mean_signed_s": -0.076,
+      "median_abs_s": 0.07,
+      "p90_abs_s": 0.19
+     },
+     "timing_vs_swing_peak": {
+      "n": 5,
+      "mean_signed_s": 0.26,
+      "median_abs_s": 0.24,
+      "p90_abs_s": 0.44
+     },
+     "timing_sources": {
+      "ball_contact": 2,
+      "peak_hand_speed": 8
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 5,
+      "detected": 5,
+      "contact_found": 2,
+      "found_rate_of_detected": 0.4,
+      "timing_when_found": {
+       "n": 2,
+       "mean_signed_s": -0.15,
+       "median_abs_s": 0.15,
+       "p90_abs_s": 0.19
+      },
+      "found_without_visible_ball": 0
+     }
+    },
+    "forehand": {
+     "labelled": 12,
+     "detected": 9,
+     "false_detections": 0,
+     "correct_label": 7,
+     "wrong_label": 1,
+     "left_unlabelled": 1,
+     "missed": 3,
+     "detection_recall": 0.75,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.778,
+     "correct_end_to_end": 0.583,
+     "confusion": {
+      "forehand": {
+       "forehand": 7,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 3
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 5,
+      "mean_signed_s": 0.086,
+      "median_abs_s": 0.06,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": {
+      "n": 4,
+      "mean_signed_s": 0.12,
+      "median_abs_s": 0.099,
+      "p90_abs_s": 0.25
+     },
+     "timing_sources": {
+      "ball_contact": 4,
+      "peak_hand_speed": 5
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 5,
+      "detected": 5,
+      "contact_found": 4,
+      "found_rate_of_detected": 0.8,
+      "timing_when_found": {
+       "n": 4,
+       "mean_signed_s": 0.1,
+       "median_abs_s": 0.12,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    },
+    "serve": {
+     "labelled": 6,
+     "detected": 6,
+     "false_detections": 0,
+     "correct_label": 5,
+     "wrong_label": 0,
+     "left_unlabelled": 1,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.833,
+     "correct_end_to_end": 0.833,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 5,
+       "unclassified": 1,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 4,
+      "mean_signed_s": 0.105,
+      "median_abs_s": 0.07,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": {
+      "n": 2,
+      "mean_signed_s": 0.2,
+      "median_abs_s": 0.2,
+      "p90_abs_s": 0.208
+     },
+     "timing_sources": {
+      "ball_contact": 1,
+      "highest_hand": 4,
+      "peak_hand_speed": 1
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 4,
+      "detected": 4,
+      "contact_found": 1,
+      "found_rate_of_detected": 0.25,
+      "timing_when_found": {
+       "n": 1,
+       "mean_signed_s": 0.28,
+       "median_abs_s": 0.28,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    }
+   }
+  },
+  "tune": {
+   "clips": 0,
+   "overall": {
+    "labelled": 0,
+    "detected": 0,
+    "false_detections": 0,
+    "correct_label": 0,
+    "wrong_label": 0,
+    "left_unlabelled": 0,
+    "missed": 0,
+    "detection_recall": null,
+    "detection_precision": null,
+    "label_accuracy_of_detected": null,
+    "correct_end_to_end": null,
+    "confusion": {
+     "forehand": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     },
+     "backhand": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     },
+     "serve": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0,
+      "missed": 0
+     }
+    },
+    "false_by_predicted_type": {
+     "forehand": 0,
+     "backhand": 0,
+     "serve": 0,
+     "unclassified": 0
+    },
+    "timing_vs_contact": null,
+    "timing_vs_swing_peak": null,
+    "timing_sources": {},
+    "other_by_subtype": {},
+    "ball_contact": {
+     "with_ball": 0,
+     "detected": 0,
+     "contact_found": 0,
+     "found_rate_of_detected": null,
+     "timing_when_found": null,
+     "found_without_visible_ball": 0
+    }
+   },
+   "by_camera_view": {},
+   "by_handedness": {},
+   "by_backhand_style": {},
+   "by_player": {},
+   "by_stroke_type": {}
+  },
+  "held_out": {
+   "clips": 13,
+   "overall": {
+    "labelled": 31,
+    "detected": 25,
+    "false_detections": 3,
+    "correct_label": 20,
+    "wrong_label": 1,
+    "left_unlabelled": 4,
+    "missed": 6,
+    "detection_recall": 0.806,
+    "detection_precision": 0.893,
+    "label_accuracy_of_detected": 0.8,
+    "correct_end_to_end": 0.645,
+    "confusion": {
+     "forehand": {
+      "forehand": 7,
+      "backhand": 1,
+      "serve": 0,
+      "unclassified": 1,
+      "missed": 3
+     },
+     "backhand": {
+      "forehand": 0,
+      "backhand": 8,
+      "serve": 0,
+      "unclassified": 2,
+      "missed": 3
+     },
+     "serve": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 5,
+      "unclassified": 1,
+      "missed": 0
+     }
+    },
+    "false_by_predicted_type": {
+     "forehand": 0,
+     "backhand": 0,
+     "serve": 0,
+     "unclassified": 3
+    },
+    "timing_vs_contact": {
+     "n": 14,
+     "mean_signed_s": 0.034,
+     "median_abs_s": 0.065,
+     "p90_abs_s": 0.28
+    },
+    "timing_vs_swing_peak": {
+     "n": 11,
+     "mean_signed_s": 0.198,
+     "median_abs_s": 0.2,
+     "p90_abs_s": 0.32
+    },
+    "timing_sources": {
+     "ball_contact": 7,
+     "highest_hand": 4,
+     "peak_hand_speed": 14
+    },
+    "other_by_subtype": {
+     "smash": {
+      "serve": 2,
+      "missed": 1,
+      "unclassified": 1
+     },
+     "slice": {
+      "backhand": 3,
+      "missed": 1
+     },
+     "volley": {
+      "forehand": 2,
+      "backhand": 2,
+      "unclassified": 1,
+      "missed": 1
+     }
+    },
+    "ball_contact": {
+     "with_ball": 14,
+     "detected": 14,
+     "contact_found": 7,
+     "found_rate_of_detected": 0.5,
+     "timing_when_found": {
+      "n": 7,
+      "mean_signed_s": 0.054,
+      "median_abs_s": 0.18,
+      "p90_abs_s": 0.28
+     },
+     "found_without_visible_ball": 3
+    }
+   },
+   "by_camera_view": {
+    "behind": {
+     "labelled": 8,
+     "detected": 5,
+     "false_detections": 0,
+     "correct_label": 5,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 3,
+     "detection_recall": 0.625,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 1.0,
+     "correct_end_to_end": 0.625,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 2
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 1
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 5,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 4,
+      "mean_signed_s": 0.105,
+      "median_abs_s": 0.07,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": {
+      "n": 1,
+      "mean_signed_s": 0.192,
+      "median_abs_s": 0.192,
+      "p90_abs_s": 0.192
+     },
+     "timing_sources": {
+      "ball_contact": 1,
+      "highest_hand": 4
+     },
+     "other_by_subtype": {
+      "volley": {
+       "unclassified": 1,
+       "missed": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 4,
+      "detected": 4,
+      "contact_found": 1,
+      "found_rate_of_detected": 0.25,
+      "timing_when_found": {
+       "n": 1,
+       "mean_signed_s": 0.28,
+       "median_abs_s": 0.28,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    },
+    "front": {
+     "labelled": 13,
+     "detected": 10,
+     "false_detections": 0,
+     "correct_label": 5,
+     "wrong_label": 1,
+     "left_unlabelled": 4,
+     "missed": 3,
+     "detection_recall": 0.769,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.5,
+     "correct_end_to_end": 0.385,
+     "confusion": {
+      "forehand": {
+       "forehand": 2,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 1
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 3,
+       "serve": 0,
+       "unclassified": 2,
+       "missed": 2
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": {
+      "n": 10,
+      "mean_signed_s": 0.199,
+      "median_abs_s": 0.204,
+      "p90_abs_s": 0.44
+     },
+     "timing_sources": {
+      "peak_hand_speed": 10
+     },
+     "other_by_subtype": {
+      "volley": {
+       "forehand": 2,
+       "backhand": 2
+      },
+      "smash": {
+       "unclassified": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    },
+    "oblique": {
+     "labelled": 10,
+     "detected": 10,
+     "false_detections": 0,
+     "correct_label": 10,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 1.0,
+     "correct_end_to_end": 1.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 5,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 5,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 10,
+      "mean_signed_s": 0.005,
+      "median_abs_s": 0.065,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": null,
+     "timing_sources": {
+      "ball_contact": 6,
+      "peak_hand_speed": 4
+     },
+     "other_by_subtype": {
+      "smash": {
+       "serve": 2,
+       "missed": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 10,
+      "detected": 10,
+      "contact_found": 6,
+      "found_rate_of_detected": 0.6,
+      "timing_when_found": {
+       "n": 6,
+       "mean_signed_s": 0.017,
+       "median_abs_s": 0.145,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    }
+   },
+   "by_handedness": {
+    "right": {
+     "labelled": 31,
+     "detected": 25,
+     "false_detections": 0,
+     "correct_label": 20,
+     "wrong_label": 1,
+     "left_unlabelled": 4,
+     "missed": 6,
+     "detection_recall": 0.806,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.8,
+     "correct_end_to_end": 0.645,
+     "confusion": {
+      "forehand": {
+       "forehand": 7,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 3
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 8,
+       "serve": 0,
+       "unclassified": 2,
+       "missed": 3
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 5,
+       "unclassified": 1,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 14,
+      "mean_signed_s": 0.034,
+      "median_abs_s": 0.065,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": {
+      "n": 11,
+      "mean_signed_s": 0.198,
+      "median_abs_s": 0.2,
+      "p90_abs_s": 0.32
+     },
+     "timing_sources": {
+      "ball_contact": 7,
+      "highest_hand": 4,
+      "peak_hand_speed": 14
+     },
+     "other_by_subtype": {
+      "smash": {
+       "serve": 2,
+       "missed": 1,
+       "unclassified": 1
+      },
+      "slice": {
+       "backhand": 3,
+       "missed": 1
+      },
+      "volley": {
+       "forehand": 2,
+       "backhand": 2,
+       "unclassified": 1,
+       "missed": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 14,
+      "detected": 14,
+      "contact_found": 7,
+      "found_rate_of_detected": 0.5,
+      "timing_when_found": {
+       "n": 7,
+       "mean_signed_s": 0.054,
+       "median_abs_s": 0.18,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 3
+     }
+    }
+   },
+   "by_backhand_style": {
+    "one_handed": {
+     "labelled": 27,
+     "detected": 21,
+     "false_detections": 0,
+     "correct_label": 16,
+     "wrong_label": 1,
+     "left_unlabelled": 4,
+     "missed": 6,
+     "detection_recall": 0.778,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.762,
+     "correct_end_to_end": 0.593,
+     "confusion": {
+      "forehand": {
+       "forehand": 7,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 3
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 8,
+       "serve": 0,
+       "unclassified": 2,
+       "missed": 3
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 1,
+       "unclassified": 1,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 10,
+      "mean_signed_s": 0.005,
+      "median_abs_s": 0.065,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": {
+      "n": 11,
+      "mean_signed_s": 0.198,
+      "median_abs_s": 0.2,
+      "p90_abs_s": 0.32
+     },
+     "timing_sources": {
+      "ball_contact": 6,
+      "highest_hand": 1,
+      "peak_hand_speed": 14
+     },
+     "other_by_subtype": {
+      "smash": {
+       "serve": 2,
+       "missed": 1,
+       "unclassified": 1
+      },
+      "slice": {
+       "backhand": 3,
+       "missed": 1
+      },
+      "volley": {
+       "forehand": 2,
+       "backhand": 2,
+       "unclassified": 1,
+       "missed": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 10,
+      "detected": 10,
+      "contact_found": 6,
+      "found_rate_of_detected": 0.6,
+      "timing_when_found": {
+       "n": 6,
+       "mean_signed_s": 0.017,
+       "median_abs_s": 0.145,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 3
+     }
+    },
+    "two_handed": {
+     "labelled": 4,
+     "detected": 4,
+     "false_detections": 0,
+     "correct_label": 4,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 1.0,
+     "correct_end_to_end": 1.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 4,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 4,
+      "mean_signed_s": 0.105,
+      "median_abs_s": 0.07,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": null,
+     "timing_sources": {
+      "ball_contact": 1,
+      "highest_hand": 3
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 4,
+      "detected": 4,
+      "contact_found": 1,
+      "found_rate_of_detected": 0.25,
+      "timing_when_found": {
+       "n": 1,
+       "mean_signed_s": 0.28,
+       "median_abs_s": 0.28,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    }
+   },
+   "by_player": {
+    "gibson": {
+     "labelled": 4,
+     "detected": 4,
+     "false_detections": 0,
+     "correct_label": 3,
+     "wrong_label": 0,
+     "left_unlabelled": 1,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.75,
+     "correct_end_to_end": 0.75,
+     "confusion": {
+      "forehand": {
+       "forehand": 2,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 1,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": {
+      "n": 4,
+      "mean_signed_s": 0.148,
+      "median_abs_s": 0.154,
+      "p90_abs_s": 0.25
+     },
+     "timing_sources": {
+      "highest_hand": 1,
+      "peak_hand_speed": 3
+     },
+     "other_by_subtype": {
+      "volley": {
+       "unclassified": 1,
+       "missed": 1
+      },
+      "smash": {
+       "unclassified": 1
+      }
+     },
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    },
+    "p1": {
+     "labelled": 4,
+     "detected": 4,
+     "false_detections": 0,
+     "correct_label": 4,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 1.0,
+     "correct_end_to_end": 1.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 4,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 4,
+      "mean_signed_s": 0.105,
+      "median_abs_s": 0.07,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": null,
+     "timing_sources": {
+      "ball_contact": 1,
+      "highest_hand": 3
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 4,
+      "detected": 4,
+      "contact_found": 1,
+      "found_rate_of_detected": 0.25,
+      "timing_when_found": {
+       "n": 1,
+       "mean_signed_s": 0.28,
+       "median_abs_s": 0.28,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    },
+    "p10": {
+     "labelled": 3,
+     "detected": 0,
+     "false_detections": 0,
+     "correct_label": 0,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 3,
+     "detection_recall": 0.0,
+     "detection_precision": null,
+     "label_accuracy_of_detected": null,
+     "correct_end_to_end": 0.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 2
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 1
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": null,
+     "timing_sources": {},
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    },
+    "p11": {
+     "labelled": 2,
+     "detected": 1,
+     "false_detections": 0,
+     "correct_label": 0,
+     "wrong_label": 0,
+     "left_unlabelled": 1,
+     "missed": 1,
+     "detection_recall": 0.5,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.0,
+     "correct_end_to_end": 0.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 1
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": {
+      "n": 1,
+      "mean_signed_s": 0.208,
+      "median_abs_s": 0.208,
+      "p90_abs_s": 0.208
+     },
+     "timing_sources": {
+      "peak_hand_speed": 1
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    },
+    "p2": {
+     "labelled": 10,
+     "detected": 10,
+     "false_detections": 0,
+     "correct_label": 10,
+     "wrong_label": 0,
+     "left_unlabelled": 0,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 1.0,
+     "correct_end_to_end": 1.0,
+     "confusion": {
+      "forehand": {
+       "forehand": 5,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 5,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 10,
+      "mean_signed_s": 0.005,
+      "median_abs_s": 0.065,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": null,
+     "timing_sources": {
+      "ball_contact": 6,
+      "peak_hand_speed": 4
+     },
+     "other_by_subtype": {
+      "smash": {
+       "serve": 2,
+       "missed": 1
+      },
+      "volley": {
+       "forehand": 2,
+       "backhand": 2
+      }
+     },
+     "ball_contact": {
+      "with_ball": 10,
+      "detected": 10,
+      "contact_found": 6,
+      "found_rate_of_detected": 0.6,
+      "timing_when_found": {
+       "n": 6,
+       "mean_signed_s": 0.017,
+       "median_abs_s": 0.145,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    },
+    "p8": {
+     "labelled": 3,
+     "detected": 3,
+     "false_detections": 0,
+     "correct_label": 1,
+     "wrong_label": 1,
+     "left_unlabelled": 1,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.333,
+     "correct_end_to_end": 0.333,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": {
+      "n": 3,
+      "mean_signed_s": 0.2,
+      "median_abs_s": 0.2,
+      "p90_abs_s": 0.32
+     },
+     "timing_sources": {
+      "peak_hand_speed": 3
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    },
+    "p9": {
+     "labelled": 5,
+     "detected": 3,
+     "false_detections": 0,
+     "correct_label": 2,
+     "wrong_label": 0,
+     "left_unlabelled": 1,
+     "missed": 2,
+     "detection_recall": 0.6,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.667,
+     "correct_end_to_end": 0.4,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 2,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 2
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": null,
+     "timing_vs_swing_peak": {
+      "n": 3,
+      "mean_signed_s": 0.26,
+      "median_abs_s": 0.24,
+      "p90_abs_s": 0.44
+     },
+     "timing_sources": {
+      "peak_hand_speed": 3
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 0,
+      "detected": 0,
+      "contact_found": 0,
+      "found_rate_of_detected": null,
+      "timing_when_found": null,
+      "found_without_visible_ball": 0
+     }
+    }
+   },
+   "by_stroke_type": {
+    "backhand": {
+     "labelled": 13,
+     "detected": 10,
+     "false_detections": 0,
+     "correct_label": 8,
+     "wrong_label": 0,
+     "left_unlabelled": 2,
+     "missed": 3,
+     "detection_recall": 0.769,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.8,
+     "correct_end_to_end": 0.615,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 8,
+       "serve": 0,
+       "unclassified": 2,
+       "missed": 3
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 5,
+      "mean_signed_s": -0.076,
+      "median_abs_s": 0.07,
+      "p90_abs_s": 0.19
+     },
+     "timing_vs_swing_peak": {
+      "n": 5,
+      "mean_signed_s": 0.26,
+      "median_abs_s": 0.24,
+      "p90_abs_s": 0.44
+     },
+     "timing_sources": {
+      "ball_contact": 2,
+      "peak_hand_speed": 8
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 5,
+      "detected": 5,
+      "contact_found": 2,
+      "found_rate_of_detected": 0.4,
+      "timing_when_found": {
+       "n": 2,
+       "mean_signed_s": -0.15,
+       "median_abs_s": 0.15,
+       "p90_abs_s": 0.19
+      },
+      "found_without_visible_ball": 0
+     }
+    },
+    "forehand": {
+     "labelled": 12,
+     "detected": 9,
+     "false_detections": 0,
+     "correct_label": 7,
+     "wrong_label": 1,
+     "left_unlabelled": 1,
+     "missed": 3,
+     "detection_recall": 0.75,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.778,
+     "correct_end_to_end": 0.583,
+     "confusion": {
+      "forehand": {
+       "forehand": 7,
+       "backhand": 1,
+       "serve": 0,
+       "unclassified": 1,
+       "missed": 3
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 5,
+      "mean_signed_s": 0.086,
+      "median_abs_s": 0.06,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": {
+      "n": 4,
+      "mean_signed_s": 0.12,
+      "median_abs_s": 0.099,
+      "p90_abs_s": 0.25
+     },
+     "timing_sources": {
+      "ball_contact": 4,
+      "peak_hand_speed": 5
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 5,
+      "detected": 5,
+      "contact_found": 4,
+      "found_rate_of_detected": 0.8,
+      "timing_when_found": {
+       "n": 4,
+       "mean_signed_s": 0.1,
+       "median_abs_s": 0.12,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    },
+    "serve": {
+     "labelled": 6,
+     "detected": 6,
+     "false_detections": 0,
+     "correct_label": 5,
+     "wrong_label": 0,
+     "left_unlabelled": 1,
+     "missed": 0,
+     "detection_recall": 1.0,
+     "detection_precision": 1.0,
+     "label_accuracy_of_detected": 0.833,
+     "correct_end_to_end": 0.833,
+     "confusion": {
+      "forehand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "backhand": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 0,
+       "unclassified": 0,
+       "missed": 0
+      },
+      "serve": {
+       "forehand": 0,
+       "backhand": 0,
+       "serve": 5,
+       "unclassified": 1,
+       "missed": 0
+      }
+     },
+     "false_by_predicted_type": {
+      "forehand": 0,
+      "backhand": 0,
+      "serve": 0,
+      "unclassified": 0
+     },
+     "timing_vs_contact": {
+      "n": 4,
+      "mean_signed_s": 0.105,
+      "median_abs_s": 0.07,
+      "p90_abs_s": 0.28
+     },
+     "timing_vs_swing_peak": {
+      "n": 2,
+      "mean_signed_s": 0.2,
+      "median_abs_s": 0.2,
+      "p90_abs_s": 0.208
+     },
+     "timing_sources": {
+      "ball_contact": 1,
+      "highest_hand": 4,
+      "peak_hand_speed": 1
+     },
+     "other_by_subtype": {},
+     "ball_contact": {
+      "with_ball": 4,
+      "detected": 4,
+      "contact_found": 1,
+      "found_rate_of_detected": 0.25,
+      "timing_when_found": {
+       "n": 1,
+       "mean_signed_s": 0.28,
+       "median_abs_s": 0.28,
+       "p90_abs_s": 0.28
+      },
+      "found_without_visible_ball": 0
+     }
+    }
+   }
+  }
+ },
+ "per_clip": [
+  {
+   "clip": "p2_fh_ball",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 19.04,
+    "fps": 25.0,
+    "resolution": "480x360",
+    "people": 1,
+    "tracked_frac": 1.0,
+    "camera_view_detected": "at an angle, or the player turns a lot",
+    "analysis_s": 5.0,
+    "extras": {
+     "ball": {
+      "status": "partial",
+      "found": 4,
+      "strokes": 5,
+      "note": "Ball contact was found for 4 of 5 strokes; those are timed at contact. The rest are timed at peak hitting-hand speed (serves: highest hand position), which is near contact but is not contact. Contact is located in the 2D picture from the ball's path; it has been checked against hand-marked contact frames on a small evaluation set only (docs/VALIDATION.md)."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "The visible lines fit more than one placement of the court equally well, so position on court is not reported.",
+      "frames_tried": 20,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.5271,
+         0.1768,
+         0.732,
+         0.9071
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 19.0,
+        "frames": 476
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "forehand",
+     "time": 1.16,
+     "start": 0.56,
+     "end": 1.68,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.8
+    },
+    {
+     "type": "forehand",
+     "time": 5.16,
+     "start": 4.44,
+     "end": 5.4,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.8
+    },
+    {
+     "type": "forehand",
+     "time": 9.08,
+     "start": 8.24,
+     "end": 9.24,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.8
+    },
+    {
+     "type": "forehand",
+     "time": 12.68,
+     "start": 12.0,
+     "end": 13.08,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.8
+    },
+    {
+     "type": "forehand",
+     "time": 16.56,
+     "start": 15.92,
+     "end": 17.0,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.8
+    }
+   ],
+   "items": [
+    {
+     "true": "forehand",
+     "pred": "forehand",
+     "err": -0.06,
+     "contact_kind": "contact",
+     "timing_source": "ball_contact",
+     "t": 1.22,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p2"
+    },
+    {
+     "true": "forehand",
+     "pred": "forehand",
+     "err": 0.18,
+     "contact_kind": "contact",
+     "timing_source": "ball_contact",
+     "t": 4.98,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p2"
+    },
+    {
+     "true": "forehand",
+     "pred": "forehand",
+     "err": 0.28,
+     "contact_kind": "contact",
+     "timing_source": "ball_contact",
+     "t": 8.8,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p2"
+    },
+    {
+     "true": "forehand",
+     "pred": "forehand",
+     "err": 0.03,
+     "contact_kind": "contact",
+     "timing_source": "peak_hand_speed",
+     "t": 12.65,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p2"
+    },
+    {
+     "true": "forehand",
+     "pred": "forehand",
+     "err": 0.0,
+     "contact_kind": "contact",
+     "timing_source": "ball_contact",
+     "t": 16.56,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p2"
+    }
+   ]
+  },
+  {
+   "clip": "p2_bh1_ball",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 16.48,
+    "fps": 25.0,
+    "resolution": "480x360",
+    "people": 1,
+    "tracked_frac": 1.0,
+    "camera_view_detected": "mostly from in front of or behind the player",
+    "analysis_s": 8.0,
+    "extras": {
+     "ball": {
+      "status": "partial",
+      "found": 2,
+      "strokes": 5,
+      "note": "Ball contact was found for 2 of 5 strokes; those are timed at contact. The rest are timed at peak hitting-hand speed (serves: highest hand position), which is near contact but is not contact. Contact is located in the 2D picture from the ball's path; it has been checked against hand-marked contact frames on a small evaluation set only (docs/VALIDATION.md)."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "The visible lines fit more than one placement of the court equally well, so position on court is not reported.",
+      "frames_tried": 17,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.7048,
+         0.3101,
+         0.801,
+         0.6991
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 16.44,
+        "frames": 412
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "backhand",
+     "time": 1.24,
+     "start": 0.64,
+     "end": 1.92,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.8
+    },
+    {
+     "type": "backhand",
+     "time": 4.04,
+     "start": 3.56,
+     "end": 4.84,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.77
+    },
+    {
+     "type": "backhand",
+     "time": 7.4,
+     "start": 6.72,
+     "end": 7.96,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.56
+    },
+    {
+     "type": "backhand",
+     "time": 10.64,
+     "start": 10.04,
+     "end": 11.2,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.8
+    },
+    {
+     "type": "backhand",
+     "time": 13.6,
+     "start": 13.08,
+     "end": 14.32,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.8
+    }
+   ],
+   "items": [
+    {
+     "true": "backhand",
+     "pred": "backhand",
+     "err": -0.07,
+     "contact_kind": "contact",
+     "timing_source": "peak_hand_speed",
+     "t": 1.31,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p2"
+    },
+    {
+     "true": "backhand",
+     "pred": "backhand",
+     "err": -0.19,
+     "contact_kind": "contact",
+     "timing_source": "ball_contact",
+     "t": 4.23,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p2"
+    },
+    {
+     "true": "backhand",
+     "pred": "backhand",
+     "err": -0.02,
+     "contact_kind": "contact",
+     "timing_source": "peak_hand_speed",
+     "t": 7.42,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p2"
+    },
+    {
+     "true": "backhand",
+     "pred": "backhand",
+     "err": 0.01,
+     "contact_kind": "contact",
+     "timing_source": "peak_hand_speed",
+     "t": 10.63,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p2"
+    },
+    {
+     "true": "backhand",
+     "pred": "backhand",
+     "err": -0.11,
+     "contact_kind": "contact",
+     "timing_source": "ball_contact",
+     "t": 13.71,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p2"
+    }
+   ]
+  },
+  {
+   "clip": "p1_serve_ball",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 17.68,
+    "fps": 25.0,
+    "resolution": "480x360",
+    "people": 1,
+    "tracked_frac": 1.0,
+    "camera_view_detected": "at an angle, or the player turns a lot",
+    "analysis_s": 4.5,
+    "extras": {
+     "ball": {
+      "status": "partial",
+      "found": 1,
+      "strokes": 4,
+      "note": "Ball contact was found for 1 of 4 strokes; those are timed at contact. The rest are timed at peak hitting-hand speed (serves: highest hand position), which is near contact but is not contact. Contact is located in the 2D picture from the ball's path; it has been checked against hand-marked contact frames on a small evaluation set only (docs/VALIDATION.md)."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "The visible lines fit more than one placement of the court equally well, so position on court is not reported.",
+      "frames_tried": 18,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.6093,
+         0.2912,
+         0.8761,
+         0.8792
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 17.64,
+        "frames": 441
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "serve",
+     "time": 1.64,
+     "start": 0.28,
+     "end": 2.24,
+     "timing_source": "highest_hand",
+     "source": "auto",
+     "label_confidence": 0.9
+    },
+    {
+     "type": "serve",
+     "time": 5.92,
+     "start": 4.44,
+     "end": 6.28,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.9
+    },
+    {
+     "type": "serve",
+     "time": 10.56,
+     "start": 9.28,
+     "end": 11.16,
+     "timing_source": "highest_hand",
+     "source": "auto",
+     "label_confidence": 0.9
+    },
+    {
+     "type": "serve",
+     "time": 15.68,
+     "start": 14.48,
+     "end": 16.36,
+     "timing_source": "highest_hand",
+     "source": "auto",
+     "label_confidence": 0.9
+    }
+   ],
+   "items": [
+    {
+     "true": "serve",
+     "pred": "serve",
+     "err": 0.06,
+     "contact_kind": "contact",
+     "timing_source": "highest_hand",
+     "t": 1.58,
+     "handedness": "right",
+     "camera_view": "behind",
+     "backhand_style": "two_handed",
+     "subtype": null,
+     "player": "p1"
+    },
+    {
+     "true": "serve",
+     "pred": "serve",
+     "err": 0.28,
+     "contact_kind": "contact",
+     "timing_source": "ball_contact",
+     "t": 5.64,
+     "handedness": "right",
+     "camera_view": "behind",
+     "backhand_style": "two_handed",
+     "subtype": null,
+     "player": "p1"
+    },
+    {
+     "true": "serve",
+     "pred": "serve",
+     "err": 0.08,
+     "contact_kind": "contact",
+     "timing_source": "highest_hand",
+     "t": 10.48,
+     "handedness": "right",
+     "camera_view": "behind",
+     "backhand_style": "two_handed",
+     "subtype": null,
+     "player": "p1"
+    },
+    {
+     "true": "serve",
+     "pred": "serve",
+     "err": 0.0,
+     "contact_kind": "contact",
+     "timing_source": "highest_hand",
+     "t": 15.68,
+     "handedness": "right",
+     "camera_view": "behind",
+     "backhand_style": "two_handed",
+     "subtype": null,
+     "player": "p1"
+    }
+   ]
+  },
+  {
+   "clip": "daviscup01",
+   "split": "held_out",
+   "status": "failed",
+   "labelled": false,
+   "labeller": null,
+   "expert_labels": false,
+   "result": {
+    "status": "failed",
+    "code": "tracking_poor",
+    "message": "The selected player could only be followed in 9% of the video, which is not enough to analyse."
+   },
+   "preds": [],
+   "items": []
+  },
+  {
+   "clip": "p2_smash_ball",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 15.48,
+    "fps": 25.0,
+    "resolution": "480x360",
+    "people": 1,
+    "tracked_frac": 0.93,
+    "camera_view_detected": "mostly from in front of or behind the player",
+    "analysis_s": 1.2,
+    "extras": {
+     "ball": {
+      "status": "unable",
+      "found": 0,
+      "strokes": 2,
+      "note": "No ball was tracked clearly enough near any stroke, so contact time and contact point could not be assessed. Timestamps mark peak hitting-hand speed (serves: highest hand position) instead. A small, fast or blurred ball, a ball the same colour as the background, or a camera that moves a lot all cause this."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "Fewer than two court lines were found in each direction, so the camera's position relative to the court cannot be fixed.",
+      "frames_tried": 16,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.4884,
+         0.3528,
+         0.5439,
+         0.6412
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 15.44,
+        "frames": 361
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "serve",
+     "time": 2.96,
+     "start": 1.48,
+     "end": 3.56,
+     "timing_source": "highest_hand",
+     "source": "auto",
+     "label_confidence": 0.9
+    },
+    {
+     "type": "serve",
+     "time": 7.2,
+     "start": 5.92,
+     "end": 7.96,
+     "timing_source": "highest_hand",
+     "source": "auto",
+     "label_confidence": 0.9
+    }
+   ],
+   "items": [
+    {
+     "true": "other",
+     "pred": "serve",
+     "err": 0.06,
+     "contact_kind": "peak",
+     "timing_source": "highest_hand",
+     "t": 2.9,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": "smash",
+     "player": "p2"
+    },
+    {
+     "true": "other",
+     "pred": "serve",
+     "err": 0.1,
+     "contact_kind": "peak",
+     "timing_source": "highest_hand",
+     "t": 7.1,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": "smash",
+     "player": "p2"
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 12.1,
+     "handedness": "right",
+     "camera_view": "oblique",
+     "backhand_style": "one_handed",
+     "subtype": "smash",
+     "player": "p2"
+    }
+   ]
+  },
+  {
+   "clip": "slice_ball",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 14.24,
+    "fps": 25.0,
+    "resolution": "480x360",
+    "people": 1,
+    "tracked_frac": 0.99,
+    "camera_view_detected": "at an angle, or the player turns a lot",
+    "analysis_s": 1.2,
+    "extras": {
+     "ball": {
+      "status": "ok",
+      "found": 4,
+      "strokes": 4,
+      "note": "Ball contact was found for 4 of 4 strokes; those are timed at contact. The rest are timed at peak hitting-hand speed (serves: highest hand position), which is near contact but is not contact. Contact is located in the 2D picture from the ball's path; it has been checked against hand-marked contact frames on a small evaluation set only (docs/VALIDATION.md)."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "Fewer than two court lines were found in each direction, so the camera's position relative to the court cannot be fixed.",
+      "frames_tried": 15,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.5021,
+         0.3258,
+         0.5691,
+         0.6891
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 14.2,
+        "frames": 352
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "unclassified",
+     "time": 1.8,
+     "start": 1.04,
+     "end": 2.16,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.1
+    },
+    {
+     "type": "backhand",
+     "time": 2.52,
+     "start": 2.16,
+     "end": 3.04,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.5
+    },
+    {
+     "type": "backhand",
+     "time": 6.2,
+     "start": 5.48,
+     "end": 6.6,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.67
+    },
+    {
+     "type": "backhand",
+     "time": 12.68,
+     "start": 12.16,
+     "end": 13.32,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.5
+    }
+   ],
+   "items": [
+    {
+     "true": null,
+     "pred": "unclassified",
+     "t": 1.8
+    },
+    {
+     "true": "other",
+     "pred": "backhand",
+     "err": -0.28,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 2.8,
+     "handedness": "right",
+     "camera_view": "far",
+     "backhand_style": "one_handed",
+     "subtype": "slice",
+     "player": null
+    },
+    {
+     "true": "other",
+     "pred": "backhand",
+     "err": 0.2,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 6.0,
+     "handedness": "right",
+     "camera_view": "far",
+     "backhand_style": "one_handed",
+     "subtype": "slice",
+     "player": null
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 8.8,
+     "handedness": "right",
+     "camera_view": "far",
+     "backhand_style": "one_handed",
+     "subtype": "slice",
+     "player": null
+    },
+    {
+     "true": "other",
+     "pred": "backhand",
+     "err": -0.42,
+     "contact_kind": "peak",
+     "timing_source": "ball_contact",
+     "t": 13.1,
+     "handedness": "right",
+     "camera_view": "far",
+     "backhand_style": "one_handed",
+     "subtype": "slice",
+     "player": null
+    }
+   ]
+  },
+  {
+   "clip": "p2_volley_ball",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 8.24,
+    "fps": 25.0,
+    "resolution": "480x360",
+    "people": 1,
+    "tracked_frac": 1.0,
+    "camera_view_detected": "mostly from in front of or behind the player",
+    "analysis_s": 2.5,
+    "extras": {
+     "ball": {
+      "status": "partial",
+      "found": 1,
+      "strokes": 4,
+      "note": "Ball contact was found for 1 of 4 strokes; those are timed at contact. The rest are timed at peak hitting-hand speed (serves: highest hand position), which is near contact but is not contact. Contact is located in the 2D picture from the ball's path; it has been checked against hand-marked contact frames on a small evaluation set only (docs/VALIDATION.md)."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "The visible lines fit more than one placement of the court equally well, so position on court is not reported.",
+      "frames_tried": 9,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.4825,
+         0.28,
+         0.6204,
+         1.0
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 8.2,
+        "frames": 206
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "forehand",
+     "time": 1.36,
+     "start": 0.84,
+     "end": 1.76,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.8
+    },
+    {
+     "type": "backhand",
+     "time": 2.96,
+     "start": 2.36,
+     "end": 3.4,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.5
+    },
+    {
+     "type": "forehand",
+     "time": 4.56,
+     "start": 4.04,
+     "end": 5.0,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.8
+    },
+    {
+     "type": "backhand",
+     "time": 6.45,
+     "start": 5.88,
+     "end": 6.84,
+     "timing_source": "ball_contact",
+     "source": "auto",
+     "label_confidence": 0.8
+    }
+   ],
+   "items": [
+    {
+     "true": "other",
+     "pred": "forehand",
+     "err": -0.14,
+     "contact_kind": "contact",
+     "timing_source": "peak_hand_speed",
+     "t": 1.5,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p2"
+    },
+    {
+     "true": "other",
+     "pred": "backhand",
+     "err": -0.14,
+     "contact_kind": "contact",
+     "timing_source": "peak_hand_speed",
+     "t": 3.1,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p2"
+    },
+    {
+     "true": "other",
+     "pred": "forehand",
+     "err": -0.14,
+     "contact_kind": "contact",
+     "timing_source": "peak_hand_speed",
+     "t": 4.7,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p2"
+    },
+    {
+     "true": "other",
+     "pred": "backhand",
+     "err": -0.05,
+     "contact_kind": "contact",
+     "timing_source": "ball_contact",
+     "t": 6.5,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "p2"
+    }
+   ]
+  },
+  {
+   "clip": "p8_hogeschool1938",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 8.0,
+    "fps": 25.0,
+    "resolution": "720x576",
+    "people": 1,
+    "tracked_frac": 0.97,
+    "camera_view_detected": "mostly from in front of or behind the player",
+    "analysis_s": 3.6,
+    "extras": {
+     "ball": {
+      "status": "unable",
+      "found": 0,
+      "strokes": 3,
+      "note": "No ball was tracked clearly enough near any stroke, so contact time and contact point could not be assessed. Timestamps mark peak hitting-hand speed (serves: highest hand position) instead. A small, fast or blurred ball, a ball the same colour as the background, or a camera that moves a lot all cause this."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "The visible lines fit more than one placement of the court equally well, so position on court is not reported.",
+      "frames_tried": 8,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [
+       0.08
+      ],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.4464,
+         0.2482,
+         0.6284,
+         0.7115
+        ],
+        "box_t": 0.08,
+        "start": 0.08,
+        "end": 7.96,
+        "frames": 195
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "backhand",
+     "time": 1.08,
+     "start": 0.64,
+     "end": 1.64,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.53
+    },
+    {
+     "type": "unclassified",
+     "time": 4.4,
+     "start": 3.88,
+     "end": 4.8,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.1
+    },
+    {
+     "type": "backhand",
+     "time": 7.92,
+     "start": 7.48,
+     "end": 7.96,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.5
+    }
+   ],
+   "items": [
+    {
+     "true": "forehand",
+     "pred": "backhand",
+     "err": 0.08,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 1.0,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p8"
+    },
+    {
+     "true": "backhand",
+     "pred": "unclassified",
+     "err": 0.2,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 4.2,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p8"
+    },
+    {
+     "true": "backhand",
+     "pred": "backhand",
+     "err": 0.32,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 7.6,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p8"
+    }
+   ]
+  },
+  {
+   "clip": "p9_hogeschool1938",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 15.6,
+    "fps": 25.0,
+    "resolution": "720x576",
+    "people": 1,
+    "tracked_frac": 0.86,
+    "camera_view_detected": "mostly from in front of or behind the player",
+    "analysis_s": 6.0,
+    "extras": {
+     "ball": {
+      "status": "unable",
+      "found": 0,
+      "strokes": 4,
+      "note": "No ball was tracked clearly enough near any stroke, so contact time and contact point could not be assessed. Timestamps mark peak hitting-hand speed (serves: highest hand position) instead. A small, fast or blurred ball, a ball the same colour as the background, or a camera that moves a lot all cause this."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "The visible lines fit more than one placement of the court equally well, so position on court is not reported.",
+      "frames_tried": 16,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.5937,
+         0.1939,
+         0.7133,
+         0.6532
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 15.56,
+        "frames": 336
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "unclassified",
+     "time": 4.56,
+     "start": 4.12,
+     "end": 5.04,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.2
+    },
+    {
+     "type": "unclassified",
+     "time": 8.84,
+     "start": 8.28,
+     "end": 9.24,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.2
+    },
+    {
+     "type": "backhand",
+     "time": 12.04,
+     "start": 11.48,
+     "end": 12.44,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.72
+    },
+    {
+     "type": "backhand",
+     "time": 14.4,
+     "start": 13.8,
+     "end": 14.64,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.7
+    }
+   ],
+   "items": [
+    {
+     "true": "backhand",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 2.2,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p9"
+    },
+    {
+     "true": null,
+     "pred": "unclassified",
+     "t": 4.56
+    },
+    {
+     "true": "backhand",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 5.4,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p9"
+    },
+    {
+     "true": "backhand",
+     "pred": "unclassified",
+     "err": 0.24,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 8.6,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p9"
+    },
+    {
+     "true": "backhand",
+     "pred": "backhand",
+     "err": 0.44,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 11.6,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p9"
+    },
+    {
+     "true": "backhand",
+     "pred": "backhand",
+     "err": 0.1,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 14.3,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p9"
+    }
+   ]
+  },
+  {
+   "clip": "p10_youth_lesson",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 5.72,
+    "fps": 25.0,
+    "resolution": "320x240",
+    "people": 1,
+    "tracked_frac": 0.99,
+    "camera_view_detected": "at an angle, or the player turns a lot",
+    "analysis_s": 1.0,
+    "extras": {
+     "ball": {
+      "status": "unable",
+      "found": 0,
+      "strokes": 1,
+      "note": "No ball was tracked clearly enough near any stroke, so contact time and contact point could not be assessed. Timestamps mark peak hitting-hand speed (serves: highest hand position) instead. A small, fast or blurred ball, a ball the same colour as the background, or a camera that moves a lot all cause this."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "Fewer than two court lines were found in each direction, so the camera's position relative to the court cannot be fixed.",
+      "frames_tried": 6,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.4035,
+         0.1933,
+         0.6842,
+         1.0
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 5.68,
+        "frames": 142
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "unclassified",
+     "time": 0.2,
+     "start": 0.0,
+     "end": 0.6,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.0
+    }
+   ],
+   "items": [
+    {
+     "true": null,
+     "pred": "unclassified",
+     "t": 0.2
+    },
+    {
+     "true": "forehand",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 1.1,
+     "handedness": "right",
+     "camera_view": "behind",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p10"
+    },
+    {
+     "true": "backhand",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 4.0,
+     "handedness": "right",
+     "camera_view": "behind",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p10"
+    },
+    {
+     "true": "forehand",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 4.8,
+     "handedness": "right",
+     "camera_view": "behind",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p10"
+    }
+   ]
+  },
+  {
+   "clip": "gibson_wimbledon_fh",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 4.917,
+    "fps": 24.0,
+    "resolution": "1280x960",
+    "people": 1,
+    "tracked_frac": 0.98,
+    "camera_view_detected": "at an angle, or the player turns a lot",
+    "analysis_s": 1.1,
+    "extras": {
+     "ball": {
+      "status": "unable",
+      "found": 0,
+      "strokes": 2,
+      "note": "No ball was tracked clearly enough near any stroke, so contact time and contact point could not be assessed. Timestamps mark peak hitting-hand speed (serves: highest hand position) instead. A small, fast or blurred ball, a ball the same colour as the background, or a camera that moves a lot all cause this."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "Fewer than two court lines were found in each direction, so the camera's position relative to the court cannot be fixed.",
+      "frames_tried": 5,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.3142,
+         0.2264,
+         0.5489,
+         0.8723
+        ],
+        "box_t": 0.083,
+        "start": 0.083,
+        "end": 4.875,
+        "frames": 116
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "unclassified",
+     "time": 0.75,
+     "start": 0.167,
+     "end": 1.708,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.1
+    },
+    {
+     "type": "forehand",
+     "time": 3.833,
+     "start": 3.375,
+     "end": 4.25,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.5
+    }
+   ],
+   "items": [
+    {
+     "true": "forehand",
+     "pred": "unclassified",
+     "err": 0.25,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 0.5,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "gibson"
+    },
+    {
+     "true": "forehand",
+     "pred": "forehand",
+     "err": 0.033,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 3.8,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "gibson"
+    }
+   ]
+  },
+  {
+   "clip": "gibson_wimbledon_net",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 7.917,
+    "fps": 24.0,
+    "resolution": "1280x960",
+    "people": 1,
+    "tracked_frac": 0.99,
+    "camera_view_detected": "at an angle, or the player turns a lot",
+    "analysis_s": 2.5,
+    "extras": {
+     "ball": {
+      "status": "unable",
+      "found": 0,
+      "strokes": 2,
+      "note": "No ball was tracked clearly enough near any stroke, so contact time and contact point could not be assessed. Timestamps mark peak hitting-hand speed (serves: highest hand position) instead. A small, fast or blurred ball, a ball the same colour as the background, or a camera that moves a lot all cause this."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "Fewer than two court lines were found in each direction, so the camera's position relative to the court cannot be fixed.",
+      "frames_tried": 8,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.3922,
+         0.3598,
+         0.4447,
+         0.7321
+        ],
+        "box_t": 0.083,
+        "start": 0.083,
+        "end": 7.875,
+        "frames": 188
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "serve",
+     "time": 1.292,
+     "start": 0.083,
+     "end": 2.042,
+     "timing_source": "highest_hand",
+     "source": "auto",
+     "label_confidence": 0.9
+    },
+    {
+     "type": "unclassified",
+     "time": 3.708,
+     "start": 3.0,
+     "end": 4.292,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.1
+    }
+   ],
+   "items": [
+    {
+     "true": "serve",
+     "pred": "serve",
+     "err": 0.192,
+     "contact_kind": "peak",
+     "timing_source": "highest_hand",
+     "t": 1.1,
+     "handedness": "right",
+     "camera_view": "behind",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "gibson"
+    },
+    {
+     "true": "other",
+     "pred": "unclassified",
+     "err": 0.308,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 3.4,
+     "handedness": "right",
+     "camera_view": "behind",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "gibson"
+    },
+    {
+     "true": "other",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 6.0,
+     "handedness": "right",
+     "camera_view": "behind",
+     "backhand_style": "one_handed",
+     "subtype": "volley",
+     "player": "gibson"
+    }
+   ]
+  },
+  {
+   "clip": "gibson_wimbledon_close",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 4.333,
+    "fps": 24.0,
+    "resolution": "1280x960",
+    "people": 1,
+    "tracked_frac": 0.89,
+    "camera_view_detected": "mostly from in front of or behind the player",
+    "analysis_s": 1.0,
+    "extras": {
+     "ball": {
+      "status": "unable",
+      "found": 0,
+      "strokes": 2,
+      "note": "No ball was tracked clearly enough near any stroke, so contact time and contact point could not be assessed. Timestamps mark peak hitting-hand speed (serves: highest hand position) instead. A small, fast or blurred ball, a ball the same colour as the background, or a camera that moves a lot all cause this."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "Fewer than two court lines were found in each direction, so the camera's position relative to the court cannot be fixed.",
+      "frames_tried": 5,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.4586,
+         0.1865,
+         0.5565,
+         0.7643
+        ],
+        "box_t": 0.042,
+        "start": 0.042,
+        "end": 4.292,
+        "frames": 93
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "unclassified",
+     "time": 1.167,
+     "start": 0.542,
+     "end": 2.292,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.1
+    },
+    {
+     "type": "forehand",
+     "time": 3.917,
+     "start": 3.25,
+     "end": 4.292,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.67
+    }
+   ],
+   "items": [
+    {
+     "true": "other",
+     "pred": "unclassified",
+     "err": -0.233,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 1.4,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": "smash",
+     "player": "gibson"
+    },
+    {
+     "true": "forehand",
+     "pred": "forehand",
+     "err": 0.117,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 3.8,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "gibson"
+    }
+   ]
+  },
+  {
+   "clip": "p11_gibson_final",
+   "split": "held_out",
+   "status": "ok",
+   "labelled": true,
+   "labeller": "Claude (AI assistant, developer tooling)",
+   "expert_labels": false,
+   "result": {
+    "status": "ok",
+    "duration_s": 5.917,
+    "fps": 24.0,
+    "resolution": "1280x960",
+    "people": 1,
+    "tracked_frac": 1.0,
+    "camera_view_detected": "at an angle, or the player turns a lot",
+    "analysis_s": 1.2,
+    "extras": {
+     "ball": {
+      "status": "unable",
+      "found": 0,
+      "strokes": 1,
+      "note": "No ball was tracked clearly enough near any stroke, so contact time and contact point could not be assessed. Timestamps mark peak hitting-hand speed (serves: highest hand position) instead. A small, fast or blurred ball, a ball the same colour as the background, or a camera that moves a lot all cause this."
+     },
+     "court": {
+      "status": "unable",
+      "reason": "Fewer than two court lines were found in each direction, so the camera's position relative to the court cannot be fixed.",
+      "frames_tried": 6,
+      "frames_fitted": 0,
+      "camera_view": null
+     },
+     "tracking_events": {
+      "cuts": [],
+      "segments": [
+       {
+        "id": 0,
+        "kind": "seed",
+        "status": "auto",
+        "after": null,
+        "confidence": 1.0,
+        "similarity": null,
+        "box": [
+         0.3568,
+         0.1532,
+         0.4742,
+         0.7129
+        ],
+        "box_t": 0.0,
+        "start": 0.0,
+        "end": 5.875,
+        "frames": 142
+       }
+      ],
+      "reacquire": true
+     }
+    }
+   },
+   "preds": [
+    {
+     "type": "unclassified",
+     "time": 2.208,
+     "start": 1.75,
+     "end": 2.833,
+     "timing_source": "peak_hand_speed",
+     "source": "auto",
+     "label_confidence": 0.2
+    }
+   ],
+   "items": [
+    {
+     "true": "serve",
+     "pred": "unclassified",
+     "err": 0.208,
+     "contact_kind": "peak",
+     "timing_source": "peak_hand_speed",
+     "t": 2.0,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p11"
+    },
+    {
+     "true": "forehand",
+     "pred": "missed",
+     "err": null,
+     "contact_kind": "peak",
+     "t": 4.8,
+     "handedness": "right",
+     "camera_view": "front",
+     "backhand_style": "one_handed",
+     "subtype": null,
+     "player": "p11"
+    }
+   ]
+  }
+ ]
+}

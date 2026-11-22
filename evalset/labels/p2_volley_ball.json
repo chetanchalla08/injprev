@@ -1,0 +1,60 @@
+{
+ "format": "baseline-labels/1",
+ "clip": "p2_volley_ball",
+ "labeller": "Claude (AI assistant, developer tooling)",
+ "labeller_role": "non-expert developer label",
+ "expert": false,
+ "method": "Read by eye from film strips at 5 fps; ball visible near contact, about +-0.1 s. Start/end are contact -0.8 s and +0.7 s, not individually marked.",
+ "labelled_at": "2026-11-20",
+ "notes": "",
+ "strokes": [
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 0.7,
+   "contact": 1.5,
+   "end": 2.2,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 2.3,
+   "contact": 3.1,
+   "end": 3.8,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 3.9,
+   "contact": 4.7,
+   "end": 5.4,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 5.7,
+   "contact": 6.5,
+   "end": 7.2,
+   "contact_kind": "contact",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  }
+ ]
+}

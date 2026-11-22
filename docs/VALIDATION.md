@@ -125,6 +125,62 @@ footage, and camera view is still judged from body orientation on all of this se
 **Hops (split-step candidates).** Built from pose alone; no footage is labelled for split
 steps, so there is no number to report.
 
+**Smash vs serve (run `smash_fix_tune`, tune split only; tried and reverted, see below).** With the expanded set (146 strokes, 14
+players; see `evalset/README.md`) the new `subtype` report showed that 13 of the 14 tune smashes the app
+found were called serves. Measured on tune clips only: in the 2 s before the hit, the other arm stayed
+above the head for 0.07-0.40 s in serves (one exception at 0.77 s) and 0.53-1.36 s in smashes (one
+exception at 0.30 s, a far shot); in a smash it points at the lob while the player waits. Rule: ≥ 0.6 s
+up → overhead, left unlabelled (0.6 rather than 0.5 so the synthetic serves, held about 0.53 s, keep a
+margin). Tune result: smashes called serve 13 → 3, smashes left unlabelled 1 → 11; one serve lost (the
+0.77 s exception), serves labelled correctly 9 → 8; no other stroke changed in the 45 tune clips. Serves
+with a slow, high toss are the known risk.
+
+**Held-out, scored once after this change (run `smash_fix_heldout`, 13 clips, 31 strokes).** Overall recall
+81%, precision 89%, correct 52%. Smashes: none called a serve (3 unlabelled, 1 missed). But serves: only 1
+of 6 labelled correctly, 5 left unlabelled, and 4 of those 5 are the overhead rule itself: p1's four serves in
+`p1_serve_ball` held the toss arm up 0.7-0.8 s, past the 0.6 s cutoff. The same four serves were labelled
+correctly in the 20 Nov run (`p3_bh1_tune`), before the rule. So the risk named above is real: the rule does
+not generalise to a slower toss, and the tune numbers overstate it. Held-out has now been seen, so the
+cutoff must not be tuned against these four serves; any rework needs a reason found on tune footage.
+
+**Reverted.** Tune was then searched for a second measure that keeps slow-toss serves (lowest racket-hand
+height in the 2 s before, racket-hand height when and while the toss arm is up, hip movement): none
+separates the one slow-toss tune serve (p6, 0.77 s) from the smashes, so no rework could be justified on
+tune. The rule was removed: serves are a supported stroke and smashes are not, so losing real serves costs
+more than calling a smash a serve. Smashes are therefore called serves again (13 of 15 on tune before the
+rule). To revisit it, tune needs serves with a slow, high toss and smashes inside rallies.
+
+**Ball contact (runs `ball_tune_*`, `ball_b2_tune`, `ball_b2_heldout`; tried and reverted).** The report now
+says, of detected strokes with a visible ball, how often contact was found, and on how many strokes with no
+visible ball (shadow swings, any stroke type) a contact was claimed anyway. Before this change: tune 10 of 14
+found, 16 claimed with no ball; held-out (`smash_fix_heldout`) 4 of 14 found, 3 claimed with no ball. (The
+README's earlier 12/14 and 2/14 were from older runs.)
+
+Diagnosis on tune only: three of the four tune misses are clay-court backhands in `p1_bh2_ball`, where the
+blurred ball reads as very bright pale orange (OpenCV hue 10-14, value about 250), outside the yellow-green
+range; the fourth (`rola_a` 5.45 s) has the ball out of frame. Most false claims come from blobs on the
+player (face, shoes, a yellow shirt) or from a court blob linked onto racket blur, where one point beyond
+arm's reach was enough for the track to count as a ball. Variants on tune:
+
+| variant | found (of 14) | claimed with no ball (of 84) |
+|---|---|---|
+| current | 10 | 16 |
+| + pale-orange hue band (5-20, value ≥ 230) | 13 | not counted on all strokes (6 on fh/bh/serve, up from 3) |
+| + mask of head, legs, torso | 13 | 18 |
+| two far points only | 9 | 9 |
+| **B2: hue band + mask + two far points** | **11** | **9** |
+
+**Held-out, scored once with B2 (run `ball_b2_heldout`, 13 clips).** Contact found 4 → 7 of 14, claimed with no
+ball 3 → 3. But stroke timing got worse: on the 14 detected strokes with a visible ball, median error
+0.04 → 0.07 s, within 0.10 s 11 → 9, more than 0.20 s off 0 → 2. Several new "contacts" replaced pose
+timestamps that were already right (`p1_serve_ball` 5.64 s: 0.00 → 0.28 s; `p2_fh_ball` 8.8 s: 0.00 →
+0.28 s). Tune had shown the same direction (median 0.05 → 0.07 s). Since the report presents ball timing as
+the better source, a change that finds more contacts but times strokes worse is not an improvement.
+
+**Reverted.** Only the measure was kept. Held-out has now been seen for this change, so B2 must not be tuned
+against these strokes. A future attempt needs, on tune, a check that a found contact beats the pose
+timestamp (for example agreement with the hand-speed peak) before it replaces it.
+
 ### 1.4 "Not assessed" items revisited
 | Item | Outcome | Why |
 |---|---|---|

@@ -20,7 +20,8 @@
     "sha1": "d37be2471184bede61febcc93beaca6bfbbcfbb3"
    },
    "cuts": null,
-   "notes": "Player 1 (red top) shadow-swinging forehands without a ball, slow and deliberate. Instructional video."
+   "notes": "Player 1 (red top) shadow-swinging forehands without a ball, slow and deliberate. Instructional video.",
+   "player": "p1"
   },
   {
    "id": "p1_bh2_shadow",
@@ -41,7 +42,8 @@
     "sha1": "d453be1627ed4ea9711b0fdd004b27451db11ab1"
    },
    "cuts": null,
-   "notes": "Player 1 shadow-swinging two-handed backhands without a ball; the third is very slow."
+   "notes": "Player 1 shadow-swinging two-handed backhands without a ball; the third is very slow.",
+   "player": "p1"
   },
   {
    "id": "sharapova",
@@ -62,7 +64,8 @@
     "sha1": "bb9363f3bd3060d836a9f49f69871fe9d061a3c3"
    },
    "cuts": null,
-   "notes": "Match footage, handheld from the stands, zooms out mid-clip. Used when the first build's detector was tuned."
+   "notes": "Match footage, handheld from the stands, zooms out mid-clip. Used when the first build's detector was tuned.",
+   "player": "sharapova"
   },
   {
    "id": "rola_a",
@@ -86,7 +89,8 @@
     "sha1": "3f55af872e1b8d2418a79a0126421b62a89827de"
    },
    "cuts": null,
-   "notes": "Left-hander filmed from across the net with a panning, zooming camera; a line judge stands nearby. Used when the first build's detector was tuned."
+   "notes": "Left-hander filmed from across the net with a panning, zooming camera; a line judge stands nearby. Used when the first build's detector was tuned.",
+   "player": "rola"
   },
   {
    "id": "rola_c",
@@ -110,7 +114,8 @@
     "sha1": "3f55af872e1b8d2418a79a0126421b62a89827de"
    },
    "cuts": null,
-   "notes": "Same player; the camera pans away so he leaves the frame around 9-10 s into the clip and comes back."
+   "notes": "Same player; the camera pans away so he leaves the frame around 9-10 s into the clip and comes back.",
+   "player": "rola"
   },
   {
    "id": "p2_fh_ball",
@@ -131,7 +136,8 @@
     "sha1": "d37be2471184bede61febcc93beaca6bfbbcfbb3"
    },
    "cuts": null,
-   "notes": "Player 2 (grey top) hitting fed forehands; camera in front and to the side."
+   "notes": "Player 2 (grey top) hitting fed forehands; camera in front and to the side.",
+   "player": "p2"
   },
   {
    "id": "p2_bh1_ball",
@@ -152,7 +158,8 @@
     "sha1": "cb0f9f0e890dc65f21afc6afecfdb361e2c34017"
    },
    "cuts": null,
-   "notes": "Player 2 hitting fed one-handed backhands; wide shot, player about a quarter of frame height."
+   "notes": "Player 2 hitting fed one-handed backhands; wide shot, player about a quarter of frame height.",
+   "player": "p2"
   },
   {
    "id": "p1_bh2_ball",
@@ -173,7 +180,8 @@
     "sha1": "d453be1627ed4ea9711b0fdd004b27451db11ab1"
    },
    "cuts": null,
-   "notes": "Player 1 hitting fed two-handed backhands; handheld camera that pans and zooms. Placed in the tune split (before any scores were looked at) so that ball tracking has frame-accurate contacts to be developed against."
+   "notes": "Player 1 hitting fed two-handed backhands; handheld camera that pans and zooms. Placed in the tune split (before any scores were looked at) so that ball tracking has frame-accurate contacts to be developed against.",
+   "player": "p1"
   },
   {
    "id": "p1_serve_ball",
@@ -194,7 +202,8 @@
     "sha1": "db238f3bc532cb0aaae2c5de1c3cfdaa080d5d0a"
    },
    "cuts": null,
-   "notes": "Player 1 serving, filmed from behind and to the side."
+   "notes": "Player 1 serving, filmed from behind and to the side.",
+   "player": "p1"
   },
   {
    "id": "daviscup01",
@@ -215,7 +224,8 @@
     "sha1": "02f839d5f04b51e09bf057789c611c07736beda8"
    },
    "cuts": null,
-   "notes": "Doubles match filmed from the stands; players are small. Not labelled: kept as a hard case to check the pipeline fails or abstains cleanly."
+   "notes": "Doubles match filmed from the stands; players are small. Not labelled: kept as a hard case to check the pipeline fails or abstains cleanly.",
+   "player": null
   },
   {
    "id": "p3_bh1_shadow",
@@ -236,7 +246,8 @@
     "sha1": "cb0f9f0e890dc65f21afc6afecfdb361e2c34017"
    },
    "cuts": null,
-   "notes": "Player 3 (blue top) staged one-handed backhand demonstration without a ball, before the first cut of 0REVES 1 MANO. Slow step-by-step backswing, then a fast swing to a high finish above the head. Ends before the cut at 19.16 s; the held-out clip p2_bh1_ball (24.86-41.36 s, a different player) is not included."
+   "notes": "Player 3 (blue top) staged one-handed backhand demonstration without a ball, before the first cut of 0REVES 1 MANO. Slow step-by-step backswing, then a fast swing to a high finish above the head. Ends before the cut at 19.16 s; the held-out clip p2_bh1_ball (24.86-41.36 s, a different player) is not included.",
+   "player": "p3"
   },
   {
    "id": "cuts_bh1_full",
@@ -260,7 +271,8 @@
     19.16,
     24.16
    ],
-   "notes": "Player 3 staged demonstration, title card, then player 2 in a wide shot. After the cut the person on screen is a DIFFERENT player. Not labelled for strokes."
+   "notes": "Player 3 staged demonstration, title card, then player 2 in a wide shot. After the cut the person on screen is a DIFFERENT player. Not labelled for strokes.",
+   "player": null
   },
   {
    "id": "cuts_serve_full",
@@ -284,7 +296,8 @@
     25.16,
     30.2
    ],
-   "notes": "Player 2 staged serve demonstration, title card, then player 1. After the cut the person on screen is a DIFFERENT player. Not labelled for strokes."
+   "notes": "Player 2 staged serve demonstration, title card, then player 1. After the cut the person on screen is a DIFFERENT player. Not labelled for strokes.",
+   "player": null
   },
   {
    "id": "cuts_bh2_full",
@@ -308,7 +321,1064 @@
     14.2,
     19.2
    ],
-   "notes": "Player 1 close up, title card, then the SAME player in a wide shot. Not labelled for strokes as a whole (see p1_bh2_shadow and p1_bh2_ball)."
+   "notes": "Player 1 close up, title card, then the SAME player in a wide shot. Not labelled for strokes as a whole (see p1_bh2_shadow and p1_bh2_ball).",
+   "player": "p1"
+  },
+  {
+   "id": "p1_smash_shadow",
+   "file": "clips/dardo_smash/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": 0,
+   "t1": 21.0,
+   "player_hint": null,
+   "source": {
+    "title": "File:0SMASH.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0SMASH.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "277a1428a5fdc39567f2b2145bb283e53baada47"
+   },
+   "cuts": null,
+   "notes": "Player 1 (red top) shadow smashes, demonstration before the title card of 0SMASH. A seventh swing cut off by the title card is excluded by the trim.",
+   "player": "p1"
+  },
+  {
+   "id": "p2_smash_ball",
+   "file": "clips/dardo_smash/source.ogv",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "oblique",
+   "t0": 27.5,
+   "t1": 43.0,
+   "player_hint": null,
+   "source": {
+    "title": "File:0SMASH.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0SMASH.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "277a1428a5fdc39567f2b2145bb283e53baada47"
+   },
+   "cuts": null,
+   "notes": "Player 2 (grey hoodie) smashing fed lobs after the title card of 0SMASH; handheld camera zooms in, then far out for the last smash. Same footage as 'Smash con pelota.ogv' (not added separately).",
+   "player": "p2"
+  },
+  {
+   "id": "p1_slice_shadow",
+   "file": "clips/dardo_slice/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": 0,
+   "t1": 12.8,
+   "player_hint": null,
+   "source": {
+    "title": "File:0SLICE.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0SLICE.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "45a23925654233249b6e529118013658b8e5304a"
+   },
+   "cuts": null,
+   "notes": "Player 1 (red top) shadow slices before the title card of 0SLICE. A seventh swing cut off by the title card is excluded by the trim.",
+   "player": "p1"
+  },
+  {
+   "id": "slice_ball",
+   "file": "clips/dardo_slice/source.ogv",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "far",
+   "t0": 18.5,
+   "t1": 32.8,
+   "player_hint": null,
+   "source": {
+    "title": "File:0SLICE.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0SLICE.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "45a23925654233249b6e529118013658b8e5304a"
+   },
+   "cuts": null,
+   "notes": "Player in a white top hitting slices from far away after the title card of 0SLICE. Probably player 2 but not certain from the footage; put in held-out either way. Same footage as 'Slice con pelota.ogv'.",
+   "player": null
+  },
+  {
+   "id": "p3_volley_shadow",
+   "file": "clips/dardo_volley/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 0,
+   "t1": 24.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:0VOLEA.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0VOLEA.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "8187865eab88581a60cc52c167a4214d2555434b"
+   },
+   "cuts": null,
+   "notes": "Player 3 (blue top) slow volley demonstrations, alternating forehand and backhand, filmed across the net; each is held in position before the punch.",
+   "player": "p3"
+  },
+  {
+   "id": "p2_volley_ball",
+   "file": "clips/dardo_volley/source.ogv",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 29.9,
+   "t1": 38.5,
+   "player_hint": null,
+   "source": {
+    "title": "File:0VOLEA.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:0VOLEA.ogv",
+    "author": "Dardo 86 7",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "sha1": "8187865eab88581a60cc52c167a4214d2555434b"
+   },
+   "cuts": null,
+   "notes": "Player 2 (grey hoodie) volleying fed balls at the net after the title card of 0VOLEA. Same footage as 'Volea con pelota.ogv'.",
+   "player": "p2"
+  },
+  {
+   "id": "p8_hogeschool1938",
+   "file": "clips/nl1938_hogeschool/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 20.0,
+   "t1": 28.0,
+   "player_hint": null,
+   "source": {
+    "title": "File:HOGESCHOOL TENNIS-PGM4011526.webm",
+    "page": "https://commons.wikimedia.org/wiki/File:HOGESCHOOL_TENNIS-PGM4011526.webm",
+    "author": "Polygoon Hollands Nieuws (producer) / Nederlands Instituut voor Beeld en Geluid (custodian)",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:HOGESCHOOL_TENNIS-PGM4011526.webm",
+    "sha1": "310f6fbd4a1c8097fcb5ebc2cc81cccc7b0047dc"
+   },
+   "cuts": null,
+   "notes": "1938 Polygoon newsreel, black and white, 720x576 at 25 fps. One continuous shot across the net of a player in a cap (identity unknown) rallying; ball mostly too small to see. Ends just before the shot cuts during an overhead. level: advanced. The rest of the reel is wide shots with small players or shots of 1-4 s and is not used.",
+   "player": "p8"
+  },
+  {
+   "id": "p9_hogeschool1938",
+   "file": "clips/nl1938_hogeschool/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 38.0,
+   "t1": 53.6,
+   "player_hint": null,
+   "source": {
+    "title": "File:HOGESCHOOL TENNIS-PGM4011526.webm",
+    "page": "https://commons.wikimedia.org/wiki/File:HOGESCHOOL_TENNIS-PGM4011526.webm",
+    "author": "Polygoon Hollands Nieuws (producer) / Nederlands Instituut voor Beeld en Geluid (custodian)",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:HOGESCHOOL_TENNIS-PGM4011526.webm",
+    "sha1": "310f6fbd4a1c8097fcb5ebc2cc81cccc7b0047dc"
+   },
+   "cuts": null,
+   "notes": "1938 Polygoon newsreel, black and white, 720x576 at 25 fps. Bareheaded player (identity unknown; the reel opens with Budge) seen across the net, camera panning to follow; jump cuts in the same set-up at about 3.4 s and 14.0 s. Mostly one-handed backhands with a high, arms-wide finish. level: advanced.",
+   "player": "p9"
+  },
+  {
+   "id": "p10_youth_lesson",
+   "file": "clips/nl_youth_lesson/source.ogv",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "behind",
+   "t0": 41.2,
+   "t1": 46.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:Tennisopleiding voor de Nederlandse jeugd Weeknummer 47-43 - Open Beelden - 10283.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:Tennisopleiding_voor_de_Nederlandse_jeugd_Weeknummer_47-43_-_Open_Beelden_-_10283.ogv",
+    "author": "Nederlands Instituut voor Beeld en Geluid",
+    "licence": "CC BY-SA 3.0 NL",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en",
+    "sha1": "eb9267940968e4feba85062577e66dd7780b0362"
+   },
+   "cuts": null,
+   "notes": "1940s newsreel of a junior lesson, 320x240 at 25 fps, filmed from behind and to one side. A junior girl swinging forehand, backhand, forehand, apparently without a ball (shadow swings for the camera). level: beginner, junior. The rest of the reel is crowds, coaches demonstrating to groups, and shots of 1-4 s.",
+   "player": "p10"
+  },
+  {
+   "id": "tilden_b_fh_rally",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 202.0,
+   "t1": 215.5,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Medium shot across the net, rallying with a ball; long, slow preparation.",
+   "player": "tilden"
+  },
+  {
+   "id": "tilden_b_bh_close",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 215.6,
+   "t1": 221.1,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Close shot, knees up; demonstration backhands.",
+   "player": "tilden"
+  },
+  {
+   "id": "tilden_b_bh_demo",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 342.0,
+   "t1": 351.3,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Medium shot; ball fed, slow demonstration backhands.",
+   "player": "tilden"
+  },
+  {
+   "id": "tilden_b_fh_side",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "side",
+   "t0": 352.0,
+   "t1": 359.3,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Close side-on shot against a dark background.",
+   "player": "tilden"
+  },
+  {
+   "id": "tilden_b_bh_mid",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 359.4,
+   "t1": 376.5,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Medium shot; very long backhand preparations held for the camera.",
+   "player": "tilden"
+  },
+  {
+   "id": "tilden_b_fh_side2",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "side",
+   "t0": 376.6,
+   "t1": 391.1,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Side-on shot, dark background; loop backswing.",
+   "player": "tilden"
+  },
+  {
+   "id": "tilden_b_serve_behind",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "behind",
+   "t0": 496.2,
+   "t1": 510.0,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Close shot from behind; head and shoulders only, legs out of frame (hard case for pose).",
+   "player": "tilden"
+  },
+  {
+   "id": "tilden_b_serve_front",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 510.2,
+   "t1": 523.9,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Full-length shot across the net.",
+   "player": "tilden"
+  },
+  {
+   "id": "tilden_b_fh_behind",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "behind",
+   "t0": 573.4,
+   "t1": 578.5,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Medium shot from behind the baseline, rallying.",
+   "player": "tilden"
+  },
+  {
+   "id": "tilden_b_bh_behind",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "behind",
+   "t0": 580.4,
+   "t1": 583.5,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Medium shot from behind the baseline, rallying.",
+   "player": "tilden"
+  },
+  {
+   "id": "p4_b_fh_close_a",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 234.6,
+   "t1": 240.5,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Tilden's pupil, a young woman (blonde, white shorts). level: beginner. Close shot; forehands, apparently shadow swings.",
+   "player": "p4"
+  },
+  {
+   "id": "p4_b_fh_rally",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 240.6,
+   "t1": 247.7,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Tilden's pupil, a young woman (blonde, white shorts). level: beginner. Medium shot across the net, rallying.",
+   "player": "p4"
+  },
+  {
+   "id": "p4_b_fh_close_b",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 247.8,
+   "t1": 261.1,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Tilden's pupil, a young woman (blonde, white shorts). level: beginner. Close shot; forehands, apparently shadow swings.",
+   "player": "p4"
+  },
+  {
+   "id": "p4_b_serve_front",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 542.4,
+   "t1": 548.5,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Tilden's pupil, a young woman (blonde, white shorts). level: beginner. Full-length shot across the net.",
+   "player": "p4"
+  },
+  {
+   "id": "p4_b_serve_behind",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "behind",
+   "t0": 548.6,
+   "t1": 561.1,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Tilden's pupil, a young woman (blonde, white shorts). level: beginner. Close shot from behind; head and shoulders only (hard case for pose).",
+   "player": "p4"
+  },
+  {
+   "id": "p4_b_serve_far",
+   "file": "clips/tilden_beginners/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "oblique",
+   "t0": 561.2,
+   "t1": 565.8,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensTennisForBeginners.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "a7bb7ab0a28e680bc38c9a5206b3799364e915f5"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Tilden's pupil, a young woman (blonde, white shorts). level: beginner. Wide high shot; player small.",
+   "player": "p4"
+  },
+  {
+   "id": "tilden_a_serve_high",
+   "file": "clips/tilden_advanced/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "oblique",
+   "t0": 321.6,
+   "t1": 332.7,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensAdvancedTennis.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "f3319239801c00474f898253b9d53b315af3c4cd"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. High oblique shot, full length.",
+   "player": "tilden"
+  },
+  {
+   "id": "tilden_a_serve_low",
+   "file": "clips/tilden_advanced/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 332.8,
+   "t1": 351.3,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensAdvancedTennis.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "f3319239801c00474f898253b9d53b315af3c4cd"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Low shot across the net, player in silhouette against the sky.",
+   "player": "tilden"
+  },
+  {
+   "id": "tilden_a_serve_oblique",
+   "file": "clips/tilden_advanced/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "oblique",
+   "t0": 351.4,
+   "t1": 369.8,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensAdvancedTennis.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "f3319239801c00474f898253b9d53b315af3c4cd"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Bill Tilden demonstrating. level: pro. Oblique shot; first serve is a slowed demonstration.",
+   "player": "tilden"
+  },
+  {
+   "id": "p4_a_serve_mid",
+   "file": "clips/tilden_advanced/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 490.0,
+   "t1": 498.0,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensAdvancedTennis.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "f3319239801c00474f898253b9d53b315af3c4cd"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Tilden's pupil, a young woman (blonde, white shorts). level: beginner. Medium shot across the court.",
+   "player": "p4"
+  },
+  {
+   "id": "p4_a_serve_front",
+   "file": "clips/tilden_advanced/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 498.2,
+   "t1": 509.9,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensAdvancedTennis.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "f3319239801c00474f898253b9d53b315af3c4cd"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Tilden's pupil, a young woman (blonde, white shorts). level: beginner. Low full-length shot across the net.",
+   "player": "p4"
+  },
+  {
+   "id": "p5_a_fh_high",
+   "file": "clips/tilden_advanced/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "oblique",
+   "t0": 231.6,
+   "t1": 236.9,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensAdvancedTennis.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "f3319239801c00474f898253b9d53b315af3c4cd"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Tilden's second pupil, a girl with short dark hair. level: beginner. High oblique shot; forehand drill.",
+   "player": "p5"
+  },
+  {
+   "id": "p5_a_volley_net",
+   "file": "clips/tilden_advanced/source.mp4",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 237.0,
+   "t1": 249.9,
+   "player_hint": null,
+   "source": {
+    "title": "BillTildensAdvancedTennis.mp4 (Internet Archive item BillTilden-AdvancedTennis)",
+    "page": "https://archive.org/details/BillTilden-AdvancedTennis",
+    "author": "Official Films (narration and supervision Bill Tilden, directed by Julian Peyser)",
+    "licence": "CC0 1.0",
+    "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sha1": "f3319239801c00474f898253b9d53b315af3c4cd"
+   },
+   "cuts": null,
+   "notes": "1930s instructional film, black and white, 640x480 at about 30 fps (transfer of old film), with frequent cuts between set-ups and some slowed demonstration swings. Tilden's second pupil, a girl with short dark hair. level: beginner. At the net, filmed across it; forehand volleys, the first a low lunge.",
+   "player": "p5"
+  },
+  {
+   "id": "gibson_wimbledon_fh",
+   "file": "clips/gibson_usia/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 49.0,
+   "t1": 53.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:Althea Gibson - Tennis Champion (USIA Film).webm",
+    "page": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "author": "U.S. Information Agency",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "sha1": "affdaccbeecef070bd7e388c42ca75c2cb40a8e4"
+   },
+   "cuts": null,
+   "notes": "1957-58 USIA documentary, black and white, 1440x1080 at 24 fps, match footage with frequent cuts to the crowd. Althea Gibson. level: pro. Medium shot across the net at Wimbledon; the first forehand's backswing starts just before the clip.",
+   "player": "gibson"
+  },
+  {
+   "id": "gibson_wimbledon_net",
+   "file": "clips/gibson_usia/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "behind",
+   "t0": 86.0,
+   "t1": 93.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:Althea Gibson - Tennis Champion (USIA Film).webm",
+    "page": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "author": "U.S. Information Agency",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "sha1": "affdaccbeecef070bd7e388c42ca75c2cb40a8e4"
+   },
+   "cuts": null,
+   "notes": "1957-58 USIA documentary, black and white, 1440x1080 at 24 fps, match footage with frequent cuts to the crowd. Althea Gibson. level: pro. High shot from behind the baseline, camera panning: serve, then two volleys moving in; player small.",
+   "player": "gibson"
+  },
+  {
+   "id": "gibson_wimbledon_close",
+   "file": "clips/gibson_usia/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 115.2,
+   "t1": 119.5,
+   "player_hint": null,
+   "source": {
+    "title": "File:Althea Gibson - Tennis Champion (USIA Film).webm",
+    "page": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "author": "U.S. Information Agency",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "sha1": "affdaccbeecef070bd7e388c42ca75c2cb40a8e4"
+   },
+   "cuts": null,
+   "notes": "1957-58 USIA documentary, black and white, 1440x1080 at 24 fps, match footage with frequent cuts to the crowd. Althea Gibson. level: pro. Medium-close shot near the net: an overhead, then a forehand.",
+   "player": "gibson"
+  },
+  {
+   "id": "p11_gibson_final",
+   "file": "clips/gibson_usia/source.webm",
+   "split": "held_out",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 605.0,
+   "t1": 610.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:Althea Gibson - Tennis Champion (USIA Film).webm",
+    "page": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "author": "U.S. Information Agency",
+    "licence": "Public domain",
+    "licence_url": "https://commons.wikimedia.org/wiki/File:Althea_Gibson_-_Tennis_Champion_(USIA_Film).webm",
+    "sha1": "affdaccbeecef070bd7e388c42ca75c2cb40a8e4"
+   },
+   "cuts": null,
+   "notes": "1957-58 USIA documentary, black and white, 1440x1080 at 24 fps, match footage with frequent cuts to the crowd. Gibson's opponent in a final (blonde, identity not confirmed). level: pro. Medium shot, camera following: serve, then a forehand moving forward.",
+   "player": "p11"
+  },
+  {
+   "id": "p6_smash_far_a",
+   "file": "clips/evd_005/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "far",
+   "t0": 45.4,
+   "t1": 56.4,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-005.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-005.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "1a845d8c7d43c105146307efc29dd848fc6ba209"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Lesson 'El remate o smash': overheads from mid-court, wide shot across the net; player small.",
+   "player": "p6"
+  },
+  {
+   "id": "p6_smash_net_a",
+   "file": "clips/evd_005/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 57.6,
+   "t1": 63.2,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-005.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-005.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "1a845d8c7d43c105146307efc29dd848fc6ba209"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Overhead near the net, filmed across it.",
+   "player": "p6"
+  },
+  {
+   "id": "p6_smash_mid_a",
+   "file": "clips/evd_005/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 63.6,
+   "t1": 69.2,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-005.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-005.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "1a845d8c7d43c105146307efc29dd848fc6ba209"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Overhead, medium shot across the net.",
+   "player": "p6"
+  },
+  {
+   "id": "p6_smash_far_b",
+   "file": "clips/evd_005/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "far",
+   "t0": 77.4,
+   "t1": 82.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-005.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-005.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "1a845d8c7d43c105146307efc29dd848fc6ba209"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Overhead, wide shot; player small; ends at a cross-fade.",
+   "player": "p6"
+  },
+  {
+   "id": "p6_smash_mid_b",
+   "file": "clips/evd_005/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 83.6,
+   "t1": 93.3,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-005.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-005.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "1a845d8c7d43c105146307efc29dd848fc6ba209"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Long wait in ready position, then an overhead.",
+   "player": "p6"
+  },
+  {
+   "id": "p6_smash_mid_c",
+   "file": "clips/evd_005/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 104.0,
+   "t1": 107.2,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-005.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-005.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "1a845d8c7d43c105146307efc29dd848fc6ba209"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Overhead; starts just after a freeze frame of the preparation.",
+   "player": "p6"
+  },
+  {
+   "id": "p6_smash_mid_d",
+   "file": "clips/evd_005/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "t0": 123.8,
+   "t1": 127.2,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-005.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-005.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "1a845d8c7d43c105146307efc29dd848fc6ba209"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Overhead; starts just after a held preparation (freeze frame).",
+   "player": "p6"
+  },
+  {
+   "id": "p6_smash_far_c",
+   "file": "clips/evd_005/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "far",
+   "t0": 147.4,
+   "t1": 154.0,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-005.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-005.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "1a845d8c7d43c105146307efc29dd848fc6ba209"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Overhead, wide shot; player small.",
+   "player": "p6"
+  },
+  {
+   "id": "p6_serve_side_a",
+   "file": "clips/evd_004/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "side",
+   "t0": 8.8,
+   "t1": 13.1,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-004.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-004.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "f9a5ef20c3050a72fc693e502ad34a6fa2a8904d"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Lesson on the serve: serve from the baseline, filmed side-on.",
+   "player": "p6"
+  },
+  {
+   "id": "p6_serve_side_b",
+   "file": "clips/evd_004/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "side",
+   "t0": 13.2,
+   "t1": 15.9,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-004.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-004.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "f9a5ef20c3050a72fc693e502ad34a6fa2a8904d"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Serve, filmed side-on from behind the baseline corner.",
+   "player": "p6"
+  },
+  {
+   "id": "p6_serve_side_c",
+   "file": "clips/evd_004/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "side",
+   "t0": 127.4,
+   "t1": 131.6,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-004.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-004.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "f9a5ef20c3050a72fc693e502ad34a6fa2a8904d"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Serve, filmed side-on.",
+   "player": "p6"
+  },
+  {
+   "id": "p6_serve_side_d",
+   "file": "clips/evd_004/source.ogv",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "side",
+   "t0": 132.2,
+   "t1": 134.3,
+   "player_hint": null,
+   "source": {
+    "title": "File:EVD-tenis-004.ogv",
+    "page": "https://commons.wikimedia.org/wiki/File:EVD-tenis-004.ogv",
+    "author": "Evdcoldeportes (Escuela Virtual del Deporte, Coldeportes)",
+    "licence": "CC BY-SA 2.5 CO",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/co/deed.en",
+    "sha1": "f9a5ef20c3050a72fc693e502ad34a6fa2a8904d"
+   },
+   "cuts": null,
+   "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Serve, filmed side-on; short clip between cross-fades.",
+   "player": "p6"
   }
  ]
 }

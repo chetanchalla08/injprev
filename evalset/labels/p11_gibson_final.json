@@ -1,0 +1,34 @@
+{
+ "format": "baseline-labels/1",
+ "clip": "p11_gibson_final",
+ "labeller": "Claude (AI assistant, developer tooling)",
+ "labeller_role": "non-expert developer label",
+ "expert": false,
+ "method": "Read by eye from film strips at 5 fps; ball not clearly seen at contact, so 'contact' is the estimated hit of the swing, about +-0.2 s. Start/end are contact -0.8 s and +0.7 s, clamped to the clip, not individually marked.",
+ "labelled_at": "2026-11-21",
+ "notes": "",
+ "strokes": [
+  {
+   "type": "serve",
+   "start": 1.2,
+   "contact": 2.0,
+   "end": 2.7,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "forehand",
+   "start": 4.0,
+   "contact": 4.8,
+   "end": 5.5,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  }
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "format": "baseline-labels/1",
+ "clip": "p3_volley_shadow",
+ "labeller": "Claude (AI assistant, developer tooling)",
+ "labeller_role": "non-expert developer label",
+ "expert": false,
+ "method": "Read by eye from film strips at 5 fps; no ball or ball not clearly seen, so 'contact' is the estimated hit of the swing, about +-0.2 s. Start/end are contact -0.8 s and +0.7 s, not individually marked.",
+ "labelled_at": "2026-11-20",
+ "notes": "",
+ "strokes": [
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 2.4,
+   "contact": 3.2,
+   "end": 3.9,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 5.6,
+   "contact": 6.4,
+   "end": 7.1,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 8.8,
+   "contact": 9.6,
+   "end": 10.3,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 11.4,
+   "contact": 12.2,
+   "end": 12.9,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 14.6,
+   "contact": 15.4,
+   "end": 16.1,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 16.8,
+   "contact": 17.6,
+   "end": 18.3,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 20.0,
+   "contact": 20.8,
+   "end": 21.5,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  },
+  {
+   "type": "other",
+   "subtype": "volley",
+   "start": 22.4,
+   "contact": 23.2,
+   "end": 23.9,
+   "contact_kind": "peak",
+   "handedness": "right",
+   "backhand_style": "one_handed",
+   "camera_view": "front",
+   "notes": ""
+  }
+ ]
+}

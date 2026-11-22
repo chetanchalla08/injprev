@@ -30,13 +30,18 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--backhand", choices=("one_handed", "two_handed"), default="two_handed")
     ap.add_argument("--view", choices=CAMERA_VIEWS, default="unknown")
     ap.add_argument("--notes", default="")
+    ap.add_argument("--player", help="stable id of the person filmed (e.g. p12); the same person should not appear in both splits")
     a = ap.parse_args(argv)
     clips = load_manifest(a.root)
     if any(c.id == a.id for c in clips):
         raise SystemExit(f"A clip with id {a.id!r} already exists.")
     if not a.video.exists():
         raise SystemExit(f"{a.video} not found.")
-    clip = Clip(id=a.id, file=f"clips/{a.id}/source{a.video.suffix.lower()}", split=a.split, handedness=a.hand, backhand_style=a.backhand, camera_view=a.view,
+    other = [c for c in clips if a.player and c.player == a.player and c.split != a.split]
+    if other:
+        print(f"WARNING: player {a.player} is already in the {other[0].split} split ({', '.join(c.id for c in other)}); "
+              "held-out results for this player will not show how the app does on new people.")  # fmt: skip
+    clip = Clip(id=a.id, file=f"clips/{a.id}/source{a.video.suffix.lower()}", split=a.split, handedness=a.hand, backhand_style=a.backhand, camera_view=a.view, player=a.player,
                 source={"title": a.video.name, "page": a.page, "author": a.author, "licence": a.licence}, notes=a.notes)  # fmt: skip
     if a.labels:
         doc = json.loads(a.labels.read_text())

@@ -80,18 +80,43 @@ def summarise(items: list[dict]) -> dict:
         "timing_vs_contact": _timing([x["err"] for x in found if x["contact_kind"] == "contact"]),
         "timing_vs_swing_peak": _timing([x["err"] for x in found if x["contact_kind"] == "peak"]),
         "timing_sources": {k: sum(x.get("timing_source") == k for x in found) for k in sorted({x.get("timing_source") or "?" for x in found})},
+        "other_by_subtype": _other_by_subtype(items),
+        "ball_contact": _ball_contact(scored, [x for x in items if x["true"] is not None]),
     }  # fmt: skip
 
 
-def score_clip(labels: Labels, preds: list[dict]) -> list[dict]:
+def _ball_contact(scored: list[dict], labelled: list[dict]) -> dict:
+    """Of the strokes where a ball was there to find (contact_kind "contact"), how many were detected and timed from ball contact.
+    A contact claimed with no visible ball is false whatever the stroke, so those are counted over every labelled stroke (``labelled``)."""
+    with_ball = [x for x in scored if x["contact_kind"] == "contact"]
+    det = [x for x in with_ball if x["pred"] != "missed"]
+    hit = [x for x in det if x.get("timing_source") == "ball_contact"]
+    phantom = [x for x in labelled if x["contact_kind"] != "contact" and x.get("timing_source") == "ball_contact"]
+    return {"with_ball": len(with_ball), "detected": len(det), "contact_found": len(hit), "found_rate_of_detected": round(len(hit) / len(det), 3) if det else None,
+            "timing_when_found": _timing([x["err"] for x in hit]), "found_without_visible_ball": len(phantom)}  # fmt: skip
+
+
+def _other_by_subtype(items: list[dict]) -> dict:
+    """What the app made of strokes it does not label (smash, slice, volley): e.g. {"smash": {"serve": 3, "missed": 1}}."""
+    out: dict[str, dict[str, int]] = {}
+    for x in items:
+        if x["true"] == "other":
+            d = out.setdefault(x.get("subtype") or "unspecified", {})
+            d[x["pred"]] = d.get(x["pred"], 0) + 1
+    return out
+
+
+def score_clip(labels: Labels, preds: list[dict], player: str | None = None) -> list[dict]:
     lab = [vars(s) for s in labels.strokes]
     pairs, miss, extra = match(lab, preds)
+    tags = lambda i: {"t": lab[i]["contact"], "handedness": lab[i]["handedness"], "camera_view": lab[i]["camera_view"], "backhand_style": lab[i]["backhand_style"],  # noqa: E731
+                      "subtype": lab[i]["subtype"], "player": player}  # fmt: skip
     items = []
     for i, j in pairs:
         items.append({"true": lab[i]["type"], "pred": preds[j]["type"], "err": round(preds[j]["time"] - lab[i]["contact"], 3), "contact_kind": lab[i]["contact_kind"],
-                      "timing_source": preds[j].get("timing_source"), "t": lab[i]["contact"], "handedness": lab[i]["handedness"], "camera_view": lab[i]["camera_view"]})  # fmt: skip
+                      "timing_source": preds[j].get("timing_source"), **tags(i)})  # fmt: skip
     for i in miss:
-        items.append({"true": lab[i]["type"], "pred": "missed", "err": None, "contact_kind": lab[i]["contact_kind"], "t": lab[i]["contact"], "handedness": lab[i]["handedness"], "camera_view": lab[i]["camera_view"]})
+        items.append({"true": lab[i]["type"], "pred": "missed", "err": None, "contact_kind": lab[i]["contact_kind"], **tags(i)})
     for j in extra:
         items.append({"true": None, "pred": preds[j]["type"], "t": preds[j]["time"]})
     return sorted(items, key=lambda x: x["t"])
@@ -104,7 +129,7 @@ def aggregate(per_clip: list[dict]) -> dict:
         clips = [c for c in per_clip if split == "all" or c["split"] == split]
         items = [x for c in clips for x in c["items"]]
         block = {"clips": len(clips), "overall": summarise(items)}
-        for key in ("camera_view", "handedness", "true"):
+        for key in ("camera_view", "handedness", "backhand_style", "player", "true"):
             groups = sorted({x[key] for x in items if x.get(key) and x["true"] in ("forehand", "backhand", "serve")})
             block["by_" + ("stroke_type" if key == "true" else key)] = {g: summarise([x for x in items if x.get(key) == g]) for g in groups}
         out[split] = block
@@ -218,7 +243,7 @@ def run_all(root: Path, options: Options, name: str, only: list[str] | None = No
         entry = {"clip": clip.id, "split": clip.split, "status": res["status"], "labelled": labels is not None, "labeller": labels and labels.labeller, "expert_labels": bool(labels and labels.expert),
                  "result": {k: v for k, v in res.items() if k != "preds"}, "preds": res.get("preds", []), "items": []}  # fmt: skip
         if labels is not None:
-            entry["items"] = score_clip(labels, res.get("preds", []))  # a failed clip scores every labelled stroke as missed
+            entry["items"] = score_clip(labels, res.get("preds", []), clip.player)  # a failed clip scores every labelled stroke as missed
         s = summarise(entry["items"])
         log(f"{clip.id:<16} {clip.split:<9} {res['status']:<7} labelled={s['labelled']:<3} detected={s['detected']:<3} correct={s['correct_label']:<3} false={s['false_detections']:<3} {res.get('message', '')}")
         per_clip.append(entry)
@@ -255,12 +280,19 @@ def print_run(r: dict, log=print) -> None:
     for split in SPLITS:
         b = r["metrics"][split]
         log(f"\n[{split}] {b['clips']} clips\n  overall            {_fmt(b['overall'])}")
-        for dim in ("by_stroke_type", "by_camera_view", "by_handedness"):
-            for g, m in b[dim].items():
+        for dim in ("by_stroke_type", "by_camera_view", "by_handedness", "by_backhand_style", "by_player"):
+            for g, m in b.get(dim, {}).items():  # runs stored before a breakdown existed simply lack it
                 log(f"  {dim[3:]:<12}{g:<9} {_fmt(m)}")
         log("  confusion (rows = labelled, cols = " + ", ".join((*PRED_TYPES, "missed")) + ")")
         for t, row in b["overall"]["confusion"].items():
             log(f"    {t:<9} " + " ".join(f"{row[p]:>4}" for p in (*PRED_TYPES, "missed")))
+        bc = b["overall"].get("ball_contact")
+        if bc and bc["with_ball"]:
+            t = bc["timing_when_found"]
+            log(f"  ball contact: found for {bc['contact_found']} of {bc['detected']} detected strokes with a visible ball ({bc['with_ball']} labelled)"
+                + (f", |t-contact| med {t['median_abs_s']:.2f}s" if t else "") + f"; claimed on {bc.get('found_without_visible_ball', 0)} strokes with no visible ball")  # fmt: skip
+        for sub, preds in b["overall"].get("other_by_subtype", {}).items():
+            log(f"  other: {sub:<11} taken as " + ", ".join(f"{p} {n}" for p, n in sorted(preds.items())))
 
 
 def load_run(root: Path, name: str) -> dict:

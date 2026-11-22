@@ -116,7 +116,8 @@ reference-like or diagnostic wording. Turning it on means the written findings l
   held-out footage every stroke was found and all 14 got the right label, including the five
   one-handed backhands that used to be called serves, but that split has now been used twice to
   judge changes, so it is no longer a clean test. See docs/VALIDATION.md for every number.
-- Ball contact was found for 2 of 14 held-out strokes; contact point is an unvalidated
+- Ball contact was found for 4 of 14 detected held-out strokes with a visible ball (a change that
+  raised this to 7 made timing worse and was reverted); contact point is an unvalidated
   observation. Court position needs five court lines in view and was found in none of the
   evaluation clips; footwork observations are unvalidated. Wrist/grip and segment sequencing are
   still not assessed.
