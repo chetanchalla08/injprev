@@ -181,6 +181,40 @@ the better source, a change that finds more contacts but times strokes worse is 
 against these strokes. A future attempt needs, on tune, a check that a found contact beats the pose
 timestamp (for example agreement with the hand-speed peak) before it replaces it.
 
+**Small player in modern phone footage (tune clip `p12_rally_front`, runs `p12_baseline`, `p12_cropped`,
+`p12_ball_side`; tune split only).** A user's 2.5-minute rally clip (960x540, 30 fps, fixed camera across the
+court, player about 90 px tall, about 20% of the frame height) came back as 18 forehands, 1 backhand, 2 serves and
+13 unlabelled; read by eye at 0.1 s steps it holds 25 forehands, 7 two-handed backhands and no serves. Added to
+tune as player p12 (32 strokes). Baseline on the clip: 25 of 32 found, 16 labelled correctly, 9 false detections.
+Why, from the pose data: the hitting wrist's visibility flickers frame to frame (about half of the frames below
+0.5 have a frame within ±2 that is above 0.7), and the wrist *positions* on those frames are also wrong.
+- 5 of the 7 backhands were missed or unlabelled: during a two-handed backhand the wrists overlap and visibility
+  falls to 0.34-0.43, under the swing finder's 0.45.
+- 10 strokes were left unlabelled by the hidden-lead-up rule, which fires because of flicker, not a hidden arm.
+- Both "serves" rest on single frames: at 108.6 s a three-frame wrist jump above the head while in the ready
+  position, at 119.8 s a forehand with a high finish whose fastest frame was an unseen, interpolated one.
+- The 9 false detections are real hand movement (racket coming back from the finish 0.9-1.3 s after a shot,
+  ready-position movement), not jitter: neither speed, travel on well-seen frames, nor direction separates them.
+
+Tried and **rejected**: treating short visibility drops as flicker (rolling maximum over ±2 frames) — false
+detections 9 → 18 on the clip, because the positions on those frames are wrong too. The cropped second pose pass
+(`p12_cropped`) found more strokes (25 → 28) but labelled fewer correctly (16 → 13; unlabelled 8 → 13) — **not
+adopted**.
+
+**Adopted: label an unlabelled stroke from the ball's side at contact** (`segment.ball_side_label`). When ball
+tracking found a contact and the pose left the stroke unlabelled, the ball's position relative to the hip centre
+decides it: on the hitting-arm side, forehand; across the body, backhand (confidence 0.45). It abstains when the
+ball is within 0.8 torso lengths of the hips or the shoulders are within 0.25 torso lengths of each other across
+the image (side-on, where left and right say nothing). Of the clip's 23 real strokes with a found contact it
+gives a side for 5, all right and all forehands; it abstains on both backhands that have a contact. Tune (46 clips, 102 strokes): correct 41 → 45 (40% → 44%), unlabelled
+22 → 18, wrong labels 3 → 3, detection unchanged. `p12_rally_front` 16 → 19, `p1_fh_shadow` 0 → 1. Held-out
+was not scored for this change.
+
+Still open on this clip: the missed two-handed backhands, the two false serves, and the 9 false detections. The
+serve fixes tried (a toss seen on more than one frame; ignoring unseen frames when finding the fastest moment)
+changed nothing on the clip and were not kept. The real remedy is better input: the player filling at least a
+third of the frame height, and 60 fps.
+
 ### 1.4 "Not assessed" items revisited
 | Item | Outcome | Why |
 |---|---|---|

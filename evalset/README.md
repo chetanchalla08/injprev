@@ -80,17 +80,17 @@ starting with `#` are ignored. Use `--offset <id>=<seconds>` if the clocks diffe
 
 ## What is in the set now
 
-58 labelled clips (plus 4 unlabelled) cut from 22 freely licensed films (sources and licences are in `manifest.json`;
+59 labelled clips (plus 4 unlabelled): 58 cut from 22 freely licensed films and one phone recording provided by the project owner (sources and licences are in `manifest.json`;
 what was found but left out, and why, is in [CANDIDATES.md](CANDIDATES.md)):
 
 | Split | Clips | Labelled strokes | Players |
 |---|---|---|---|
-| tune | 45 labelled | 101 (28 forehand, 19 backhand, 23 serve, 15 smash, 10 volley, 6 slice) | p1, p3, Sharapova, Rola, Tilden, p4, p5 (Tilden's pupils), p6 (EVD demonstrator) |
+| tune | 46 labelled | 133 (53 forehand, 26 backhand, 23 serve, 15 smash, 10 volley, 6 slice) | p1, p3, Sharapova, Rola, Tilden, p4, p5 (Tilden's pupils), p6 (EVD demonstrator), p12 (club player, modern phone footage) |
 | held_out | 13 labelled | 45 (12 forehand, 13 backhand, 6 serve, 4 smash, 6 volley, 4 slice) | p1 (other footage), p2, p8, p9 (1938 newsreel), p10 (junior), Gibson, p11 |
 | tune | 3 unlabelled | – | whole instructional files with hard cuts, for cut and re-acquisition checks |
 | held_out | 1 unlabelled | – | doubles from the stands (the pipeline correctly refuses it) |
 
-146 strokes from 14 players, no expert labels. Much of the new footage is 1930s-1950s film (black and
+178 strokes from 15 players, no expert labels. Much of the new footage is 1930s-1950s film (black and
 white, 24-30 fps, frequent cuts) or 320x240 coaching video, so it stresses the pose model more than modern
 phone footage would. Player p1 appears in both splits (different footage); every other held-out player is
 new. Held-out was scored once on 2026-11-21 (run `smash_fix_heldout`); see `docs/VALIDATION.md`.
@@ -101,22 +101,22 @@ the manifest are in presentation time.
 ## Coverage targets
 
 The aim is a set that looks like the people who will use the app, not more of the same few
-players. Counts are labelled strokes unless stated; "now" is the set as of 2026-11-21.
+players. Counts are labelled strokes unless stated; "now" is the set as of 2026-11-22.
 
 | Dimension | Target | Now |
 |---|---|---|
-| Labelled strokes | 300+ | 146 |
-| Distinct players | 20+ | 14 |
+| Labelled strokes | 300+ | 178 |
+| Distinct players | 20+ | 15 |
 | Held-out players never seen in tune | 8+ | 6 (p2, p8, p9, p10, p11, Gibson) |
-| Playing level (recorded in clip notes as `level: beginner/club/advanced/pro`) | 5+ players at each of beginner, club, advanced | beginner 3 (p4, p5, p10); the rest instructional demos and pros |
+| Playing level (recorded in clip notes as `level: beginner/club/advanced/pro`) | 5+ players at each of beginner, club, advanced | beginner 3 (p4, p5, p10); club 1 (p12); the rest instructional demos and pros |
 | Left-handed players | 4+ players, 60+ strokes | 1 player, 10 strokes |
 | One-handed backhand players | 6+ players, 60+ backhands | 6 players, 22 backhands |
-| Two-handed backhand players | 8+ players, 60+ backhands | 3 players, 10 backhands |
+| Two-handed backhand players | 8+ players, 60+ backhands | 4 players, 17 backhands |
 | Serves | 60+, from 10+ players | 29, from 7 players |
-| Forehands | 80+ | 40 |
+| Forehands | 80+ | 65 |
 | Camera: side | 50+ | 10 |
 | Camera: behind (incl. high behind the baseline) | 50+ | 16 |
-| Camera: front / across the net | 50+ | 87 |
+| Camera: front / across the net | 50+ | 119 |
 | Camera: oblique | 50+ | 25 |
 | Frame rate 50-60 fps | half the footage | 0 (all 24-30 fps) |
 | **Hard case:** one-handed backhand on a high ball | 20+ | 0 labelled as such |

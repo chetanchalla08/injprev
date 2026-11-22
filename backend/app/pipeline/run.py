@@ -21,7 +21,7 @@ from .findings import build_report
 from .measure import measure_stroke
 from .options import Options
 from .pose import Detector, find_candidates, refine_with_crops, track_player
-from .segment import STROKE_TYPES, Stroke, apply_ball, detect_strokes, manual_stroke, phases
+from .segment import STROKE_TYPES, Stroke, apply_ball, clear_ball_side, detect_strokes, manual_stroke, phases
 from .signals import PoseTrack
 from .video import normalize, quality_checks
 from .visual import Visual, visual_pass
@@ -55,6 +55,8 @@ def compose(track: PoseTrack, aux: dict, *, intake: dict, quality: dict, meta: d
     ball_tracks = ballmod.from_json(aux.get("ball_tracks")) if options.ball else []
     if options.ball:
         strokes = apply_ball(tm, strokes, ball_tracks, hand, recover_hidden=options.recover_hidden)
+    else:
+        strokes = clear_ball_side(strokes)
     measures = {s.id: measure_stroke(tm, s, hand, with_contact=options.ball) for s in strokes}
     extras: dict = {"ball_on": options.ball, "options": options.to_dict(), "phases": {s.id: phases(tm, s, hand) for s in strokes}}
 
