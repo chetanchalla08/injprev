@@ -150,6 +150,37 @@ tune. The rule was removed: serves are a supported stroke and smashes are not, s
 more than calling a smash a serve. Smashes are therefore called serves again (13 of 15 on tune before the
 rule). To revisit it, tune needs serves with a slow, high toss and smashes inside rallies.
 
+**Ball contact (runs `ball_tune_*`, `ball_b2_tune`, `ball_b2_heldout`; tried and reverted).** The report now
+says, of detected strokes with a visible ball, how often contact was found, and on how many strokes with no
+visible ball (shadow swings, any stroke type) a contact was claimed anyway. Before this change: tune 10 of 14
+found, 16 claimed with no ball; held-out (`smash_fix_heldout`) 4 of 14 found, 3 claimed with no ball. (The
+README's earlier 12/14 and 2/14 were from older runs.)
+
+Diagnosis on tune only: three of the four tune misses are clay-court backhands in `p1_bh2_ball`, where the
+blurred ball reads as very bright pale orange (OpenCV hue 10-14, value about 250), outside the yellow-green
+range; the fourth (`rola_a` 5.45 s) has the ball out of frame. Most false claims come from blobs on the
+player (face, shoes, a yellow shirt) or from a court blob linked onto racket blur, where one point beyond
+arm's reach was enough for the track to count as a ball. Variants on tune:
+
+| variant | found (of 14) | claimed with no ball (of 84) |
+|---|---|---|
+| current | 10 | 16 |
+| + pale-orange hue band (5-20, value ≥ 230) | 13 | not counted on all strokes (6 on fh/bh/serve, up from 3) |
+| + mask of head, legs, torso | 13 | 18 |
+| two far points only | 9 | 9 |
+| **B2: hue band + mask + two far points** | **11** | **9** |
+
+**Held-out, scored once with B2 (run `ball_b2_heldout`, 13 clips).** Contact found 4 → 7 of 14, claimed with no
+ball 3 → 3. But stroke timing got worse: on the 14 detected strokes with a visible ball, median error
+0.04 → 0.07 s, within 0.10 s 11 → 9, more than 0.20 s off 0 → 2. Several new "contacts" replaced pose
+timestamps that were already right (`p1_serve_ball` 5.64 s: 0.00 → 0.28 s; `p2_fh_ball` 8.8 s: 0.00 →
+0.28 s). Tune had shown the same direction (median 0.05 → 0.07 s). Since the report presents ball timing as
+the better source, a change that finds more contacts but times strokes worse is not an improvement.
+
+**Reverted.** Only the measure was kept. Held-out has now been seen for this change, so B2 must not be tuned
+against these strokes. A future attempt needs, on tune, a check that a found contact beats the pose
+timestamp (for example agreement with the hand-speed peak) before it replaces it.
+
 ### 1.4 "Not assessed" items revisited
 | Item | Outcome | Why |
 |---|---|---|

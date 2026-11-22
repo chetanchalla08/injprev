@@ -81,7 +81,19 @@ def summarise(items: list[dict]) -> dict:
         "timing_vs_swing_peak": _timing([x["err"] for x in found if x["contact_kind"] == "peak"]),
         "timing_sources": {k: sum(x.get("timing_source") == k for x in found) for k in sorted({x.get("timing_source") or "?" for x in found})},
         "other_by_subtype": _other_by_subtype(items),
+        "ball_contact": _ball_contact(scored, [x for x in items if x["true"] is not None]),
     }  # fmt: skip
+
+
+def _ball_contact(scored: list[dict], labelled: list[dict]) -> dict:
+    """Of the strokes where a ball was there to find (contact_kind "contact"), how many were detected and timed from ball contact.
+    A contact claimed with no visible ball is false whatever the stroke, so those are counted over every labelled stroke (``labelled``)."""
+    with_ball = [x for x in scored if x["contact_kind"] == "contact"]
+    det = [x for x in with_ball if x["pred"] != "missed"]
+    hit = [x for x in det if x.get("timing_source") == "ball_contact"]
+    phantom = [x for x in labelled if x["contact_kind"] != "contact" and x.get("timing_source") == "ball_contact"]
+    return {"with_ball": len(with_ball), "detected": len(det), "contact_found": len(hit), "found_rate_of_detected": round(len(hit) / len(det), 3) if det else None,
+            "timing_when_found": _timing([x["err"] for x in hit]), "found_without_visible_ball": len(phantom)}  # fmt: skip
 
 
 def _other_by_subtype(items: list[dict]) -> dict:
@@ -274,6 +286,11 @@ def print_run(r: dict, log=print) -> None:
         log("  confusion (rows = labelled, cols = " + ", ".join((*PRED_TYPES, "missed")) + ")")
         for t, row in b["overall"]["confusion"].items():
             log(f"    {t:<9} " + " ".join(f"{row[p]:>4}" for p in (*PRED_TYPES, "missed")))
+        bc = b["overall"].get("ball_contact")
+        if bc and bc["with_ball"]:
+            t = bc["timing_when_found"]
+            log(f"  ball contact: found for {bc['contact_found']} of {bc['detected']} detected strokes with a visible ball ({bc['with_ball']} labelled)"
+                + (f", |t-contact| med {t['median_abs_s']:.2f}s" if t else "") + f"; claimed on {bc.get('found_without_visible_ball', 0)} strokes with no visible ball")  # fmt: skip
         for sub, preds in b["overall"].get("other_by_subtype", {}).items():
             log(f"  other: {sub:<11} taken as " + ", ".join(f"{p} {n}" for p, n in sorted(preds.items())))
 

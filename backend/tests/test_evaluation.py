@@ -50,6 +50,21 @@ def test_scores_precision_recall_confusion_and_timing():
     assert set(agg["tune"]["by_stroke_type"]) == {"forehand", "backhand", "serve"} and "side" in agg["tune"]["by_camera_view"] and "right" in agg["tune"]["by_handedness"]
 
 
+def test_reports_how_often_ball_contact_was_found_when_a_ball_was_visible():
+    labels = parse_labels(L([
+        {"type": "forehand", "start": 0.5, "contact": 1.0, "end": 1.5}, {"type": "backhand", "start": 2.5, "contact": 3.0, "end": 3.5},
+        {"type": "forehand", "start": 4.5, "contact": 5.0, "end": 5.5}, {"type": "serve", "start": 6.5, "contact": 7.0, "end": 7.5, "contact_kind": "peak"},
+        {"type": "other", "subtype": "smash", "start": 8.5, "contact": 9.0, "end": 9.5, "contact_kind": "peak"},
+    ]))  # fmt: skip
+    preds = [{"type": "forehand", "time": 1.02, "timing_source": "ball_contact"}, {"type": "backhand", "time": 3.2, "timing_source": "peak_hand_speed"},
+             {"type": "serve", "time": 7.0, "timing_source": "ball_contact"}, {"type": "serve", "time": 9.0, "timing_source": "ball_contact"}]  # fmt: skip
+    b = score.summarise(score.score_clip(labels, preds))["ball_contact"]
+    assert (b["with_ball"], b["detected"], b["contact_found"]) == (3, 2, 1)  # the shadow serve has no ball to find
+    assert b["found_without_visible_ball"] == 2  # ... so a contact "found" there is a false one, and so is one on a shadow smash
+    assert b["found_rate_of_detected"] == 0.5 and b["timing_when_found"]["median_abs_s"] == pytest.approx(0.02)
+    assert score.summarise([])["ball_contact"]["found_rate_of_detected"] is None
+
+
 def test_other_strokes_take_a_subtype_only_from_the_known_list():
     ok = parse_labels(L([{"type": "other", "subtype": "smash", "start": 1, "contact": 2, "end": 3}, {"type": "other", "start": 4, "contact": 5, "end": 6}]))
     assert [s.subtype for s in ok.strokes] == ["smash", None] and ok.to_dict()["strokes"][0]["subtype"] == "smash"
