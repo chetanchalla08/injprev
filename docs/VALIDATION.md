@@ -281,3 +281,7 @@ is not a probability of anything about the player's body.
 3. Footage with a full court in view and labelled positions, before any footwork claim.
 4. Joint annotation on 100+ frames across views, then motion capture, before trusting any angle.
 5. Coach review of flagged clips; clinician sign-off of evidence and wording.
+6. Small players in phone footage (`p12_rally_front`): find two-handed backhands whose hitting wrist is
+   barely seen (4 of 7 undetected) without adding false swings; stop single noisy high-wrist frames and high
+   forehand finishes from becoming serves; tell recovery movements from swings. More clips like it are needed
+   before any of these is tuned, so one clip does not decide the rules.
