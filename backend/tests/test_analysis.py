@@ -95,6 +95,15 @@ def test_backhand_is_labelled_even_when_the_hidden_hand_is_misplaced(yaw):
 
 
 @pytest.mark.parametrize("yaw", [0, 45, 135, 180])
+def test_hidden_backswing_stays_unlabelled_if_the_hand_is_not_seen_again_before_the_hit(yaw):
+    # The backhand exception decides from the swing seen just before the hit; with that hidden too there is nothing to go on.
+    track = make_track([(2.0, "backhand_early_backswing")], yaw=yaw, noise=1.0)
+    hide = (track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.1)
+    track.vis[hide, R_WR] = 0.1
+    assert all(x.type != "backhand" for x in detect_strokes(track, "right", "one_handed"))
+
+
+@pytest.mark.parametrize("yaw", [0, 45, 135, 180])
 def test_left_handed_backhand_is_labelled_even_when_the_hidden_hand_is_misplaced(yaw):
     track = make_track([(2.0, "backhand_early_backswing")], yaw=yaw, left_handed=True, noise=1.0)
     hide = (track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.4)
