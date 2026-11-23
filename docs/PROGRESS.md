@@ -6,3 +6,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 
 - Swings the arm rules leave unlabelled are now labelled from the side the ball was on at contact (PR #2).
 - Backhands with a hidden backswing are labelled from the part of the swing seen before the hit (PR #3).
+- Still open on p12_rally_front: 4 undetected backhands, 2 false serves, about 9 false swings.
