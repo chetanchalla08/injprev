@@ -8,7 +8,7 @@ from app.pipeline.findings import build_report, confidence
 from app.pipeline.measure import measure_stroke
 from app.pipeline.pose import FramePoses, track_player
 from app.pipeline.segment import detect_strokes, manual_stroke
-from app.pipeline.signals import L_ANK, L_HIP, L_KNEE, R_ANK, R_HIP, R_KNEE, R_EL, R_WR, fill_short_gaps, smooth
+from app.pipeline.signals import L_ANK, L_HIP, L_KNEE, L_WR, R_ANK, R_HIP, R_KNEE, R_EL, R_WR, fill_short_gaps, smooth
 
 from .synth import FakeDetector, make_track
 
@@ -91,6 +91,17 @@ def test_backhand_is_labelled_even_when_the_hidden_hand_is_misplaced(yaw):
     w = track.world
     w[hide, R_WR] = w[hide, R_HIP] + (w[hide, R_HIP] - w[hide, L_HIP])  # one hip width out on the hitting-arm side
     s = detect_strokes(track, "right", "one_handed")
+    assert [x.type for x in s] == ["backhand"] and s[0].label_confidence <= 0.45
+
+
+@pytest.mark.parametrize("yaw", [0, 45, 135, 180])
+def test_left_handed_backhand_is_labelled_even_when_the_hidden_hand_is_misplaced(yaw):
+    track = make_track([(2.0, "backhand_early_backswing")], yaw=yaw, left_handed=True, noise=1.0)
+    hide = (track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.4)
+    track.vis[hide, L_WR] = 0.1
+    w = track.world
+    w[hide, L_WR] = w[hide, L_HIP] + (w[hide, L_HIP] - w[hide, R_HIP])  # one hip width out on the hitting-arm side
+    s = detect_strokes(track, "left", "one_handed")
     assert [x.type for x in s] == ["backhand"] and s[0].label_confidence <= 0.45
 
 
