@@ -220,11 +220,10 @@ def classify(track: PoseTrack, peak_i: int, handedness: str, backhand_style: str
     lead = vis_d[lead_sl]
     if lead.size >= 3 and (lead < 0.5).mean() > 0.5:
         # Exception: a backhand backswing takes the hand across and behind the body, out of a front camera's sight.
-        # Accepted only when the model's (low-visibility) estimate puts the hidden hand across the body, the hand is
-        # seen again before the hit, and the seen part of the swing travels out to the hitting-arm side.
-        hidden_lat = lat[lead_sl][lead < 0.5]
-        across = np.isfinite(hidden_lat).all() and float(np.median(hidden_lat)) < 0.0
-        if across and vis_d[a].mean() >= 0.5 and np.isfinite(score) and score < -SIDE_MIN_SCORE:
+        # Accepted when the hand is seen again before the hit and the seen part of the swing travels out to the
+        # hitting-arm side. Where the model puts the hidden hand is not used: for a small player it is often on the
+        # wrong side of the body (tune clip p12_rally_front).
+        if vis_d[a].mean() >= 0.5 and np.isfinite(score) and score < -SIDE_MIN_SCORE:
             return "backhand", 0.45, "The hitting hand went out of sight behind the body (as in a backhand backswing), then travelled out to the hitting-arm side. Labelled with low confidence because the backswing was hidden."
         return "unclassified", 0.1, "The hitting arm was hidden from the camera in the lead-up, so this may be only the end of a swing."
     az = track.pelvis_azimuth[peak_i]
