@@ -215,6 +215,23 @@ serve fixes tried (a toss seen on more than one frame; ignoring unseen frames wh
 changed nothing on the clip and were not kept. The real remedy is better input: the player filling at least a
 third of the frame height, and 60 fps.
 
+**Backhands with a hidden lead-up on small players (tune clip `p12_rally_front`, runs `p12_bh_hidden`,
+`ho_before_bh`, `ho_bh_hidden`).** Of the clip's 7 two-handed backhands, 4 are never detected (hitting-wrist
+visibility 0.34–0.45 around the peak, or too little hand travel) and 2 were detected but left unlabelled by the
+hidden-arm guard. The guard's backhand exception required the pose model's low-visibility estimate to put the hidden
+hand across the body; on this clip that estimate is on the wrong side even for real backhands (median +0.78 and
++0.09 hip widths toward the hitting-arm side), while the part of the swing seen before the hit travels clearly
+backhand-wise. The exception no longer uses where the hidden hand was estimated; it still needs the hand seen
+again before the hit (visibility ≥ 0.5) and travel out to the hitting-arm side of at least 0.6 hip widths
+(confidence 0.45). A forehand with a hidden backswing stays unlabelled as long as its seen part travels
+forehand-wise; the risk is a stroke whose seen part travels backhand-wise, as the false detection below does. Tune: correct 45 → 49 (44% → 48%),
+unlabelled 18 → 14, wrong labels 3 → 3, detection and false detections unchanged; on `p12_rally_front` backhands
+labelled 1 → 3, and one false detection (a recovery movement at 99.4 s) is now labelled backhand instead of left
+unlabelled. Held-out, checked once and not tuned on: no change on any count (correct 20 → 20, wrong 1 → 1).
+Rejected: the "use the better-seen wrist" idea for two-handed backhands (on this clip the other wrist is seen even
+less, mean visibility 0.07–0.57) and lowering `MIN_SWING_VIS` (0.40: one more backhand, one more false detection;
+0.35: one backhand labelled forehand and two more false detections). The 4 undetected backhands remain.
+
 ### 1.4 "Not assessed" items revisited
 | Item | Outcome | Why |
 |---|---|---|
