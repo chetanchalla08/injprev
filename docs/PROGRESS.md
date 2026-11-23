@@ -13,3 +13,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 
 - New test: no backhand is claimed when the hand stays hidden right up to the hit.
 - VALIDATION next steps now list the small-player problems (undetected backhands, false serves, false swings).
+- Main reached 30 commits; aiming for a steady count each day.
