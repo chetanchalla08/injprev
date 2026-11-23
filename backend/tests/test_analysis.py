@@ -94,9 +94,10 @@ def test_backhand_is_labelled_even_when_the_hidden_hand_is_misplaced(yaw):
     assert [x.type for x in s] == ["backhand"] and s[0].label_confidence <= 0.45
 
 
-def test_forehand_with_hidden_backswing_stays_unclassified():
-    # The hidden hand was on the hitting-arm side, so nothing says backhand: the guard still applies.
-    track = make_track([(2.0, "forehand")], yaw=135, noise=1.0)
+@pytest.mark.parametrize("yaw", [0, 45, 135, 180])
+def test_forehand_with_hidden_backswing_stays_unclassified(yaw):
+    # Nothing seen before the hit travels backhand-wise, so the hidden-arm guard still applies from any camera angle.
+    track = make_track([(2.0, "forehand")], yaw=yaw, noise=1.0)
     hide = (track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.4)
     track.vis[hide, R_WR] = 0.1
     assert [x.type for x in detect_strokes(track, "right", "one_handed")] == ["unclassified"]
