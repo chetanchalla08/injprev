@@ -11,3 +11,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 
 ## 2026-11-23
 
+- New test: no backhand is claimed when the hand stays hidden right up to the hit.
