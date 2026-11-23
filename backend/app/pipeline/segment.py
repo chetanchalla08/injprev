@@ -324,6 +324,43 @@ TIMING_LABEL = {
     "highest_hand": "Highest point of the hitting hand (the ball was not tracked well enough here; this is near contact, not contact)",
 }
 HIDDEN_ARM_VIS = 0.45
+BALL_SIDE_MIN = 0.8  # ball at contact at least this many torso lengths to one side of the hip centre
+FACING_MIN = 0.25  # shoulders at least this many torso lengths apart across the image (not side-on)
+BALL_SIDE_CONF = 0.45
+BALL_SIDE_BASIS = "The arm was too hard to follow to label this from the swing, so it is labelled from the ball: "
+
+
+def clear_ball_side(strokes: list[Stroke]) -> list[Stroke]:
+    """Undo labels that came from the ball, so a rebuild without the ball (or without a contact) does not keep them."""
+    for s in strokes:
+        if s.source == "auto" and s.label_basis.startswith(BALL_SIDE_BASIS):
+            s.type, s.label_confidence = "unclassified", 0.1
+            s.label_basis = "The hitting arm was too hard to follow to label this swing."
+    return strokes
+
+
+def ball_side_label(track: PoseTrack, stroke: Stroke, handedness: str) -> str | None:
+    """Forehand or backhand from which side of the body the ball was on at contact; None when that is unclear.
+
+    For a player small in the frame the wrist landmarks flicker and the pose-based cues leave many strokes
+    unlabelled (tune clip p12_rally_front). The ball at contact is found independently of the wrist: on the
+    hitting-arm side of the hips it is a forehand, across the body a backhand. Needs the shoulders spread across
+    the image (judged over +-1 s, so a turn during the backswing does not hide it) to know which side is which.
+    """
+    if not stroke.contact or stroke.contact.get("xy") is None:
+        return None
+    dom, non = sides(handedness)
+    i, r = track.index_at(stroke.peak), track.rate
+    wide = slice(max(0, i - int(r)), min(track.n, i + int(r) + 1))
+    near = slice(max(0, i - 3), min(track.n, i + 4))
+    tl = float(track.torso_len[i])
+    with np.errstate(all="ignore"):
+        across = float(np.nanmedian(track.xy_s[wide, dom.sh, 0] - track.xy_s[wide, non.sh, 0]))
+        hip = float(np.nanmedian(track.mid_hip[near, 0]))
+    off = (float(stroke.contact["xy"][0]) - hip) / tl if np.isfinite(tl) and tl > 0 else float("nan")
+    if not (np.isfinite(across) and np.isfinite(off)) or abs(across) / tl < FACING_MIN or abs(off) < BALL_SIDE_MIN:
+        return None
+    return "forehand" if off * across > 0 else "backhand"
 
 
 def apply_ball(track: PoseTrack, strokes: list[Stroke], ball_tracks: list, handedness: str, recover_hidden: bool = True) -> list[Stroke]:
@@ -338,6 +375,7 @@ def apply_ball(track: PoseTrack, strokes: list[Stroke], ball_tracks: list, hande
     from .signals import fill_short_gaps
 
     wrist = fill_short_gaps(wrist, int(0.2 * track.rate))
+    clear_ball_side(strokes)
     for s in strokes:
         s.pose_time = s.pose_time if s.pose_time is not None else s.peak
         s.peak, s.contact = s.pose_time, None
@@ -351,6 +389,11 @@ def apply_ball(track: PoseTrack, strokes: list[Stroke], ball_tracks: list, hande
             continue
         s.peak, s.timing_source = t, "ball_contact"
         s.contact = {"xy": est["xy"], "basis": est["basis"], "confidence": est["confidence"], "shift_s": round(t - s.pose_time, 3)}
+        if s.type == "unclassified" and s.source == "auto":
+            side = ball_side_label(track, s, handedness)
+            if side:
+                s.type, s.label_confidence = side, BALL_SIDE_CONF
+                s.label_basis = BALL_SIDE_BASIS + "at contact it was " + ("on the hitting-arm side of the body." if side == "forehand" else "across the body, on the other side from the hitting arm.")
     if not (recover_hidden and ball_tracks):
         return strokes
     chest = track.mid_sh.copy()

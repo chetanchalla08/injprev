@@ -1379,6 +1379,26 @@
    "cuts": null,
    "notes": "Colombian virtual sports school lesson, 320x240 at about 30 fps, clay court; edited with cross-fades, freeze frames and slow motion between shots (trimmed out here). Demonstrator in yellow shirt and white cap. level: advanced. Serve, filmed side-on; short clip between cross-fades.",
    "player": "p6"
+  },
+  {
+   "id": "p12_rally_front",
+   "file": "clips/p12_rally_front/source.mov",
+   "split": "tune",
+   "handedness": "right",
+   "backhand_style": "two_handed",
+   "camera_view": "front",
+   "t0": null,
+   "t1": null,
+   "player_hint": null,
+   "source": {
+    "title": "IMG_1126.mov",
+    "page": "local recording IMG_1126.mov, uploaded 2026-11-22",
+    "author": "",
+    "licence": "Provided by the project owner for internal evaluation; not redistributed"
+   },
+   "cuts": null,
+   "notes": "Modern phone footage, 960x540 at 29.97 fps, fixed camera across the court facing the player; player only about 90 px tall (20% of frame height). Rally forehands and two-handed backhands plus a few drop feeds. level: club.",
+   "player": "p12"
   }
  ]
 }

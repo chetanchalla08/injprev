@@ -289,3 +289,67 @@ def test_swing_phases_are_ordered():
     s = detect_strokes(track, "right", "one_handed")[0]
     p = phases(track, s, "right")
     assert p["preparation"][0] < p["forward_swing"][0] < p["forward_swing"][1] == p["follow_through"][0] < p["follow_through"][1]
+
+
+def _unlabelled_forehand(yaw, hand="right"):
+    """A forehand whose lead-up is hidden, so the pose alone leaves it unlabelled (see test_analysis)."""
+    track = make_track([(2.0, "forehand")], yaw=yaw, noise=1.0, left_handed=hand == "left")
+    track.vis[(track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.4), 16 if hand == "right" else 15] = 0.1
+    strokes = detect_strokes(track, hand, "one_handed")
+    assert [s.type for s in strokes] == ["unclassified"]
+    return track, strokes
+
+
+def _ball_at(track, i, side_tl, hand="right"):
+    """Ball paths in and out meeting at frame i, side_tl torso lengths from the hip centre toward the hitting-arm shoulder."""
+    dom, non = (12, 11) if hand == "right" else (11, 12)
+    across = np.sign(track.xy_s[i, dom, 0] - track.xy_s[i, non, 0])
+    c = np.array([track.mid_hip[i, 0] + across * side_tl * track.torso_len[i], track.mid_sh[i, 1]])
+    away = 1.0 if c[0] >= track.mid_hip[i, 0] else -1.0  # the ball comes in from outside, not across the body, and goes back out
+    tr_in = ball.BallTrack(list(range(i - 8, i + 1)), [(c[0] + away * 45 * (i - k), c[1] + 6 * (i - k)) for k in range(i - 8, i + 1)], [1.0] * 9)
+    tr_out = ball.BallTrack(list(range(i + 1, i + 8)), [(c[0] + away * 60 * (k - i), c[1] - 4 * (k - i)) for k in range(i + 1, i + 8)], [1.0] * 7)
+    return [tr_in, tr_out]
+
+
+@pytest.mark.parametrize("yaw", [0, 180])
+@pytest.mark.parametrize("hand", ["right", "left"])
+@pytest.mark.parametrize("side_tl, expected", [(1.2, "forehand"), (-1.2, "backhand"), (0.3, "unclassified")])
+def test_unlabelled_stroke_is_labelled_from_the_ball_side_at_contact(yaw, hand, side_tl, expected):
+    # p12_rally_front: player ~90 px tall, wrist landmarks flicker, so the pose leaves rally forehands and two-handed
+    # backhands unlabelled; the ball at contact, well to one side of the hips, still says which side the hit was on.
+    track, strokes = _unlabelled_forehand(yaw, hand)
+    i = track.index_at(strokes[0].peak)
+    got = apply_ball(track, strokes, _ball_at(track, i, side_tl, hand), hand, recover_hidden=False)
+    assert got[0].timing_source == "ball_contact"
+    assert got[0].type == expected
+    if expected != "unclassified":
+        assert got[0].label_confidence <= 0.5 and "ball" in got[0].label_basis
+
+
+def test_ball_side_is_not_used_when_the_player_is_side_on():
+    # Side-on the shoulders overlap in the image, so left and right of the hips says nothing about forehand or backhand.
+    track, strokes = _unlabelled_forehand(90)
+    i = track.index_at(strokes[0].peak)
+    got = apply_ball(track, strokes, _ball_at(track, i, 1.2), "right", recover_hidden=False)
+    assert got[0].type == "unclassified"
+
+
+def test_ball_side_never_changes_a_stroke_the_user_labelled():
+    track, strokes = _unlabelled_forehand(180)
+    strokes[0].source = "manual"
+    i = track.index_at(strokes[0].peak)
+    got = apply_ball(track, strokes, _ball_at(track, i, 1.2), "right", recover_hidden=False)
+    assert got[0].type == "unclassified"
+
+
+def test_ball_side_label_is_dropped_when_the_ball_no_longer_supports_it():
+    # A rebuild keeps saved labels; one that came from the ball must not outlive the ball (no contact now, or ball off).
+    track, strokes = _unlabelled_forehand(180)
+    i = track.index_at(strokes[0].peak)
+    labelled = apply_ball(track, strokes, _ball_at(track, i, 1.2), "right", recover_hidden=False)
+    assert labelled[0].type == "forehand"
+    again = apply_ball(track, labelled, [], "right", recover_hidden=False)
+    assert again[0].type == "unclassified" and again[0].timing_source == "peak_hand_speed"
+    off = run.compose(track, {}, intake={"handedness": "right", "backhand_style": "one_handed"}, quality=Q, meta=META, confirmations={},
+                      options=Options(ball=False, court=False), strokes=apply_ball(track, strokes, _ball_at(track, i, 1.2), "right", recover_hidden=False))  # fmt: skip
+    assert off["strokes"][0]["type"] == "unclassified"

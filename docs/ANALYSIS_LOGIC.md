@@ -53,7 +53,14 @@ within 2.2 torso lengths of the hitting wrist and within 0.3 s of the pose-based
 When found, the stroke is timed at contact (`timing.source = ball_contact`); otherwise it keeps
 peak hand speed (serves: highest hand) and the report says so. Contact point relative to the
 hips (height, distance, and "in front" only when side-on) is a **2D image-plane** quantity shown
-as an unvalidated observation; no rule uses it. Recovering strokes from the ball when the arm
+as an unvalidated observation. One rule uses the contact's side: an auto-detected stroke the swing
+rules left `unclassified` is labelled forehand when the ball at contact is at least 0.8 torso
+lengths to the hitting-arm side of the hip centre, backhand when as far on the other side (which
+side is which comes from the shoulders' image x-difference, median over ±1 s). It abstains when
+the ball is closer to the hips or the shoulders are within 0.25 torso lengths of each other
+(side-on), gives confidence 0.45, never changes a label the user set, and is undone on a rebuild
+without the ball or without a contact. With the player facing away it relies on the pose model
+keeping left and right landmarks on the right body side. Recovering strokes from the ball when the arm
 is hidden exists but is off (it produced false strokes). Phases: the forward swing starts when
 hand speed last dropped below 30 % of its peak; preparation is before, follow-through after
 the timestamp.
