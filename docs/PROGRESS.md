@@ -15,3 +15,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - VALIDATION next steps now list the small-player problems (undetected backhands, false serves, false swings).
 - Main reached 30 commits; aiming for a steady count each day.
 - Filming tip for better results: the player fills at least a third of the frame height, at 60 fps.
+- Next up: the two false serves on p12_rally_front (108.6 s and 119.8 s).
