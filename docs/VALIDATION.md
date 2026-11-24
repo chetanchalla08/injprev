@@ -310,5 +310,8 @@ is not a probability of anything about the player's body.
 5. Coach review of flagged clips; clinician sign-off of evidence and wording.
 6. Small players in phone footage (`p12_rally_front`): find two-handed backhands whose hitting wrist is
    barely seen (4 of 7 undetected) without adding false swings; stop single noisy high-wrist frames and high
-   forehand finishes from becoming serves; tell recovery movements from swings. More clips like it are needed
-   before any of these is tuned, so one clip does not decide the rules.
+   forehand finishes from becoming serves; tell the remaining recovery movements from swings (up-and-down ones are
+   now dropped; ones that travel across the body, such as 127.3 s, are not). More clips like it are needed
+   before any of these is tuned, so one clip does not decide the rules. A clip of the same player filmed closer
+   (filling at least a third of the frame, ideally at 60 fps), added to held-out, would show how much of this is
+   down to player size.

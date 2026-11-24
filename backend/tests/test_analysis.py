@@ -133,6 +133,15 @@ def test_hidden_take_back_stays_unlabelled_if_the_hand_is_not_seen_again_before_
     assert [x.type for x in detect_strokes(track, "right", "one_handed")] == ["unclassified"]
 
 
+@pytest.mark.parametrize("yaw", [0, 45, 135, 180])
+def test_left_handed_forehand_with_hidden_take_back_is_a_low_confidence_forehand(yaw):
+    track = make_track([(2.0, "forehand")], yaw=yaw, left_handed=True, noise=1.0)
+    hide = (track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.4)
+    track.vis[hide, L_WR] = 0.1
+    s = detect_strokes(track, "left", "one_handed")
+    assert [x.type for x in s] == ["forehand"] and s[0].label_confidence <= 0.45
+
+
 @pytest.mark.parametrize("yaw", [0, 90, 180])
 def test_fast_up_and_down_hand_movement_is_not_a_swing(yaw):
     # Tune clip p12_rally_front (87.3, 111.6, 116.2 s): lifting the racket into the ready position or bringing it back
@@ -147,6 +156,17 @@ def test_fast_up_and_down_hand_movement_is_not_a_swing(yaw):
     track.xy[:, R_WR, 0] += 0.8 * lift  # the same movement with as much travel across the body is still found
     del track.__dict__["xy_s"]  # cached smoothing of the old positions
     assert len(detect_strokes(track, "right", "one_handed")) == 1
+
+
+@pytest.mark.parametrize("yaw", [0, 90, 180])
+def test_left_hander_lifting_the_racket_up_and_down_is_not_a_swing(yaw):
+    track = make_track([], duration=4.0, yaw=yaw, left_handed=True)
+    sh = (track.xy[:, 11] + track.xy[:, 12]) / 2
+    torso = float(np.median(np.linalg.norm(sh - (track.xy[:, 23] + track.xy[:, 24]) / 2, axis=1)))
+    lift = 1.6 * torso * np.exp(-(((track.t - 2.0) / 0.12) ** 2))
+    track.xy[:, L_WR, 0] = sh[:, 0] - 0.3 * torso
+    track.xy[:, L_WR, 1] = sh[:, 1] + 1.2 * torso - lift
+    assert detect_strokes(track, "left", "one_handed") == []
 
 
 def test_wrong_handedness_is_not_silently_right():

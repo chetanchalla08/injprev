@@ -16,3 +16,9 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - Main reached 30 commits; aiming for a steady count each day.
 - Filming tip for better results: the player fills at least a third of the frame height, at 60 fps.
 - Next up: the two false serves on p12_rally_front (108.6 s and 119.8 s).
+
+## 2026-11-24
+
+- Fast hand movement that is mostly up and down (ready position, recovery) is no longer a swing (PR #6). Tune false swings 21 -> 15.
+- Forehands whose take-back is hidden behind the racket head are labelled forehand with low confidence (PR #6).
+- p12_rally_front now has 4 unlabelled swings instead of 7: two false swings (116.2 s, 127.3 s) and two forehands the pose cannot read (88.7 s, 101.2 s).
