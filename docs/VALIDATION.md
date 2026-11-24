@@ -232,6 +232,33 @@ Rejected: the "use the better-seen wrist" idea for two-handed backhands (on this
 less, mean visibility 0.07–0.57) and lowering `MIN_SWING_VIS` (0.40: one more backhand, one more false detection;
 0.35: one backhand labelled forehand and two more false detections). The 4 undetected backhands remain.
 
+**False swings and hidden forehand take-backs (tune clip `p12_rally_front`, runs `before_unlabelled`, `across_gate`,
+`hidden_fh`).** The clip's 7 unlabelled detections were read by eye at 0.1 s steps on player-cropped strips: 4 are
+not strokes (87.3 s walking into the ready position, 111.6 s recovery after the 110.4 s forehand, 116.2 s ready
+position, 127.3 s the racket coming back after the 126.4 s forehand, which itself is missed with wrist visibility
+0.28) and 3 are forehands (88.7, 101.2, 104.2 s) whose take-back is hidden behind the racket head. The earlier note
+that travel does not separate false detections held for total travel; **side-to-side** travel does: on this clip the
+false detections at 87.3, 90.6 and 111.6 s move the hand 0.27–0.43 torso lengths across the image within ±0.3 s,
+real strokes 0.59 or more.
+- **Adopted: swings need ≥ 0.5 torso lengths of side-to-side hand travel** (`segment.MIN_ACROSS`). Tune: false
+  detections 21 → 15 (`p12_rally_front` 9 → 6, `p4_a_serve_mid` 3 → 2, `tilden_b_bh_mid` 1 → 0,
+  `tilden_b_fh_side2` 1 → 0), strokes found 66 → 66, correct 49 → 49. One cost: on `p4_a_serve_front` a serve the
+  serve finder misses was unlabelled and is now labelled forehand (wrong labels 3 → 4), because the rising arm is no
+  longer a swing and the follow-through across the body is.
+- **Adopted: a forehand whose take-back was hidden is labelled forehand (confidence 0.45)** when the hand is seen
+  again 0.1–0.4 s before the peak and swings across the body by ≥ 1.5 hip widths, against 0.6 for the backhand
+  exception, because recovery movements drift across. Of `p12_rally_front`'s labelled strokes, every one with a
+  hidden lead-up and that much travel is a forehand (0 backhands). Tune: correct 49 → 51 (`p12_rally_front` +1,
+  `p1_fh_shadow` +1), unlabelled 13 → 11, wrong labels unchanged. This replaces the earlier choice to leave every
+  hidden-backswing forehand unlabelled.
+- Not changed: the ball-side label abstains correctly at 101.2 and 104.2 s; contact there is in front of the body,
+  which a front camera cannot place on either side. 116.2 s (0.57) stays a false detection and 88.7 s stays
+  unlabelled (its 3D hand path reads backhand-wise while the hands are apart).
+
+Held-out was scored with each run (no change on any count: found 25, correct 20, wrong 1, false 3) and not tuned
+on. Both rules were set on one player's footage; there is no other small-player rally clip, so how they carry over
+to other players is not known.
+
 ### 1.4 "Not assessed" items revisited
 | Item | Outcome | Why |
 |---|---|---|
