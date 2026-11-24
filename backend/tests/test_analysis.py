@@ -123,6 +123,7 @@ def test_forehand_with_hidden_take_back_is_a_low_confidence_forehand(yaw):
     track.vis[hide, R_WR] = 0.1
     s = detect_strokes(track, "right", "one_handed")
     assert [x.type for x in s] == ["forehand"] and s[0].label_confidence <= 0.45
+    assert "take-back was hidden" in s[0].label_basis  # the player is told why the label is uncertain
 
 
 @pytest.mark.parametrize("yaw", [0, 45, 135, 180])
