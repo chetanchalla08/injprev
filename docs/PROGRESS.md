@@ -22,3 +22,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - Fast hand movement that is mostly up and down (ready position, recovery) is no longer a swing (PR #6). Tune false swings 21 -> 15.
 - Forehands whose take-back is hidden behind the racket head are labelled forehand with low confidence (PR #6).
 - p12_rally_front now has 4 unlabelled swings instead of 7: two false swings (116.2 s, 127.3 s) and two forehands the pose cannot read (88.7 s, 101.2 s).
+- Left-handed tests added for both new rules, and the up-and-down test now runs from six camera angles (PR #7 and this batch).
