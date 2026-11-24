@@ -16,3 +16,7 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - Main reached 30 commits; aiming for a steady count each day.
 - Filming tip for better results: the player fills at least a third of the frame height, at 60 fps.
 - Next up: the two false serves on p12_rally_front (108.6 s and 119.8 s).
+
+## 2026-11-24
+
+- Fast hand movement that is mostly up and down (ready position, recovery) is no longer a swing (PR #6). Tune false swings 21 -> 15.
