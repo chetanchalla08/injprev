@@ -20,3 +20,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 ## 2026-11-24
 
 - Fast hand movement that is mostly up and down (ready position, recovery) is no longer a swing (PR #6). Tune false swings 21 -> 15.
+- Forehands whose take-back is hidden behind the racket head are labelled forehand with low confidence (PR #6).
