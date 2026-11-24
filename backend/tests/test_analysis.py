@@ -158,6 +158,17 @@ def test_fast_up_and_down_hand_movement_is_not_a_swing(yaw):
     assert len(detect_strokes(track, "right", "one_handed")) == 1
 
 
+@pytest.mark.parametrize("yaw", [0, 90, 180])
+def test_left_hander_lifting_the_racket_up_and_down_is_not_a_swing(yaw):
+    track = make_track([], duration=4.0, yaw=yaw, left_handed=True)
+    sh = (track.xy[:, 11] + track.xy[:, 12]) / 2
+    torso = float(np.median(np.linalg.norm(sh - (track.xy[:, 23] + track.xy[:, 24]) / 2, axis=1)))
+    lift = 1.6 * torso * np.exp(-(((track.t - 2.0) / 0.12) ** 2))
+    track.xy[:, L_WR, 0] = sh[:, 0] - 0.3 * torso
+    track.xy[:, L_WR, 1] = sh[:, 1] + 1.2 * torso - lift
+    assert detect_strokes(track, "left", "one_handed") == []
+
+
 def test_wrong_handedness_is_not_silently_right():
     """Analysing a right-hander as left-handed must not reproduce the same labels with confidence."""
     track = make_track(EVENTS)
