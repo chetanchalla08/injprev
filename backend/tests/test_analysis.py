@@ -115,10 +115,20 @@ def test_left_handed_backhand_is_labelled_even_when_the_hidden_hand_is_misplaced
 
 
 @pytest.mark.parametrize("yaw", [0, 45, 135, 180])
-def test_forehand_with_hidden_backswing_stays_unclassified(yaw):
-    # Nothing seen before the hit travels backhand-wise, so the hidden-arm guard still applies from any camera angle.
+def test_forehand_with_hidden_take_back_is_a_low_confidence_forehand(yaw):
+    # Tune clip p12_rally_front: seen from the front, the racket head covers the hand in the take-back; the hand is
+    # seen again before the hit and swings clearly across the body.
     track = make_track([(2.0, "forehand")], yaw=yaw, noise=1.0)
     hide = (track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.4)
+    track.vis[hide, R_WR] = 0.1
+    s = detect_strokes(track, "right", "one_handed")
+    assert [x.type for x in s] == ["forehand"] and s[0].label_confidence <= 0.45
+
+
+@pytest.mark.parametrize("yaw", [0, 45, 135, 180])
+def test_hidden_take_back_stays_unlabelled_if_the_hand_is_not_seen_again_before_the_hit(yaw):
+    track = make_track([(2.0, "forehand")], yaw=yaw, noise=1.0)
+    hide = (track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.1)
     track.vis[hide, R_WR] = 0.1
     assert [x.type for x in detect_strokes(track, "right", "one_handed")] == ["unclassified"]
 
