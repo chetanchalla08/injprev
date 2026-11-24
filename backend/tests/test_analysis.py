@@ -123,6 +123,7 @@ def test_forehand_with_hidden_take_back_is_a_low_confidence_forehand(yaw):
     track.vis[hide, R_WR] = 0.1
     s = detect_strokes(track, "right", "one_handed")
     assert [x.type for x in s] == ["forehand"] and s[0].label_confidence <= 0.45
+    assert "take-back was hidden" in s[0].label_basis  # the player is told why the label is uncertain
 
 
 @pytest.mark.parametrize("yaw", [0, 45, 135, 180])
@@ -142,7 +143,7 @@ def test_left_handed_forehand_with_hidden_take_back_is_a_low_confidence_forehand
     assert [x.type for x in s] == ["forehand"] and s[0].label_confidence <= 0.45
 
 
-@pytest.mark.parametrize("yaw", [0, 90, 180])
+@pytest.mark.parametrize("yaw", [0, 45, 90, 135, 180, 225])
 def test_fast_up_and_down_hand_movement_is_not_a_swing(yaw):
     # Tune clip p12_rally_front (87.3, 111.6, 116.2 s): lifting the racket into the ready position or bringing it back
     # down after a shot is fast and travels far, but almost entirely up and down; a groundstroke goes across.
