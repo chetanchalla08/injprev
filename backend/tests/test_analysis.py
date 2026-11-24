@@ -123,6 +123,22 @@ def test_forehand_with_hidden_backswing_stays_unclassified(yaw):
     assert [x.type for x in detect_strokes(track, "right", "one_handed")] == ["unclassified"]
 
 
+@pytest.mark.parametrize("yaw", [0, 90, 180])
+def test_fast_up_and_down_hand_movement_is_not_a_swing(yaw):
+    # Tune clip p12_rally_front (87.3, 111.6, 116.2 s): lifting the racket into the ready position or bringing it back
+    # down after a shot is fast and travels far, but almost entirely up and down; a groundstroke goes across.
+    track = make_track([], duration=4.0, yaw=yaw)
+    sh = (track.xy[:, 11] + track.xy[:, 12]) / 2
+    torso = float(np.median(np.linalg.norm(sh - (track.xy[:, 23] + track.xy[:, 24]) / 2, axis=1)))
+    lift = 1.6 * torso * np.exp(-(((track.t - 2.0) / 0.12) ** 2))  # up 1.6 torso lengths and back in about half a second
+    track.xy[:, R_WR, 0] = sh[:, 0] + 0.3 * torso
+    track.xy[:, R_WR, 1] = sh[:, 1] + 1.2 * torso - lift
+    assert detect_strokes(track, "right", "one_handed") == []
+    track.xy[:, R_WR, 0] += 0.8 * lift  # the same movement with as much travel across the body is still found
+    del track.__dict__["xy_s"]  # cached smoothing of the old positions
+    assert len(detect_strokes(track, "right", "one_handed")) == 1
+
+
 def test_wrong_handedness_is_not_silently_right():
     """Analysing a right-hander as left-handed must not reproduce the same labels with confidence."""
     track = make_track(EVENTS)

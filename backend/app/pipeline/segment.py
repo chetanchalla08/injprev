@@ -19,6 +19,7 @@ STROKE_TYPES = ("forehand", "backhand", "serve")
 # --- heuristic constants ----------------------------------------------------------------
 MIN_PEAK_SPEED = 6.0  # torso-relative hand speed (torso lengths/s) below which nothing is a swing
 MIN_EXTENT = 1.2  # the hand must travel at least this far (torso lengths) within +-0.3 s of the peak
+MIN_ACROSS = 0.5  # ...and at least this far side to side in the image: ready-position and recovery movement is mostly up and down
 MIN_SWING_VIS = 0.45  # mean hitting-wrist visibility needed around the peak
 MIN_GAP_S = 0.7  # swings closer together than this are merged (the faster one is kept)
 SERVE_REACH = 0.5  # hand at least this many torso lengths above the nose
@@ -81,6 +82,8 @@ def find_swings(track: PoseTrack, handedness: str) -> list[int]:
             continue
         sl = slice(max(0, i - w), min(track.n, i + w + 1))
         if _extent(rel, sl, track.torso_len[i]) < MIN_EXTENT or track.vis[sl, dom.wr].mean() < MIN_SWING_VIS:
+            continue
+        if _extent(rel[:, :1], sl, track.torso_len[i]) < MIN_ACROSS:
             continue
         if _dropping_from_high_finish(reach, i, w):
             continue
