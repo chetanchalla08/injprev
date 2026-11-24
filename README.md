@@ -46,7 +46,7 @@ backend/app/            main.py + api_extra.py (API), worker.py (queue, retries,
                         crypto.py + storage.py + rotate_key.py (encryption at rest, key rotation), review.py (sign-off), angles.py (angle series,
                         reference comparison), pdf.py, llm.py (optional, checked), demo.py (synthetic figure)
 backend/app/evaltools/  format.py, score.py, add.py, angles.py, reviews.py
-backend/tests/          168 tests
+backend/tests/          219 tests
 frontend/src/           Home, Session (Player / Coach / Clinician / Label / Annotate / Review tabs), Compare,
                         Duo (side by side), Progress, Review (sign-off), Capture, Privacy
 evalset/                manifest, labels, stored runs (footage itself is not in git)
@@ -112,10 +112,11 @@ reference-like or diagnostic wording. Turning it on means the written findings l
 
 ## What is not validated or not built
 
-- **Accuracy is known only on a tiny, non-expert-labelled set** (41 strokes, 5 players). On
-  held-out footage every stroke was found and all 14 got the right label, including the five
-  one-handed backhands that used to be called serves, but that split has now been used twice to
-  judge changes, so it is no longer a clean test. See docs/VALIDATION.md for every number.
+- **Accuracy is known only on a small, non-expert-labelled set** (178 strokes, 15 players; tune 133,
+  held-out 45). On the latest held-out run, 25 of 31 forehands, backhands and serves were found and 20
+  labelled correctly, with 3 false detections. The held-out split has judged several changes, so it is no
+  longer a clean test; one-handed backhand vs serve in particular needs new players. See docs/VALIDATION.md
+  for every number.
 - Ball contact was found for 4 of 14 detected held-out strokes with a visible ball (a change that
   raised this to 7 made timing worse and was reverted); contact point is an unvalidated
   observation. Court position needs five court lines in view and was found in none of the
