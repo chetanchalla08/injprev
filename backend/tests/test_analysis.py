@@ -115,12 +115,38 @@ def test_left_handed_backhand_is_labelled_even_when_the_hidden_hand_is_misplaced
 
 
 @pytest.mark.parametrize("yaw", [0, 45, 135, 180])
-def test_forehand_with_hidden_backswing_stays_unclassified(yaw):
-    # Nothing seen before the hit travels backhand-wise, so the hidden-arm guard still applies from any camera angle.
+def test_forehand_with_hidden_take_back_is_a_low_confidence_forehand(yaw):
+    # Tune clip p12_rally_front: seen from the front, the racket head covers the hand in the take-back; the hand is
+    # seen again before the hit and swings clearly across the body.
     track = make_track([(2.0, "forehand")], yaw=yaw, noise=1.0)
     hide = (track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.4)
     track.vis[hide, R_WR] = 0.1
+    s = detect_strokes(track, "right", "one_handed")
+    assert [x.type for x in s] == ["forehand"] and s[0].label_confidence <= 0.45
+
+
+@pytest.mark.parametrize("yaw", [0, 45, 135, 180])
+def test_hidden_take_back_stays_unlabelled_if_the_hand_is_not_seen_again_before_the_hit(yaw):
+    track = make_track([(2.0, "forehand")], yaw=yaw, noise=1.0)
+    hide = (track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.1)
+    track.vis[hide, R_WR] = 0.1
     assert [x.type for x in detect_strokes(track, "right", "one_handed")] == ["unclassified"]
+
+
+@pytest.mark.parametrize("yaw", [0, 90, 180])
+def test_fast_up_and_down_hand_movement_is_not_a_swing(yaw):
+    # Tune clip p12_rally_front (87.3, 111.6, 116.2 s): lifting the racket into the ready position or bringing it back
+    # down after a shot is fast and travels far, but almost entirely up and down; a groundstroke goes across.
+    track = make_track([], duration=4.0, yaw=yaw)
+    sh = (track.xy[:, 11] + track.xy[:, 12]) / 2
+    torso = float(np.median(np.linalg.norm(sh - (track.xy[:, 23] + track.xy[:, 24]) / 2, axis=1)))
+    lift = 1.6 * torso * np.exp(-(((track.t - 2.0) / 0.12) ** 2))  # up 1.6 torso lengths and back in about half a second
+    track.xy[:, R_WR, 0] = sh[:, 0] + 0.3 * torso
+    track.xy[:, R_WR, 1] = sh[:, 1] + 1.2 * torso - lift
+    assert detect_strokes(track, "right", "one_handed") == []
+    track.xy[:, R_WR, 0] += 0.8 * lift  # the same movement with as much travel across the body is still found
+    del track.__dict__["xy_s"]  # cached smoothing of the old positions
+    assert len(detect_strokes(track, "right", "one_handed")) == 1
 
 
 def test_wrong_handedness_is_not_silently_right():

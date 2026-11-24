@@ -19,10 +19,12 @@ STROKE_TYPES = ("forehand", "backhand", "serve")
 # --- heuristic constants ----------------------------------------------------------------
 MIN_PEAK_SPEED = 6.0  # torso-relative hand speed (torso lengths/s) below which nothing is a swing
 MIN_EXTENT = 1.2  # the hand must travel at least this far (torso lengths) within +-0.3 s of the peak
+MIN_ACROSS = 0.5  # ...and at least this far side to side in the image: ready-position and recovery movement is mostly up and down
 MIN_SWING_VIS = 0.45  # mean hitting-wrist visibility needed around the peak
 MIN_GAP_S = 0.7  # swings closer together than this are merged (the faster one is kept)
 SERVE_REACH = 0.5  # hand at least this many torso lengths above the nose
 SIDE_MIN_SCORE = 0.6  # minimum lateral travel (hip widths) to call forehand vs backhand
+HIDDEN_FH_MIN_SCORE = 1.5  # lateral travel (hip widths) needed to call a forehand whose take-back was hidden
 HANDS_TOGETHER_M = 0.35  # two-handed backhand: wrists closer than this (model metres) through the swing
 HANDS_APART_M = 0.42
 
@@ -81,6 +83,8 @@ def find_swings(track: PoseTrack, handedness: str) -> list[int]:
             continue
         sl = slice(max(0, i - w), min(track.n, i + w + 1))
         if _extent(rel, sl, track.torso_len[i]) < MIN_EXTENT or track.vis[sl, dom.wr].mean() < MIN_SWING_VIS:
+            continue
+        if _extent(rel[:, :1], sl, track.torso_len[i]) < MIN_ACROSS:
             continue
         if _dropping_from_high_finish(reach, i, w):
             continue
@@ -225,6 +229,10 @@ def classify(track: PoseTrack, peak_i: int, handedness: str, backhand_style: str
         # wrong side of the body (tune clip p12_rally_front).
         if vis_d[a].mean() >= 0.5 and np.isfinite(score) and score < -SIDE_MIN_SCORE:
             return "backhand", 0.45, "The hitting hand went out of sight behind the body (as in a backhand backswing), then travelled out to the hitting-arm side. Labelled with low confidence because the backswing was hidden."
+        # Seen from the front, the racket head covers the hand during a forehand take-back (tune clip p12_rally_front).
+        # Needs much more travel than the backhand exception, so a recovery movement that drifts across is not taken.
+        if vis_d[a].mean() >= 0.5 and np.isfinite(score) and score > HIDDEN_FH_MIN_SCORE:
+            return "forehand", 0.45, "The hitting hand was out of sight in the take-back (often behind the racket head), then swung clearly across the body from the hitting-arm side. Labelled with low confidence because the take-back was hidden."
         return "unclassified", 0.1, "The hitting arm was hidden from the camera in the lead-up, so this may be only the end of a swing."
     az = track.pelvis_azimuth[peak_i]
     side_on = np.isfinite(az) and az > 60  # hips overlap in the image, so left/right depth is unreliable

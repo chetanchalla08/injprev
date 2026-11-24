@@ -292,11 +292,13 @@ def test_swing_phases_are_ordered():
 
 
 def _unlabelled_forehand(yaw, hand="right"):
-    """A forehand whose lead-up is hidden, so the pose alone leaves it unlabelled (see test_analysis)."""
+    """A forehand with a hidden lead-up that the pose left unlabelled. Whether the pose labels this synthetic swing
+    depends on rules tested in test_analysis, so the unlabelled result is set here; apply_ball only sees the label."""
     track = make_track([(2.0, "forehand")], yaw=yaw, noise=1.0, left_handed=hand == "left")
     track.vis[(track.t >= 2.0 - 1.05) & (track.t <= 2.0 - 0.4), 16 if hand == "right" else 15] = 0.1
     strokes = detect_strokes(track, hand, "one_handed")
-    assert [s.type for s in strokes] == ["unclassified"]
+    assert len(strokes) == 1 and strokes[0].source == "auto"
+    strokes[0].type, strokes[0].label_confidence = "unclassified", 0.1
     return track, strokes
 
 
