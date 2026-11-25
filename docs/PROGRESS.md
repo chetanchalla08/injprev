@@ -26,3 +26,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - Next up: a clip of the same player filmed closer, added to held-out, to see how much of the small-player trouble is down to size.
 
 ## 2026-11-25
+
