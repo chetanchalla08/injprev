@@ -24,3 +24,14 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - p12_rally_front now has 4 unlabelled swings instead of 7: two false swings (116.2 s, 127.3 s) and two forehands the pose cannot read (88.7 s, 101.2 s).
 - Left-handed tests added for both new rules, and the up-and-down test now runs from six camera angles (PR #7 and this batch).
 - Next up: a clip of the same player filmed closer, added to held-out, to see how much of the small-player trouble is down to size.
+
+## 2026-11-25
+
+- No pipeline changes today; this entry tracks what is still open.
+- p12_rally_front still has two false swings (116.2 s, 127.3 s).
+- p12_rally_front still has two forehands the pose cannot read (88.7 s, 101.2 s).
+- The four undetected backhands on p12_rally_front are still open.
+- The two false serves on p12_rally_front (108.6 s and 119.8 s) are still open.
+- Tune false swings stand at 15 after the up-and-down fix (PR #6).
+- Filming reminder: the player should fill at least a third of the frame height, at 60 fps.
+- Next up: film the same player closer and add the clip to held-out.
