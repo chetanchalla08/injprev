@@ -28,3 +28,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 ## 2026-11-25
 
 - No pipeline changes today; this entry tracks what is still open.
+- p12_rally_front still has two false swings (116.2 s, 127.3 s).
