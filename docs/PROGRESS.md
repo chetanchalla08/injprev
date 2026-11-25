@@ -33,3 +33,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - The four undetected backhands on p12_rally_front are still open.
 - The two false serves on p12_rally_front (108.6 s and 119.8 s) are still open.
 - Tune false swings stand at 15 after the up-and-down fix (PR #6).
+- Filming reminder: the player should fill at least a third of the frame height, at 60 fps.
