@@ -25,3 +25,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - Left-handed tests added for both new rules, and the up-and-down test now runs from six camera angles (PR #7 and this batch).
 - Next up: a clip of the same player filmed closer, added to held-out, to see how much of the small-player trouble is down to size.
 
+## 2026-11-25
