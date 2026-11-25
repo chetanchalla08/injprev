@@ -27,3 +27,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 
 ## 2026-11-25
 
+- No pipeline changes today; this entry tracks what is still open.
