@@ -44,3 +44,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - The four undetected backhands on p12_rally_front are still open.
 - The two false serves on p12_rally_front (108.6 s and 119.8 s) are still open.
 - Commits now use the GitHub noreply address so they count on the contribution graph.
+- Next up: film the same player closer and add the clip to held-out.
