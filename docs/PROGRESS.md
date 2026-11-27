@@ -36,3 +36,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - Filming reminder: the player should fill at least a third of the frame height, at 60 fps.
 - Next up: film the same player closer and add the clip to held-out.
 
+## 2026-11-26
