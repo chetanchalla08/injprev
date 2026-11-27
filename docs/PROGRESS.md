@@ -35,3 +35,13 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - Tune false swings stand at 15 after the up-and-down fix (PR #6).
 - Filming reminder: the player should fill at least a third of the frame height, at 60 fps.
 - Next up: film the same player closer and add the clip to held-out.
+
+## 2026-11-26
+
+- No pipeline changes today; this entry tracks what is still open.
+- p12_rally_front still has two false swings (116.2 s, 127.3 s).
+- p12_rally_front still has two forehands the pose cannot read (88.7 s, 101.2 s).
+- The four undetected backhands on p12_rally_front are still open.
+- The two false serves on p12_rally_front (108.6 s and 119.8 s) are still open.
+- Commits now use the GitHub noreply address so they count on the contribution graph.
+- Next up: film the same player closer and add the clip to held-out.
