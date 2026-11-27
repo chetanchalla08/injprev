@@ -37,3 +37,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - Next up: film the same player closer and add the clip to held-out.
 
 ## 2026-11-26
+
