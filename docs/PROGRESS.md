@@ -42,3 +42,4 @@ Short dated notes on what changed. Details and numbers are in VALIDATION.md.
 - p12_rally_front still has two false swings (116.2 s, 127.3 s).
 - p12_rally_front still has two forehands the pose cannot read (88.7 s, 101.2 s).
 - The four undetected backhands on p12_rally_front are still open.
+- The two false serves on p12_rally_front (108.6 s and 119.8 s) are still open.
